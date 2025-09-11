@@ -1,7 +1,7 @@
 // components/TestimonialsSection.tsx
 import React from "react";
 
-export default function Testimonials(): JSX.Element {
+export default function Testimonials(): React.JSX.Element {
   return (
     <section aria-labelledby="testimonials-heading" className="relative py-24 bg-white">
       <img

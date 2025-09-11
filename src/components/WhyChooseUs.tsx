@@ -42,7 +42,7 @@ const cards: Card[] = [
   },
 ];
 
-export default function WhyChooseUs(): JSX.Element {
+export default function WhyChooseUs(): React.JSX.Element {
   return (
     <>
       <Head>
