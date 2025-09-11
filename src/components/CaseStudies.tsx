@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 
-export default function CaseStudies(): JSX.Element {
+export default function CaseStudies(): React.JSX.Element {
   return (
     <>
       <Head>
