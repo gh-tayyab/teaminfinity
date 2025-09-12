@@ -2,15 +2,22 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Metadata } from "next";
+
+const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Team Infinity for IT solutions, web development, and digital services tailored to your business needs.",
+};
 
 export default function ContactUs() {
   const [accepted, setAccepted] = useState(false);
 
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-white to-cyan-50 pt-44 pb-20 overflow-hidden">
-      {/* Background blur layers */}
-      <div className="absolute top-1/ -left-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
-      <div className="absolute top-1/ -right-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
+      {/* Background blur layers (main page) */}
+      <div className="absolute top-52 -left-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
+      <div className="absolute top-52 -right-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
 
       {/* Content wrapper */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -76,6 +83,7 @@ export default function ContactUs() {
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
+            title="Team Infinity office location"
           ></iframe>
         </div>
 
@@ -172,11 +180,13 @@ export default function ContactUs() {
                   />
                 </div>
                 <div className="bg-white rounded-xl shadow-md p-6">
-                  <h3 className="text-4xl font-bold text-[#00B7CD] mb-2">98%</h3>
+                  <h3 className="text-4xl font-bold text-[#00B7CD] mb-2">
+                    98%
+                  </h3>
                   <p className="font-semibold">Client Satisfaction</p>
                   <p className="text-gray-600 text-sm">
-                    Trusted by clients for our quality work, clear communication,
-                    and consistent results.
+                    Trusted by clients for our quality work, clear
+                    communication, and consistent results.
                   </p>
                 </div>
               </div>
@@ -185,16 +195,32 @@ export default function ContactUs() {
               <div className="flex items-center gap-4">
                 <span className="font-medium">Stay connected</span>
                 <div className="flex gap-3">
-                  <a href="#" aria-label="Facebook" className="hover:text-[#00B7CD]">
+                  <a
+                    href="#"
+                    aria-label="Facebook"
+                    className="hover:text-[#00B7CD]"
+                  >
                     🌐
                   </a>
-                  <a href="#" aria-label="Twitter" className="hover:text-[#00B7CD]">
+                  <a
+                    href="#"
+                    aria-label="Twitter"
+                    className="hover:text-[#00B7CD]"
+                  >
                     🐦
                   </a>
-                  <a href="#" aria-label="LinkedIn" className="hover:text-[#00B7CD]">
+                  <a
+                    href="#"
+                    aria-label="LinkedIn"
+                    className="hover:text-[#00B7CD]"
+                  >
                     💼
                   </a>
-                  <a href="#" aria-label="Instagram" className="hover:text-[#00B7CD]">
+                  <a
+                    href="#"
+                    aria-label="Instagram"
+                    className="hover:text-[#00B7CD]"
+                  >
                     📸
                   </a>
                 </div>
@@ -203,6 +229,65 @@ export default function ContactUs() {
           </div>
         </section>
         {/* --- End Contact Form Section --- */}
+
+        {/* --- NEW: FAQ / Accordion Section (as shown in image) --- */}
+        <section
+          id="faq"
+          aria-labelledby="faq-heading"
+          className="relative py-20 bg-gradient-to-b from-transparent to-white rounded-2xl"
+        >
+          {/* Add the two blur layers for this FAQ section (top-right & bottom-left) */}
+          <div className="absolute -top-12 right-0 w-96 h-96 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
+          <div className="absolute -bottom-12 -left-100 w-96 h-96 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
+
+          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <p className="text-sm uppercase text-[#00B7CD] tracking-wider mb-2">
+              ✱ Common Questions
+            </p>
+            <h2 id="faq-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Simple answers to your social media questions.
+            </h2>
+
+            {/* Accordion list - semantic for SEO & accessibility */}
+            <dl className="space-y-4 text-left">
+              {[
+                "What services does Buzzz offer for brands?",
+                "Which platforms do you manage?",
+                "Do you offer paid ads and boosting?",
+                "What's the minimum contract period?",
+                "Do you provide performance reports?",
+                "How do I get started with Buzzz?",
+              ].map((q, idx) => (
+                <div
+                  key={q}
+                  className="bg-white/80 backdrop-blur-sm border border-gray-100 rounded-xl p-4 shadow-sm flex items-start justify-between"
+                >
+                  <details className="w-full" aria-expanded="false">
+                    <summary className="cursor-pointer list-none flex items-center justify-between gap-4 py-2 px-2 select-none">
+                      <span className="text-gray-800">{q}</span>
+                      <span
+                        aria-hidden
+                        className="text-2xl font-bold text-[#00B7CD]"
+                      >
+                        +
+                      </span>
+                    </summary>
+                    <div className="mt-3 text-gray-600">
+                      <p>
+                        {/* Placeholder answer - change to real content as needed */}
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quaerat, saepe? We provide tailored social media
+                        strategies, content creation, community management, and
+                        paid advertising to help brands grow.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+        {/* --- End FAQ Section --- */}
       </div>
     </section>
   );

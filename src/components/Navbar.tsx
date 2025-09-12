@@ -40,7 +40,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-transparent fixed top-0 w-full z-50">
+    <nav className="bg-gradient-to-r from-white to-cyan-50 fixed -top-2 w-full z-50">
       <div className="container mx-auto flex items-center justify-between py-2 px-6">
         {/* Logo */}
         <Link href="/" aria-label="Team Infinity Home">
@@ -81,14 +81,29 @@ export default function Navbar() {
                 onMouseEnter={openDropdown}
                 onMouseLeave={() => closeDropdownWithDelay(120)}
               >
-                <Link href="/services/web-design" className="block hover:text-cyan-600">
-                  Web Design
+                <Link href="/web-development" className="block hover:text-cyan-600">
+                  Web Development
                 </Link>
-                <Link href="/services/development" className="block hover:text-cyan-600">
-                  Development
+                <Link href="/graphic-designing" className="block hover:text-cyan-600">
+                  Graphic Designing
                 </Link>
-                <Link href="/services/marketing" className="block hover:text-cyan-600">
-                  Marketing
+                <Link href="/digital-marketing" className="block hover:text-cyan-600">
+                  Digital Marketing
+                </Link>
+                <Link href="/ai-automation" className="block hover:text-cyan-600">
+                  AI Automation
+                </Link>
+                <Link href="/search-engine-optimization" className="block hover:text-cyan-600">
+                  Search Engine Optimization
+                </Link>
+                <Link href="/shopify-development" className="block hover:text-cyan-600">
+                  Shopify Development
+                </Link>
+                <Link href="/ui-ux-designing" className="block hover:text-cyan-600">
+                  UI/UX Designing
+                </Link>
+                <Link href="/video-editing" className="block hover:text-cyan-600">
+                  Video Editing
                 </Link>
               </div>
             )}
@@ -105,7 +120,7 @@ export default function Navbar() {
         {/* CTA Button */}
         <Link
           href="/contact-us"
-          className="hidden md:inline-block px-4 py-2 bg-transparent border-2 border-black hover:bg-cyan-500 text-black font-normal rounded-sm transition"
+          className="hidden md:inline-block px-4 py-2 bg-transparent border-2 border-black hover:bg-cyan-200 text-black font-normal rounded-sm transition"
         >
           Get Started
         </Link>
@@ -145,15 +160,30 @@ export default function Navbar() {
 
           {dropdownOpen && (
             <div className="pl-4 space-y-1">
-              <Link href="/services/web-design" className="block hover:text-cyan-600">
-                Web Design
-              </Link>
-              <Link href="/services/development" className="block hover:text-cyan-600">
-                Development
-              </Link>
-              <Link href="/services/marketing" className="block hover:text-cyan-600">
-                Marketing
-              </Link>
+              <Link href="/web-development" className="block hover:text-cyan-600">
+                  Web Development
+                </Link>
+                <Link href="/graphic-designing" className="block hover:text-cyan-600">
+                  Graphic Designing
+                </Link>
+                <Link href="/digital-marketing" className="block hover:text-cyan-600">
+                  Digital Marketing
+                </Link>
+                <Link href="/ai-automation" className="block hover:text-cyan-600">
+                  AI Automation
+                </Link>
+                <Link href="/search-engine-optimization" className="block hover:text-cyan-600">
+                  Search Engine Optimization
+                </Link>
+                <Link href="/shopify-development" className="block hover:text-cyan-600">
+                  Shopify Development
+                </Link>
+                <Link href="/ui-ux-designing" className="block hover:text-cyan-600">
+                  UI/UX Designing
+                </Link>
+                <Link href="/video-editing" className="block hover:text-cyan-600">
+                  Video Editing
+                </Link>
             </div>
           )}
 

@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-white to-cyan-50 top-6">
+    <section className="relative bg-gradient-to-r from-white to-cyan-50 top-4">
       {/* Spacer blank div (for clean look behind navbar) */}
       <div className="h-24" />
 

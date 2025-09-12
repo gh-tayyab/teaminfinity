@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google"; // Change here
+import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,7 +11,10 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Team Infinity – IT Solutions & Web Development",
+  title: {
+    default: "Team Infinity – IT Solutions & Web Development",
+    template: "%s | Team Infinity – IT Solutions",
+  },
   description:
     "Team Infinity provides cutting-edge IT solutions, web development, AI integration, and cloud services to help businesses grow.",
   keywords: [
