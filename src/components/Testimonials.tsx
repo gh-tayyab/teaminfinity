@@ -1,29 +1,29 @@
-// components/TestimonialsSection.tsx
+import Image from "next/image";
 import React from "react";
 
 export default function Testimonials(): React.JSX.Element {
   return (
     <section aria-labelledby="testimonials-heading" className="relative py-24 bg-white">
-      <img
-        src="/images/testimonialsleft.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none md:block absolute -top-22  w-200 h-70 object-cover z-0"
-      />
+      {/* Left decorative image (decorative, hidden from assistive tech) */}
+      <div className="pointer-events-none md:block absolute -top-22  w-200 h-70 object-cover z-0" aria-hidden="true">
+        <Image
+          src="/images/testimonialsleft.svg"
+          alt=""
+          fill
+          className="object-cover"
+          loading="lazy"
+        />
+      </div>
+
       {/* Bottom-left decorative */}
-      <img
-        src="/images/testimonialsbottom.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute w-100  bottom-0 left-0 object-cover z-0"
-      />
+      <div className="pointer-events-none absolute w-100  bottom-0 left-0 object-cover z-0" aria-hidden="true">
+        <Image src="/images/testimonialsbottom.svg" alt="" width={400} height={300} className="object-cover" loading="lazy" />
+      </div>
+
       {/* Bottom-right decorative */}
-      <img
-        src="/images/testimonialsbottomleft.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute w-100 bottom-0 right-0 object-cover z-0"
-      />
+      <div className="pointer-events-none absolute w-100 bottom-0 right-0 object-cover z-0" aria-hidden="true">
+        <Image src="/images/testimonialsbottomleft.svg" alt="" width={400} height={300} className="object-cover" loading="lazy" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-20">
         <div className="text-center mb-10">
@@ -40,11 +40,16 @@ export default function Testimonials(): React.JSX.Element {
             <div className="grid grid-cols-1 md:grid-cols-2 items-center">
               {/* Left: image */}
               <div className="relative p-6 md:p-8">
-                <img
-                  src="/images/testimonials-1.svg"
-                  alt="testimonial 1"
-                  className=" rounded-xl object-cover h-56 md:h-64"
-                />
+                <div className="rounded-xl overflow-hidden relative h-56 md:h-64">
+                  <Image
+                    src="/images/testimonials-1.svg"
+                    alt="Maya Olivia — Marketing Lead at Urban Bloom"
+                    fill
+                    className="object-cover rounded-xl"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                </div>
               </div>
 
               {/* Right: content */}
@@ -70,16 +75,20 @@ export default function Testimonials(): React.JSX.Element {
           </article>
 
           {/* Card 2 */}
-           {/* Card 1 */}
           <article className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center">
               {/* Left: image */}
               <div className="relative p-6 md:p-8">
-                <img
-                  src="/images/testimonials-2.svg"
-                  alt="testimonial 1"
-                  className=" rounded-xl object-cover h-56 md:h-64"
-                />
+                <div className="rounded-xl overflow-hidden relative h-56 md:h-64">
+                  <Image
+                    src="/images/testimonials-2.svg"
+                    alt="Nadya Sarah — Founder of Matcha Mood"
+                    fill
+                    className="object-cover rounded-xl"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                </div>
               </div>
 
               {/* Right: content */}

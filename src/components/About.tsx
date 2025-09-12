@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -22,7 +22,7 @@ export default function About() {
         {/* Right side content */}
         <div>
           <p className="flex items-center gap-2 text-sm font-semibold text-[#009FB2] uppercase tracking-wide mb-3">
-            <span className="text-lg">✱</span> Who We Are
+            <span className="text-lg" aria-hidden="true">✱</span> Who We Are
           </p>
           <h2
             id="about-heading"
@@ -44,16 +44,18 @@ export default function About() {
         </div>
       </div>
 
-      {/* Decorative bottom-right image */}
-      <div className="absolute bottom-0 right-0 w-[200px] md:w-[300px] opacity-70 pointer-events-none">
+      {/* Decorative bottom-right image (purely decorative) */}
+      <div className="absolute bottom-0 right-0 w-[200px] md:w-[300px] opacity-70 pointer-events-none" aria-hidden="true">
         <Image
           src="/images/aboutbottom.svg"
-          alt="Decorative technology pattern"
+          alt=""
           width={400}
           height={500}
           className="object-contain"
+          loading="lazy"
+          sizes="(max-width: 768px) 200px, 300px"
         />
       </div>
     </section>
-  )
+  );
 }

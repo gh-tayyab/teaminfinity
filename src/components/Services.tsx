@@ -18,7 +18,7 @@ const services: Service[] = [
       "Paid Advertising (Google & Social Ads)",
       "SEO & Content Marketing",
     ],
-    icon: <Lightbulb className="w-8 h-8" />,
+    icon: <Lightbulb className="w-8 h-8" aria-hidden="true" />,
     href: "/services/marketing",
   },
   {
@@ -29,7 +29,7 @@ const services: Service[] = [
       "Mobile App Development",
       "UI/UX Design & Optimization",
     ],
-    icon: <Code className="w-8 h-8" />,
+    icon: <Code className="w-8 h-8" aria-hidden="true" />,
     href: "/services/development",
   },
   {
@@ -39,7 +39,7 @@ const services: Service[] = [
       "Strategy Consulting",
       "Ongoing Maintenance & Support",
     ],
-    icon: <BarChart className="w-8 h-8" />,
+    icon: <BarChart className="w-8 h-8" aria-hidden="true" />,
     href: "/services/growth",
   },
 ];
@@ -51,21 +51,25 @@ export default function ServicesSection() {
       aria-labelledby="services-heading"
       className="relative bg-[#F2FBFD] py-20 px-6 overflow-hidden"
     >
-      {/* Decorative bottom images */}
-      <div className="absolute left-6 bottom-0 pointer-events-none opacity-70">
+      {/* Decorative bottom images (purely decorative) */}
+      <div className="absolute left-6 bottom-0 pointer-events-none opacity-70" aria-hidden="true">
         <Image
           src="/images/servicesbottom.svg"
-          alt="decorative pattern left"
+          alt=""
           width={220}
           height={180}
+          loading="lazy"
+          sizes="220px"
         />
       </div>
-      <div className="absolute right-6 bottom-0 pointer-events-none opacity-70">
+      <div className="absolute right-6 bottom-0 pointer-events-none opacity-70" aria-hidden="true">
         <Image
           src="/images/servicesbottomright.svg"
-          alt="decorative pattern right"
+          alt=""
           width={160}
           height={160}
+          loading="lazy"
+          sizes="160px"
         />
       </div>
 
@@ -73,7 +77,7 @@ export default function ServicesSection() {
         <div className="flex items-start justify-between mb-10 px-2">
           <div>
             <p className="text-sm font-semibold text-[#009FB2] uppercase tracking-wider mb-3 flex items-center gap-2">
-              <span className="text-lg">✱</span> Our Services
+              <span className="text-lg" aria-hidden="true">✱</span> Our Services
             </p>
             <h2
               id="services-heading"
@@ -85,9 +89,9 @@ export default function ServicesSection() {
 
           <div>
             <Link
-              href={"/services"}
-              type="button"
+              href={'/services'}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-200 text-sm font-medium hover:shadow-md transition"
+              aria-label="View all services"
             >
               View All Services
             </Link>
@@ -96,28 +100,37 @@ export default function ServicesSection() {
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          {services.map((s) => (
-            <Link key={s.title} href={s.href} className="block group h-full">
-              <article className="bg-white p-8 shadow-2xl border border-transparent transition-transform duration-300 transform hover:scale-105 hover:shadow-3xl hover:border-transparent relative flex flex-col items-center text-center cursor-pointer h-full">
+          {services.map((s, idx) => (
+            <Link
+              key={s.title}
+              href={s.href}
+              className="block group h-full"
+              aria-label={`Open ${s.title} details`}
+            >
+              <article
+                className="bg-white p-8 shadow-2xl border border-transparent transition-transform duration-300 transform hover:scale-105 hover:shadow-3xl hover:border-transparent relative flex flex-col items-center text-center cursor-pointer h-full"
+                role="group"
+                aria-labelledby={`service-title-${idx}`}
+              >
                 {/* Icon block */}
                 <div className="mb-6">
                   <div className="w-20 h-20 rounded-lg border-2 border-gray-100 flex items-center justify-center transition-colors duration-300 group-hover:border-[#009FB2]">
-                    <span className="text-gray-800 group-hover:text-[#009FB2]">
+                    <span className="text-gray-800 group-hover:text-[#009FB2]" aria-hidden="true">
                       {s.icon}
                     </span>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 group-hover:text-[#009FB2]">
+                <h3 id={`service-title-${idx}`} className="text-lg md:text-xl font-semibold text-gray-900 mb-4 group-hover:text-[#009FB2]">
                   {s.title}
                 </h3>
 
                 {/* List */}
-                <ul className="space-y-2 text-sm text-gray-600 text-left flex-1">
+                <ul className="space-y-2 text-sm text-gray-600 text-left flex-1" aria-label={`${s.title} features`}>
                   {s.items.map((it) => (
                     <li key={it} className="flex items-start gap-3">
-                      <Check className="w-4 h-4 mt-1 text-[#009FB2] flex-shrink-0" />
+                      <Check className="w-4 h-4 mt-1 text-[#009FB2] flex-shrink-0" aria-hidden="true" />
                       <span>{it}</span>
                     </li>
                   ))}

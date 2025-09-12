@@ -1,7 +1,7 @@
-// components/CaseStudies.tsx
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 export default function CaseStudies(): React.JSX.Element {
   return (
@@ -20,29 +20,29 @@ export default function CaseStudies(): React.JSX.Element {
       </Head>
 
       <section className="relative py-30">
-        {/* Top decorative background image (replace src) */}
-        <div className="absolute inset-x-0 top-0 h-38 md:h-44 lg:h-50 pointer-events-none -z-10">
+        {/* Top decorative background image (replace src) - decorative */}
+        <div className="absolute inset-x-0 top-0 h-38 md:h-44 lg:h-50 pointer-events-none -z-10" aria-hidden="true">
           <Image
             src="/images/bg.png" // ← replace with your top background asset
-            alt="decorative top background"
+            alt=""
             fill
             className="object-cover"
-            priority
+            loading="lazy"
           />
         </div>
 
         {/* Decorative soft cyan circle top-right */}
-        <div className="absolute top-6 right-6 md:top-10 md:right-10 lg:top-14 lg:right-14 w-32 h-32 bg-[#36E1F8] opacity-20 rounded-full blur-3xl pointer-events-none -z-0" />
+        <div className="absolute top-6 right-6 md:top-10 md:right-10 lg:top-14 lg:right-14 w-32 h-32 bg-[#36E1F8] opacity-20 rounded-full blur-3xl pointer-events-none -z-0" aria-hidden="true" />
 
-        {/* Optional top-right decorative image (robot). Replace src with your asset. */}
-        <div className="absolute right-6 top-6 md:top-8 lg:top-10 z-20 pointer-events-none">
+        {/* Optional top-right decorative image (robot). Replace src with your asset. decorative */}
+        <div className="absolute right-6 top-6 md:top-8 lg:top-10 z-20 pointer-events-none" aria-hidden="true">
           <Image
             src="/images/robot.svg" // ← replace with your top-right decorative image
-            alt="decorative robot"
+            alt=""
             width={260}
             height={260}
             className="select-none"
-            priority
+            loading="lazy"
           />
         </div>
 
@@ -61,7 +61,7 @@ export default function CaseStudies(): React.JSX.Element {
                   <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm relative h-40 md:h-75">
                     <Image
                       src="/images/case1.svg" // ← replace with your image (large)
-                      alt="case study large"
+                      alt="Case study: project overview"
                       fill
                       className="object-cover"
                       priority
@@ -73,19 +73,19 @@ export default function CaseStudies(): React.JSX.Element {
                     <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm relative h-20 md:h-44">
                       <Image
                         src="/images/case2.svg" // ← replace
-                        alt="case small 1"
+                        alt="Case study detail 1"
                         fill
                         className="object-cover"
-                        priority
+                        loading="lazy"
                       />
                     </div>
                     <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm relative h-20 md:h-44">
                       <Image
                         src="/images/case3.svg" // ← replace
-                        alt="case small 2"
+                        alt="Case study detail 2"
                         fill
                         className="object-cover"
-                        priority
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -94,7 +94,7 @@ export default function CaseStudies(): React.JSX.Element {
                 {/* RIGHT: Content */}
                 <div className="flex flex-col items-start justify-center">
                   <span className="text-xs text-[#60d1db] uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <span className="text-sm">✷</span>
+                    <span className="text-sm" aria-hidden="true">✷</span>
                     <span className="hidden sm:inline text-black">Show Work</span>
                   </span>
 
@@ -106,12 +106,13 @@ export default function CaseStudies(): React.JSX.Element {
                     See how we've helped businesses like yours achieve measurable growth.
                   </p>
 
-                  <a
+                  <Link
                     href="/work"
                     className="inline-flex items-center justify-center px-5 py-2.5 border border-[#bfeef2] text-[#0f5670] rounded-md text-sm font-medium shadow-sm hover:shadow-md transition"
+                    aria-label="View our work"
                   >
                     View Our Work
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
