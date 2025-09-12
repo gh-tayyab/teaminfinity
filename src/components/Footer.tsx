@@ -5,6 +5,7 @@ import { Facebook, Instagram, Youtube, Twitter, Linkedin } from "lucide-react";
 export default function Footer() {
   return (
     <footer className=" bg-[#1E1E22] text-white">
+      <div className="absolute -left-20 w-64 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0" />
       {/* Newsletter Section */}
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="bg-gradient-to-r from-white to-gray-50 text-[#1E1E22] rounded-xl shadow-lg p-8 sm:p-10 relative top-10">

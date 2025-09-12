@@ -261,6 +261,7 @@ const ServicesGrid: React.FC = () => {
       aria-labelledby="services-grid-heading"
       className="relative py-16 bg-gradient-to-b from-transparent to-white"
     >
+            <div className="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-[#00B7CD] opacity-20 blur-3xl z-0" />
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
         <h2
           id="services-grid-heading"

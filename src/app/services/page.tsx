@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import ServicesGrid from "./ServicesGrid";
 import WhyChooseUs from "./WhyChooseUs";
+import OurProcess from "./OurProcess";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -72,6 +73,7 @@ const Page: React.FC = () => {
       {/* Services Grid */}
       <ServicesGrid />
       <WhyChooseUs />
+      <OurProcess />
     </main>
   );
 };

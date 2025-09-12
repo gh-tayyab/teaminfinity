@@ -3,11 +3,12 @@ import { Metadata } from "next";
 import ContactForm from "./ContactForm";
 import FAQ from "./FAQ";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Contact Us",
   description:
     "Get in touch with Team Infinity for IT solutions, web development, and digital services tailored to your business needs.",
 };
+
 
 export default function ContactUs() {
 
