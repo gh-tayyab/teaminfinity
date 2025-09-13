@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import React from "react";
+import CaseStudyClient from "./CaseStudyClient";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -7,8 +7,6 @@ export const metadata: Metadata = {
     "Learn more about Team Infinity, our vision, mission, and the dedicated professionals driving innovative IT solutions.",
 };
 
-const page = () => {
-  return <div>about</div>;
-};
-
-export default page;
+export default function CaseStudyPage() {
+  return <CaseStudyClient />;
+}
