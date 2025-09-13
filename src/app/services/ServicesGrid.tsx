@@ -31,7 +31,11 @@ const services = [
     key: "graphic-designing",
     title: "Graphic Designing",
     desc: "Brand visuals, logos, social assets and print-ready designs created to elevate your identity.",
-    bullets: ["Brand identity", "Social & print assets", "Illustrations & icons"],
+    bullets: [
+      "Brand identity",
+      "Social & print assets",
+      "Illustrations & icons",
+    ],
     img: "/images/serviceimage1.svg",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -67,7 +71,11 @@ const services = [
     key: "ai-automation",
     title: "AI Automation",
     desc: "Automate workflows, build smart helpers and integrate LLMs to save time and scale processes.",
-    bullets: ["Custom agents & pipelines", "Chatbots & assistants", "Data automation"],
+    bullets: [
+      "Custom agents & pipelines",
+      "Chatbots & assistants",
+      "Data automation",
+    ],
     img: "/images/services/ai-automation.jpg",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -85,7 +93,11 @@ const services = [
     key: "search-engine-optimization",
     title: "Search Engine Optimization",
     desc: "Technical SEO, content strategy and link-building to increase organic visibility and traffic.",
-    bullets: ["On-page & technical", "Keyword strategy", "Content optimisation"],
+    bullets: [
+      "On-page & technical",
+      "Keyword strategy",
+      "Content optimisation",
+    ],
     img: "/images/services/seo.jpg",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -132,8 +144,21 @@ const services = [
     img: "/images/serviceimage3.svg",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <rect x="3" y="3" width="18" height="18" rx="2" stroke="#06b6d4" strokeWidth="1.4" />
-        <path d="M8 12h8" stroke="#06b6d4" strokeWidth="1.4" strokeLinecap="round" />
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="2"
+          stroke="#06b6d4"
+          strokeWidth="1.4"
+        />
+        <path
+          d="M8 12h8"
+          stroke="#06b6d4"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+        />
       </svg>
     ),
   },
@@ -167,9 +192,14 @@ const LargeCard = ({ s }: { s: (typeof services)[number] }) => (
     <div className="h-full flex flex-col lg:flex-row">
       <div className="p-6 flex-1">
         <div className="flex items-start gap-4">
-          <div className="flex-shrink-0 bg-[#ECFEFF] rounded-lg p-3">{s.icon}</div>
+          <div className="flex-shrink-0 bg-[#ECFEFF] rounded-lg p-3">
+            {s.icon}
+          </div>
           <div>
-            <h3 id={`svc-${s.key}-title`} className="text-lg font-semibold text-gray-900 mb-1">
+            <h3
+              id={`svc-${s.key}-title`}
+              className="text-lg font-semibold text-gray-900 mb-1"
+            >
               {s.title}
             </h3>
             <p className="text-sm text-gray-600 mb-3">{s.desc}</p>
@@ -218,9 +248,14 @@ const SmallCard = ({ s }: { s: (typeof services)[number] }) => (
     <div className="p-6 h-full flex flex-col justify-between">
       <div>
         <div className="flex items-start gap-4">
-          <div className="flex-shrink-0 bg-[#ECFEFF] rounded-lg p-3">{s.icon}</div>
+          <div className="flex-shrink-0 bg-[#ECFEFF] rounded-lg p-3">
+            {s.icon}
+          </div>
           <div>
-            <h3 id={`svc-${s.key}-title`} className="text-lg font-semibold text-gray-900 mb-1">
+            <h3
+              id={`svc-${s.key}-title`}
+              className="text-lg font-semibold text-gray-900 mb-1"
+            >
               {s.title}
             </h3>
             <p className="text-sm text-gray-600 mb-3">{s.desc}</p>
@@ -251,7 +286,9 @@ const SmallCard = ({ s }: { s: (typeof services)[number] }) => (
 
 // Services Grid
 const ServicesGrid: React.FC = () => {
-  const rows: Array<[(typeof services)[number], (typeof services)[number] | undefined]> = [];
+  const rows: Array<
+    [(typeof services)[number], (typeof services)[number] | undefined]
+  > = [];
   for (let i = 0; i < services.length; i += 2) {
     rows.push([services[i], services[i + 1]]);
   }
@@ -261,7 +298,7 @@ const ServicesGrid: React.FC = () => {
       aria-labelledby="services-grid-heading"
       className="relative py-16 bg-gradient-to-b from-transparent to-white"
     >
-            <div className="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-[#00B7CD] opacity-20 blur-3xl z-0" />
+      <div className="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-[#00B7CD] opacity-20 blur-3xl z-0" />
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
         <h2
           id="services-grid-heading"
@@ -280,8 +317,10 @@ const ServicesGrid: React.FC = () => {
                 key={rowIndex}
                 className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
               >
-                {a && (firstIsLarge ? <LargeCard s={a} /> : <SmallCard s={a} />)}
-                {b && (secondIsLarge ? <LargeCard s={b} /> : <SmallCard s={b} />)}
+                {a &&
+                  (firstIsLarge ? <LargeCard s={a} /> : <SmallCard s={a} />)}
+                {b &&
+                  (secondIsLarge ? <LargeCard s={b} /> : <SmallCard s={b} />)}
               </div>
             );
           })}

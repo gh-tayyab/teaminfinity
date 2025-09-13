@@ -9,40 +9,48 @@ export default function BrandsSection() {
   ];
 
   return (
-    <section className="py-16 px-0 bg-[#F2FBFD] relative overflow-hidden">
-      {/* Background decorative elements */}
+    <section
+      id="brands"
+      aria-labelledby="brands-heading"
+      className="relative py-16 bg-[#F2FBFD] overflow-hidden"
+    >
+      {/* Background Blurs */}
       <div
         className="absolute top-0 left-0 w-32 h-32 bg-[#36E1F8] opacity-20 rounded-full blur-3xl"
         aria-hidden="true"
-      ></div>
+      />
       <div
         className="absolute bottom-0 right-0 w-40 h-40 bg-[#C0BFC6] opacity-30 rounded-full blur-3xl"
         aria-hidden="true"
-      ></div>
+      />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-0">
-        {/* Left side image */}
-        <div className="flex items-center right-1 justify-start w-full h-full">
+      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
+        {/* Left Decorative Image */}
+        <div className="flex items-center justify-start">
           <Image
             src="/images/image17.svg"
-            alt="Decorative element"
+            alt=""
             width={250}
             height={250}
             className="object-contain"
             loading="lazy"
             sizes="250px"
+            aria-hidden="true"
           />
         </div>
 
-        {/* Center - logos */}
+        {/* Center Logos */}
         <div className="col-span-2 text-center flex flex-col items-center">
-          {/* Header */}
-          <h3 className="flex items-center justify-center gap-2 mb-12 text-sm font-medium text-[#27272B] tracking-wider">
+          {/* Heading */}
+          <h2
+            id="brands-heading"
+            className="flex items-center justify-center gap-2 mb-12 text-sm font-semibold text-[#27272B] tracking-wider"
+          >
             <Star aria-hidden="true" className="w-4 h-4 text-[#36E1F8]" />
-            <span>WE WORK WITH</span>
-          </h3>
+            <span>We Work With</span>
+          </h2>
 
-          {/* Logos grid */}
+          {/* Logos Grid */}
           <div className="space-y-8">
             {brands.map((row, rowIndex) => (
               <div
@@ -50,9 +58,11 @@ export default function BrandsSection() {
                 className="flex items-center justify-center gap-6 md:gap-10 lg:gap-12 flex-wrap"
               >
                 {row.map((logo, logoIndex) => {
-                  // derive friendly alt text from filename when possible
-                  const rawName = logo.split('/').pop() || `brand-${rowIndex}-${logoIndex}`;
-                  const friendlyName = rawName.replace(/\.(svg|png|jpg|jpeg)/i, '').replace(/[-_\d]+/g, ' ').trim();
+                  const rawName = logo.split("/").pop() || `brand-${rowIndex}-${logoIndex}`;
+                  const friendlyName = rawName
+                    .replace(/\.(svg|png|jpg|jpeg)/i, "")
+                    .replace(/[-_\d]+/g, " ")
+                    .trim();
 
                   return (
                     <div

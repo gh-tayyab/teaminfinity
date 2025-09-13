@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-cyan-50 text-center px-6">
-      <div className="max-w-md">
+    <section className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-cyan-50 text-center px-6 overflow-hidden">
+      <div className="max-w-md relative z-10">
         <h1 className="text-7xl font-bold text-cyan-600">404</h1>
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mt-4">
           Page Not Found
@@ -20,8 +20,8 @@ export default function NotFound() {
       </div>
 
       {/* Decorative Blur Layers */}
-      <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-cyan-200/40 rounded-full blur-3xl" />
-      <div className="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-300/40 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-[220px] h-[220px] bg-cyan-200/40 rounded-full blur-3xl z-0" />
+      <div className="absolute bottom-0 right-0 w-[180px] h-[220px] bg-cyan-200/40 rounded-full blur-3xl z-0" />
     </section>
   );
 }

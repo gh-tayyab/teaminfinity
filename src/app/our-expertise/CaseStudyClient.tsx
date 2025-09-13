@@ -17,12 +17,13 @@ export default function CaseStudyClient() {
 
   return (
     <section
+      id="case-study"
       className="relative py-16 bg-gradient-to-r from-cyan-50 via-white to-white"
       aria-labelledby="case-study-heading"
     >
-      {/* Blur Layer (left side) */}
-      <div className="absolute top-52 -left-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
-      <div className="absolute top-52 -right-0 w-72 h-80 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
+      {/* Decorative Blur Layers */}
+      <div className="absolute top-52 -left-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0" />
+      <div className="absolute top-52 right-0 w-72 h-80 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0" />
 
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
         {/* Left Content */}
@@ -34,8 +35,8 @@ export default function CaseStudyClient() {
             Case Study
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            From strategy to execution we help businesses grow through powerful
-            marketing and innovative development solutions
+            From strategy to execution, we help businesses grow through powerful
+            marketing and innovative development solutions.
           </p>
 
           {/* Email Signup */}
@@ -55,6 +56,7 @@ export default function CaseStudyClient() {
               required
               aria-required="true"
               aria-label="Email address"
+              aria-describedby="case-study-heading"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex-grow min-w-0 px-4 py-3 border rounded-l-full outline-none text-sm sm:text-base"
@@ -76,9 +78,9 @@ export default function CaseStudyClient() {
               alt="Business analytics dashboard showing performance metrics"
               width={800}
               height={500}
-              className="rounded-lg object-cover w-full h-64 md:h-72 lg:h-80"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+              className="rounded-lg object-cover w-full h-64 md:h-72 lg:h-80"
             />
           </div>
 
@@ -88,8 +90,8 @@ export default function CaseStudyClient() {
               alt="Team working on digital project using design tools"
               width={400}
               height={300}
-              className="rounded-lg object-cover w-full h-auto"
               sizes="(max-width: 768px) 50vw, 400px"
+              className="rounded-lg object-cover w-full h-auto"
             />
           </div>
           <div>
@@ -98,13 +100,14 @@ export default function CaseStudyClient() {
               alt="Mobile phone screen displaying social media applications"
               width={400}
               height={300}
-              className="rounded-lg object-cover w-full h-auto"
               sizes="(max-width: 768px) 50vw, 400px"
+              className="rounded-lg object-cover w-full h-auto"
             />
           </div>
         </div>
       </div>
 
+      {/* Related Sections */}
       <IndustriesSection />
       <CampaignsSection />
       <Partner />

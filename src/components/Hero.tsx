@@ -13,49 +13,58 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-white to-cyan-50 top-4">
-      {/* Spacer blank div (for clean look behind navbar) */}
-      <div className="h-24" />
-
+    <section
+      className="relative bg-gradient-to-r from-white to-cyan-50 pt-28 pb-16"
+      aria-labelledby="hero-heading"
+    >
       <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
         {/* Left Content */}
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+          <h1
+            id="hero-heading"
+            className="text-4xl md:text-5xl font-bold leading-tight text-gray-900"
+          >
             We Build Brands & Digital Experiences That Drive Results
           </h1>
           <p className="mt-4 text-gray-600 text-lg">
-            From strategy to execution we help businesses grow through powerful
-            marketing and innovative development solutions
+            From strategy to execution, we help businesses grow through powerful
+            marketing and innovative development solutions.
           </p>
 
           {/* Email Signup */}
-          <form
-            className="mt-6 flex items-center w-full max-w-md"
-            onSubmit={handleSubmit}
-            aria-label="Subscribe to newsletter"
-          >
-            <label htmlFor="hero-email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="hero-email"
-              name="email"
-              type="email"
-              placeholder="Enter your email"
-              className="flex-grow min-w-0 px-4 py-3 border rounded-l-full outline-none"
-              required
-              aria-required="true"
-              aria-label="Email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button
-              type="submit"
-              className="px-5 py-3 bg-cyan-500 text-white rounded-r-full hover:bg-cyan-600 transition shrink-0"
+          {!submitted ? (
+            <form
+              className="mt-6 flex items-center gap-2 w-full max-w-md"
+              onSubmit={handleSubmit}
+              aria-label="Subscribe to newsletter"
             >
-              {submitted ? "Thanks" : "Get Started"}
-            </button>
-          </form>
+              <label htmlFor="hero-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="hero-email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                className="flex-grow min-w-0 px-4 py-3 border rounded-md outline-none focus:ring-2 focus:ring-cyan-500"
+                required
+                aria-required="true"
+                aria-label="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button
+                type="submit"
+                className="px-4 py-2 sm:py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-[#009FB2] hover:bg-cyan-600 transition whitespace-nowrap"
+              >
+                Get Started
+              </button>
+            </form>
+          ) : (
+            <p className="mt-6 text-green-600 font-medium">
+              🎉 Thanks for subscribing!
+            </p>
+          )}
 
           {/* Clients */}
           <div className="flex items-center gap-3 mt-6">

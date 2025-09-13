@@ -9,42 +9,46 @@ export const metadata: Metadata = {
     "Get in touch with Team Infinity for IT solutions, web development, and digital services tailored to your business needs.",
 };
 
-
 export default function ContactUs() {
-
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-white to-cyan-50 pt-44 pb-20 overflow-hidden">
-      {/* Background blur layers (main page) */}
+      {/* Background blur layers */}
       <div className="absolute top-52 -left-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
       <div className="absolute top-52 -right-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
 
-      {/* Content wrapper */}
+      {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           Contact Us
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-          From strategy to execution we help businesses grow through powerful
-          marketing and innovative development solutions
+          From strategy to execution, we help businesses grow through powerful
+          marketing and innovative development solutions.
         </p>
 
-        {/* Email input */}
-        <form className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-20">
+        {/* Email input CTA */}
+        <form
+          className="flex flex-row items-center justify-center gap-3 mb-20 flex-wrap"
+          aria-label="Email subscription form"
+        >
           <input
             type="email"
             placeholder="Enter your email"
-            className="w-full sm:w-80 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00B7CD]"
+            className="flex-1 min-w-[180px] sm:w-80 px-4 py-3 bg-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00B7CD]"
+            aria-label="Enter your email"
+            required
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-[#00B7CD] text-white font-medium rounded-md hover:bg-cyan-600 transition"
+            className="px-4 py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-[#009FB2] hover:bg-[#00B7CD] transition whitespace-nowrap"
+            aria-label="Submit email"
           >
             Get Started
           </button>
         </form>
 
-        {/* Section title */}
+        {/* Section Title */}
         <div className="mb-10">
           <p className="text-sm uppercase text-[#00B7CD] tracking-wider mb-2">
             ✱ Get in Touch
@@ -86,7 +90,7 @@ export default function ContactUs() {
           ></iframe>
         </div>
 
-
+        {/* Contact Form + FAQ */}
         <ContactForm />
         <FAQ />
       </div>

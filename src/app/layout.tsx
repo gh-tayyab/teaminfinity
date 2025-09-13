@@ -3,6 +3,7 @@ import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
@@ -64,6 +65,7 @@ export default function RootLayout({
       <body className={`${instrumentSans.variable} font-sans antialiased`}>
         <Navbar />
         {children}
+        <BackToTop />
         <Footer />
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link"; // ✅ Use Next.js Link instead of <a>
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -46,41 +47,42 @@ function CampaignCard({
               <h3 className="text-lg font-semibold text-gray-900 leading-tight">
                 {title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600 max-w-xl">{description}</p>
+              <p className="mt-2 text-sm text-gray-600 max-w-xl">
+                {description}
+              </p>
             </div>
           </div>
-
-          {/* Optional: keep vertical space for future actions */}
+          {/* Placeholder for actions if needed later */}
           <div className="hidden md:block" />
         </div>
 
         {/* Divider */}
         <div className="border-t border-gray-100 my-5" />
 
-        {/* Key-values */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-gray-700">
+        {/* Key details */}
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-gray-700">
           <div>
-            <div className="text-xs text-gray-400">Client</div>
-            <div className="font-medium text-sm mt-1">{client}</div>
+            <dt className="text-xs text-gray-400">Client</dt>
+            <dd className="font-medium text-sm mt-1">{client}</dd>
           </div>
           <div>
-            <div className="text-xs text-gray-400">Service</div>
-            <div className="font-medium text-sm mt-1">{service}</div>
+            <dt className="text-xs text-gray-400">Service</dt>
+            <dd className="font-medium text-sm mt-1">{service}</dd>
           </div>
 
           <div>
-            <div className="text-xs text-gray-400">Category</div>
-            <div className="font-medium text-sm mt-1">{category}</div>
+            <dt className="text-xs text-gray-400">Category</dt>
+            <dd className="font-medium text-sm mt-1">{category}</dd>
           </div>
           <div>
-            <div className="text-xs text-gray-400">Year</div>
-            <div className="font-medium text-sm mt-1">{year}</div>
+            <dt className="text-xs text-gray-400">Year</dt>
+            <dd className="font-medium text-sm mt-1">{year}</dd>
           </div>
-        </div>
+        </dl>
       </div>
 
-      {/* Image area */}
-      <div className="w-full left-10 h-40 md:h-44 lg:h-80 relative rounded-3xl">
+      {/* Image */}
+      <div className="w-full left-14 h-40 md:h-44 lg:h-80 relative rounded-3xl">
         <Image
           src={imgSrc}
           alt={imgAlt}
@@ -101,7 +103,7 @@ export default function CampaignsSection(): React.JSX.Element {
       className="relative py-16 bg-gradient-to-r from-cyan-50/60 via-white to-white"
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-start justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-6">
           <div className="max-w-3xl">
             <p className="text-xs text-cyan-600 uppercase tracking-wider mb-3">
               Case Studies
@@ -114,14 +116,14 @@ export default function CampaignsSection(): React.JSX.Element {
             </h2>
           </div>
 
-          <div className="mt-2">
-            <a
-              href="#"
+          <div className="mt-4 md:mt-2">
+            <Link
+              href="/case-studies"
               className="inline-flex items-center px-4 py-2 bg-cyan-500 text-white rounded-full text-sm shadow-md hover:bg-cyan-600 transition"
-              aria-label="View all case study"
+              aria-label="View all case studies"
             >
-              View All Case Study
-            </a>
+              View All Case Studies
+            </Link>
           </div>
         </div>
 
