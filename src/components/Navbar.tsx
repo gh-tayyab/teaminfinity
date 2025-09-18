@@ -39,7 +39,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-white to-cyan-50 fixed -top-2 w-full z-50">
+    <nav className="bg-[#F2FBFD] fixed -top-2 w-full z-50">
       <div className="container mx-auto flex items-center justify-between py-2 px-6">
         {/* Logo */}
         <Link href="/" aria-label="Team Infinity Home" className="flex items-center">

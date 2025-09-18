@@ -5,11 +5,11 @@ export default function Testimonials(): React.JSX.Element {
   return (
     <section
       aria-labelledby="testimonials-heading"
-      className="relative py-24 bg-white"
+      className="relative py-24 bg-[#F2FBFD]"
     >
       {/* Left decorative image */}
       <div
-        className="pointer-events-none md:block absolute -top-22 h-72 w-9/12 z-0"
+        className="pointer-events-none md:block absolute top-5 h-60 w-9/12 z-0"
         aria-hidden="true"
       >
         <Image

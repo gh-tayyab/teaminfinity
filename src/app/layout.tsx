@@ -53,6 +53,13 @@ export const metadata: Metadata = {
     icon: "/favicon.ico", // Add your favicon in /public folder
   },
   metadataBase: new URL("https://teaminfinity.uk"),
+
+  // ✅ Mobile zoom issue fix
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({

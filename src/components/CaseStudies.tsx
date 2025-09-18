@@ -49,7 +49,7 @@ export default function CaseStudies(): React.JSX.Element {
 
         {/* Decorative top-right image */}
         <div
-          className="absolute right-6 top-6 md:top-8 lg:top-10 z-20 pointer-events-none"
+          className="hidden md:block absolute right-6 top-6 md:top-8 lg:top-10 z-20 pointer-events-none"
           aria-hidden="true"
         >
           <Image

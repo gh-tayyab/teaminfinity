@@ -16,22 +16,18 @@ export default function BrandsSection() {
     >
       {/* Background Blurs */}
       <div
-        className="absolute top-0 left-0 w-32 h-32 bg-[#36E1F8] opacity-20 rounded-full blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 right-0 w-40 h-40 bg-[#C0BFC6] opacity-30 rounded-full blur-3xl"
+        className="absolute top-20 right-0 w-32 h-80 bg-[#00B7CD] opacity-20 rounded-full blur-3xl"
         aria-hidden="true"
       />
 
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
+      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center justify-center">
         {/* Left Decorative Image */}
         <div className="flex items-center justify-start">
           <Image
             src="/images/image17.svg"
             alt=""
-            width={250}
-            height={250}
+            width={220}
+            height={220}
             className="object-contain"
             loading="lazy"
             sizes="250px"

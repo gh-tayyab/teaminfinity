@@ -5,7 +5,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative bg-gradient-to-r from-[#F2FBFD] to-[#EAFBFF] py-20"
+      className="relative bg-[#F2FBFD] py-20"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side Image */}
