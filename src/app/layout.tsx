@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 
+// ✅ Font optimization (with display=swap by default in next/font)
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-instrument-sans",
-  weight: ["400", "500", "600", "700"], // common weights
+  weight: ["400", "500", "600", "700"],
+  display: "swap", // Prevents CLS by showing fallback instantly
 });
 
 export const metadata: Metadata = {
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Team Infinity",
     images: [
       {
-        url: "https://teaminfinity.uk/og-image.jpg", // Absolute URL
+        url: "https://teaminfinity.uk/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Team Infinity - IT Solutions",
@@ -50,28 +52,30 @@ export const metadata: Metadata = {
     images: ["https://teaminfinity.uk/og-image.jpg"],
   },
   icons: {
-    icon: "/favicon.ico", // Add your favicon in /public folder
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png", // ✅ extra icon for iOS
   },
   metadataBase: new URL("https://teaminfinity.uk"),
+};
 
-  // ✅ Mobile zoom issue fix
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+// ✅ Separate viewport export (Next.js recommended)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#ffffff", // ✅ improves PWA & mobile experience
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={`${instrumentSans.variable} font-sans antialiased`}>
+    <html lang="en" className={`${instrumentSans.variable} font-sans`}>
+      <body className="antialiased bg-[#F2FBFD] text-gray-900">
         <Navbar />
-        {children}
+        <main>{children}</main>
         <BackToTop />
         <Footer />
       </body>

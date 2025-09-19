@@ -70,18 +70,20 @@ export default function Navbar() {
             className="relative"
             onMouseEnter={openDropdown}
             onMouseLeave={() => closeDropdownWithDelay(120)}
-            onFocus={openDropdown}
-            onBlur={() => closeDropdownWithDelay(120)}
-            tabIndex={0}
-            aria-haspopup="true"
-            aria-expanded={dropdownOpen}
           >
-            <div className="flex items-center gap-1 hover:text-cyan-600 font-normal cursor-pointer select-none">
+            <button
+              type="button"
+              onFocus={openDropdown}
+              onBlur={() => closeDropdownWithDelay(120)}
+              className="flex items-center gap-1 hover:text-cyan-600 font-normal cursor-pointer select-none"
+              aria-haspopup="true"
+              aria-expanded={dropdownOpen}
+            >
               <Link href="/services" className="hover:text-cyan-600">
                 Services
               </Link>
               <ChevronDown size={16} />
-            </div>
+            </button>
 
             {dropdownOpen && (
               <ul
@@ -89,46 +91,14 @@ export default function Navbar() {
                 onMouseEnter={openDropdown}
                 onMouseLeave={() => closeDropdownWithDelay(120)}
               >
-                <li>
-                  <Link href="/web-development" className="block hover:text-cyan-600">
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/graphic-designing" className="block hover:text-cyan-600">
-                    Graphic Designing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/digital-marketing" className="block hover:text-cyan-600">
-                    Digital Marketing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/ai-automation" className="block hover:text-cyan-600">
-                    AI Automation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/search-engine-optimization" className="block hover:text-cyan-600">
-                    Search Engine Optimization
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/shopify-development" className="block hover:text-cyan-600">
-                    Shopify Development
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/ui-ux-designing" className="block hover:text-cyan-600">
-                    UI/UX Designing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/video-editing" className="block hover:text-cyan-600">
-                    Video Editing
-                  </Link>
-                </li>
+                <li><Link href="/web-development" className="block hover:text-cyan-600">Web Development</Link></li>
+                <li><Link href="/graphic-designing" className="block hover:text-cyan-600">Graphic Designing</Link></li>
+                <li><Link href="/digital-marketing" className="block hover:text-cyan-600">Digital Marketing</Link></li>
+                <li><Link href="/ai-automation" className="block hover:text-cyan-600">AI Automation</Link></li>
+                <li><Link href="/search-engine-optimization" className="block hover:text-cyan-600">Search Engine Optimization</Link></li>
+                <li><Link href="/shopify-development" className="block hover:text-cyan-600">Shopify Development</Link></li>
+                <li><Link href="/ui-ux-designing" className="block hover:text-cyan-600">UI/UX Designing</Link></li>
+                <li><Link href="/video-editing" className="block hover:text-cyan-600">Video Editing</Link></li>
               </ul>
             )}
           </li>
@@ -168,22 +138,9 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg px-6 pb-4 space-y-3">
           <ul className="space-y-3">
-            <li>
-              <Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                About
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/services" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                Services
-              </Link>
-            </li>
+            <li><Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Home</Link></li>
+            <li><Link href="/about" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">About</Link></li>
+            <li><Link href="/services" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Services</Link></li>
 
             {/* Sub Services */}
             <li>
@@ -196,60 +153,20 @@ export default function Navbar() {
               </button>
               {dropdownOpen && (
                 <ul className="pl-4 space-y-1">
-                  <li>
-                    <Link href="/web-development" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                      Web Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/graphic-designing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                      Graphic Designing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/digital-marketing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                      Digital Marketing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/ai-automation" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                      AI Automation
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/search-engine-optimization" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                      Search Engine Optimization
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/shopify-development" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                      Shopify Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/ui-ux-designing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                      UI/UX Designing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/video-editing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                      Video Editing
-                    </Link>
-                  </li>
+                  <li><Link href="/web-development" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Web Development</Link></li>
+                  <li><Link href="/graphic-designing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Graphic Designing</Link></li>
+                  <li><Link href="/digital-marketing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Digital Marketing</Link></li>
+                  <li><Link href="/ai-automation" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">AI Automation</Link></li>
+                  <li><Link href="/search-engine-optimization" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Search Engine Optimization</Link></li>
+                  <li><Link href="/shopify-development" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Shopify Development</Link></li>
+                  <li><Link href="/ui-ux-designing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">UI/UX Designing</Link></li>
+                  <li><Link href="/video-editing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Video Editing</Link></li>
                 </ul>
               )}
             </li>
 
-            <li>
-              <Link href="/our-expertise" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                Our Expertise
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact-us" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">
-                Contact Us
-              </Link>
-            </li>
+            <li><Link href="/our-expertise" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Our Expertise</Link></li>
+            <li><Link href="/contact-us" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Contact Us</Link></li>
           </ul>
 
           <Link

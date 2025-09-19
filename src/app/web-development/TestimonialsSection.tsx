@@ -1,4 +1,3 @@
-// components/TestimonialsSection.tsx
 "use client";
 
 import Image from "next/image";
@@ -71,7 +70,7 @@ const TestimonialsSection: React.FC = () => {
           {/* LEFT */}
           <div className="flex flex-col">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">
-              Don't just take
+              Don&apos;t just take
               <br />
               our word for it:
             </h2>
@@ -83,12 +82,25 @@ const TestimonialsSection: React.FC = () => {
               className="inline-flex items-center justify-center w-max px-6 py-3 bg-[#00B7CD] text-white rounded-full font-medium hover:bg-cyan-600 transition mb-8"
             >
               Discover more
-              <svg className="ml-2" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M5 12h14M13 5l6 7-6 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg
+                className="ml-2"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12h14M13 5l6 7-6 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </Link>
 
-            {/* thin divider line (as in screenshot) */}
+            {/* thin divider line */}
             <div className="w-full">
               <div className="border-t border-slate-200 mb-6" />
             </div>
@@ -103,7 +115,13 @@ const TestimonialsSection: React.FC = () => {
                   className="flex items-center justify-center bg-white rounded-lg px-3 py-2 shadow-sm"
                   style={{ minWidth: 120 }}
                 >
-                  <Image src={p.src} alt={p.alt} width={110} height={36} className="object-contain" />
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    width={110}
+                    height={36}
+                    className="object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -111,7 +129,7 @@ const TestimonialsSection: React.FC = () => {
 
           {/* RIGHT: Testimonials stack */}
           <div className="flex flex-col gap-6">
-            {testimonials.map((t, idx) => (
+            {testimonials.map((t) => (
               <article
                 key={t.key}
                 className="relative bg-white rounded-2xl shadow-lg p-6 md:p-6 lg:p-6 overflow-hidden"
@@ -122,11 +140,20 @@ const TestimonialsSection: React.FC = () => {
 
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-slate-100">
-                    <Image src={t.avatar} alt={`${t.name} avatar`} width={80} height={80} className="object-cover" />
+                    <Image
+                      src={t.avatar}
+                      alt={`${t.name} avatar`}
+                      width={80}
+                      height={80}
+                      className="object-cover"
+                    />
                   </div>
 
                   <div>
-                    <h3 id={`testi-${t.key}-title`} className="text-lg font-semibold text-slate-900">
+                    <h3
+                      id={`testi-${t.key}-title`}
+                      className="text-lg font-semibold text-slate-900"
+                    >
                       {t.name}
                     </h3>
                     <p className="text-sm text-slate-500 mb-3">{t.role}</p>
