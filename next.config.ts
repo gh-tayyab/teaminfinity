@@ -1,15 +1,19 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-  openAnalyzer: false,
+import type { NextConfig } from "next";
+import type { Configuration as WebpackConfig } from "webpack";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+// Bundle Analyzer wrapper
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+  openAnalyzer: false, // ✅ Stops auto-opening in browser
 });
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  // Optimize Images
+  // ✅ Optimize images
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60,
   },
 
@@ -19,12 +23,16 @@ const nextConfig = {
   },
 
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    // ✅ Strip console.logs only in production
+    removeConsole: process.env.NODE_ENV === "production",
   },
 
-  webpack(config, { isServer }) {
+  // ✅ Typed webpack config
+  webpack(config: WebpackConfig, { isServer }: { isServer: boolean }) {
     if (!isServer) {
+      config.resolve = config.resolve || {};
       config.resolve.fallback = {
+        ...config.resolve.fallback,
         fs: false,
         net: false,
         tls: false,
@@ -34,4 +42,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+export default withBundleAnalyzer(nextConfig);
