@@ -1,4 +1,3 @@
-
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-plus-jakarta)", "sans-serif"], // ✅ Custom font
+        sans: ["var(--font-instrument-sans)", "sans-serif"], // ✅ Correct variable
       },
     },
   },

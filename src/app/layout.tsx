@@ -5,12 +5,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 
-// ✅ Font optimization (with display=swap by default in next/font)
+// ✅ Import Instrument Sans with variable binding
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-instrument-sans",
   weight: ["400", "500", "600", "700"],
-  display: "swap", // Prevents CLS by showing fallback instantly
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -53,17 +53,17 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png", // ✅ extra icon for iOS
+    apple: "/apple-touch-icon.png",
   },
   metadataBase: new URL("https://teaminfinity.uk"),
 };
 
-// ✅ Separate viewport export (Next.js recommended)
+// ✅ Viewport settings
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#ffffff", // ✅ improves PWA & mobile experience
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({

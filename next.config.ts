@@ -1,17 +1,15 @@
-import type { NextConfig } from "next";
-import type { Configuration } from "webpack";
-import withBundleAnalyzer from "@next/bundle-analyzer";
-
-const bundleAnalyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+  openAnalyzer: false,
 });
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
 
+  // Optimize Images
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
   },
 
@@ -21,22 +19,19 @@ const nextConfig: NextConfig = {
   },
 
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  webpack(config: Configuration, { isServer }: { isServer: boolean }) {
+  webpack(config, { isServer }) {
     if (!isServer) {
-      config.resolve = {
-        ...config.resolve,
-        fallback: {
-          fs: false,
-          net: false,
-          tls: false,
-        },
+      config.resolve.fallback = {
+        fs: false,
+        net: false,
+        tls: false,
       };
     }
     return config;
   },
 };
 
-export default bundleAnalyzer(nextConfig);
+module.exports = withBundleAnalyzer(nextConfig);
