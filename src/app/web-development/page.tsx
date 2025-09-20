@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <>
     <section
-      className="relative w-full h-[70vh] top-14 flex items-center justify-center text-center text-white"
+      className="relative w-full h-[70vh] top-24 flex items-center justify-center text-center text-white"
       aria-labelledby="social-hero-heading"
     >
       {/* Background Image (fills parent) */}
@@ -33,7 +33,7 @@ export default function Header() {
       <div className="absolute inset-0 bg-[#06859F] opacity-70" aria-hidden="true" />
 
       {/* Content (centered both vertically & horizontally) */}
-      <div className="relative z-10 max-w-3xl px-6 flex flex-col items-center justify-center h-full">
+      <div className="relative z-10 max-w-3xl px-6 flex flex-col items-center justify-center -top-10 h-full">
         <h1 id="social-hero-heading" className="text-3xl md:text-4xl font-bold leading-tight">
           Boost Your Social Media Presence with Our Expert Agency Services
         </h1>

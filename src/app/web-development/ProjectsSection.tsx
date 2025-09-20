@@ -19,7 +19,7 @@ const featured = {
   subtitle:
     "Helping an online retail store increase website traffic and sales through targeted social media advertising.",
   tags: ["advertising", "social media strategy"],
-  href: "/case-studies/ecommerce-boost",
+  href: "/our-expertise",
   // stats for the boxed chart area
   stats: [
     { label: "User", value: "3.3K", delta: "↑10.1%" },
@@ -31,25 +31,25 @@ const featured = {
 
 const projects: Project[] = [
   {
-    key: "travel-trendsetter",
-    title: "Travel Trendsetter",
-    img: "/images/campaign2.svg",
-    desc: "Developing a social media strategy for a travel agency to increase bookings and engagement on Instagram and Facebook.",
-    href: "/case-studies/travel-trendsetter",
+    key: "macopieprivee",
+    title: "Macopieprivee",
+    img: "/projects/web1.png",
+    desc: "A simple guide to help businesses reclaim fees, cut storage costs, and save thousands of euros.",
+    href: "https://macopieprivee.com/",
   },
   {
-    key: "b2b-success",
-    title: "B2B Success",
-    img: "/images/campaign1.svg",
-    desc: "Creating a LinkedIn strategy for a B2B company to generate leads and improve brand visibility.",
-    href: "/case-studies/b2b-success",
+    key: "noble-brit",
+    title: "Noble Brit",
+    img: "/projects/web2.png",
+    desc: "An online store offering Nike essentials and more with no minimum order, free shipping, and secure shopping.",
+    href: "https://noblebrit.com",
   },
   {
-    key: "fashion-forward",
-    title: "Fashion Forward",
-    img: "/images/servicei.svg",
-    desc: "Building a strong and visually stunning Instagram presence for a clothing brand to increase awareness and sales.",
-    href: "/case-studies/fashion-forward",
+    key: "deepak-&-fahad",
+    title: "Deepak & Fahad",
+    img: "/projects/web3.png",
+    desc: "A contemporary Pakistani fashion brand blending timeless tradition with modern tailoring in menswear and womenswear.",
+    href: "https://www.deepakandfahad.com/",
   },
   // add more projects as needed — the .map below will render them
 ];
@@ -63,11 +63,18 @@ const ProjectsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
         <div className="mb-10">
-          <p className="text-sm text-slate-500 uppercase tracking-wide">Our Projects</p>
-          <h2 id="projects-heading" className="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <p className="text-sm text-slate-500 uppercase tracking-wide">
+            Our Projects
+          </p>
+          <h2
+            id="projects-heading"
+            className="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900"
+          >
             Stay Ahead of the Game:
           </h2>
-          <p className="mt-2 text-sm text-slate-600">See Our Most Recent and Innovative Projects</p>
+          <p className="mt-2 text-sm text-slate-600">
+            See Our Most Recent and Innovative Projects
+          </p>
         </div>
 
         {/* Top featured area */}
@@ -82,9 +89,14 @@ const ProjectsSection: React.FC = () => {
                 {/* top stats row */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
                   {featured.stats.map((s) => (
-                    <div key={s.label} className="text-center p-2 rounded-md bg-slate-50">
+                    <div
+                      key={s.label}
+                      className="text-center p-2 rounded-md bg-slate-50"
+                    >
                       <div className="text-sm text-slate-500">{s.label}</div>
-                      <div className="text-base font-semibold text-slate-900">{s.value}</div>
+                      <div className="text-base font-semibold text-slate-900">
+                        {s.value}
+                      </div>
                       <div className="text-xs text-slate-400">{s.delta}</div>
                     </div>
                   ))}
@@ -108,14 +120,34 @@ const ProjectsSection: React.FC = () => {
           </div>
 
           {/* Right: featured content */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center relative">
+            {/* ✅ Robot image only on large screens */}
+            <div
+          className="hidden lg:block absolute right-0 -top-80 z-20 pointer-events-none"
+          aria-hidden="true"
+        >
+          <Image
+            src="/images/robot2.svg"
+            alt=""
+            width={260}
+            height={260}
+            className="select-none"
+            loading="lazy"
+          />
+        </div>
+
             <div className="max-w-xl">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">{featured.title}</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                {featured.title}
+              </h3>
 
               {/* tags */}
               <div className="flex gap-2 items-center mb-4">
                 {featured.tags.map((t) => (
-                  <span key={t} className="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full">
+                  <span
+                    key={t}
+                    className="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full"
+                  >
                     {t}
                   </span>
                 ))}
@@ -129,8 +161,20 @@ const ProjectsSection: React.FC = () => {
                 aria-label={`View case study for ${featured.title}`}
               >
                 View Case Study
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-                  <path d="M5 12h14M13 5l6 7-6 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M5 12h14M13 5l6 7-6 7"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </Link>
             </div>
@@ -141,23 +185,43 @@ const ProjectsSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p) => (
             <article key={p.key} className="overflow-hidden">
-              <div className="relative h-44 sm:h-48 md:h-44 lg:h-44">
-                <Image src={p.img} alt={p.title} fill className="object-cover rounded-tl-2xl" />
+              <div className="relative h-44 sm:h-48 md:h-44 lg:h-48">
+                <Image
+                  src={p.img}
+                  alt={p.title}
+                  fill
+                  className="object-cover rounded-tl-2xl border-2"
+                />
               </div>
 
               <div className="p-6">
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">{p.title}</h4>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">
+                  {p.title}
+                </h4>
                 <p className="text-sm text-slate-600 mb-4">{p.desc}</p>
 
                 <div className="mt-2">
                   <Link
                     href={p.href ?? "#"}
+                    target="_blank"
                     className="inline-flex items-center gap-2 px-4 py-2 bg-[#00b7cd] text-white rounded-full text-sm font-medium hover:bg-cyan-600 transition"
                     aria-label={`View case study ${p.title}`}
                   >
                     View Project
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
-                      <path d="M5 12h14M13 5l6 7-6 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden
+                    >
+                      <path
+                        d="M5 12h14M13 5l6 7-6 7"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </Link>
                 </div>

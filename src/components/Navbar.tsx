@@ -53,14 +53,14 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-8 font-thin">
           <li>
-            <Link href="/" className="hover:text-cyan-600 font-normal">
+            <Link href="/" className="hover:text-cyan-600 ">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-cyan-600 font-normal">
+            <Link href="/about" className="hover:text-cyan-600">
               About Us
             </Link>
           </li>
@@ -104,12 +104,12 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/our-expertise" className="hover:text-cyan-600 font-normal">
+            <Link href="/our-expertise" className="hover:text-cyan-600 ">
               Our Expertise
             </Link>
           </li>
           <li>
-            <Link href="/contact-us" className="hover:text-cyan-600 font-normal">
+            <Link href="/contact-us" className="hover:text-cyan-600">
               Contact Us
             </Link>
           </li>

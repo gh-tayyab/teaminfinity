@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Decorative background */}
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute top-[130px] left-[-150px] w-[250px] h-[350px] bg-cyan-200/40 rounded-full blur-3xl"
+        className="hidden lg:block absolute top-[130px] left-[-150px] w-[150px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl"
       />
 
       {/* Content */}

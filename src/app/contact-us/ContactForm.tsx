@@ -1,4 +1,5 @@
 "use client";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -6,22 +7,49 @@ import React, { useState } from "react";
 const ContactForm = () => {
   const [accepted, setAccepted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!accepted) {
-      alert("Please accept terms and privacy policy before submitting.");
-      return;
+  // ✅ Form Submit
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  if (!accepted) {
+    alert("Please accept terms and privacy policy before submitting.");
+    return;
+  }
+
+  const form = e.currentTarget; // <-- form reference safe rakho
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+      const errorData = await res.json().catch(() => ({}));
+      throw new Error(errorData?.message || "Failed to send message");
     }
-    // TODO: Add form submission logic
-  };
+
+    alert("✅ Message sent successfully!");
+    form.reset(); // <-- ab error nahi aayega
+    setAccepted(false);
+  } catch (err) {
+    console.error("Form Submit Error:", err);
+    alert("⚠️ Something went wrong. Please try again.");
+  }
+};
+
 
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start text-left">
+        
         {/* Left: Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-xl shadow-md p-8 space-y-6"
+          className="bg-white rounded-xl shadow-md p-4 space-y-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
@@ -133,21 +161,25 @@ const ContactForm = () => {
             </div>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-4">
-            <span className="font-medium">Stay connected</span>
-            <div className="flex gap-3">
-              {socialLinks.map(({ href, label, icon }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="hover:text-[#00B7CD]"
-                >
-                  {icon}
-                </Link>
-              ))}
-            </div>
+          <div className="mt-8 py-6 text-center flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 sm:px-8">
+        
+        <div className="flex gap-4 mt-4 md:mt-0">
+          <Link href="#" aria-label="Facebook" className="hover:opacity-80">
+            <Facebook className="w-5 h-5 text-[#009FB2]" />
+          </Link>
+          <Link href="#" aria-label="Instagram" className="hover:opacity-80">
+            <Instagram className="w-5 h-5 text-[#009FB2]" />
+          </Link>
+          <Link href="#" aria-label="Youtube" className="hover:opacity-80">
+            <Youtube className="w-5 h-5 text-[#009FB2]" />
+          </Link>
+          <Link href="#" aria-label="Twitter" className="hover:opacity-80">
+            <Twitter className="w-5 h-5 text-[#009FB2]" />
+          </Link>
+          <Link href="#" aria-label="LinkedIn" className="hover:opacity-80">
+            <Linkedin className="w-5 h-5 text-[#009FB2]" />
+          </Link>
+        </div>
           </div>
         </div>
       </div>
@@ -157,10 +189,3 @@ const ContactForm = () => {
 
 export default ContactForm;
 
-// Social links data
-const socialLinks = [
-  { href: "#", label: "Facebook", icon: "🌐" },
-  { href: "#", label: "Twitter", icon: "🐦" },
-  { href: "#", label: "LinkedIn", icon: "💼" },
-  { href: "#", label: "Instagram", icon: "📸" },
-];

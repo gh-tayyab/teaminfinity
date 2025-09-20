@@ -208,7 +208,7 @@ export default function OurProcess(): React.JSX.Element {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="/contact"
+                href="/contact-us"
                 className="inline-block px-4 py-2 rounded-full bg-gradient-to-b from-cyan-400 to-cyan-500 text-white font-semibold shadow"
               >
                 Get A Free Consultation

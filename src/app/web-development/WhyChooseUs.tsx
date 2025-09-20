@@ -26,6 +26,10 @@ export default function WhyChooseUs() {
 
   return (
     <section className="relative bg-gradient-to-r from-white to-cyan-50 py-16 px-6">
+      <div
+        aria-hidden="true"
+        className="hidden lg:block absolute top-[50px] left-0 w-[60px] h-[350px] bg-cyan-500 rounded-full blur-3xl"
+      />
       <div className="max-w-4xl mx-auto text-left">
         {/* Heading */}
         <p className="text-sm font-medium text-cyan-600 mb-2 uppercase tracking-wide">
@@ -48,7 +52,7 @@ export default function WhyChooseUs() {
           <video
             ref={videoRef}
             className="w-full aspect-video object-cover"
-            src="/videos/myvideo.mp4"
+            src="/videos/myvido.mp4"
             loop
             playsInline
           />

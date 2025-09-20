@@ -7,11 +7,14 @@ export default function StatsSection() {
       aria-labelledby="why-heading"
       className="relative bg-gradient-to-r from-white to-cyan-50 py-16"
     >
-     
+     <div
+        aria-hidden="true"
+        className="hidden lg:block absolute top-0 right-0 w-[60px] h-[350px] bg-cyan-500 rounded-full blur-3xl"
+      />
 
       <div className="container mx-auto px-6">
         {/* Images row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 items-start justify-center mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 items-start justify-center mb-8 gap-4">
           {/* Card 1 */}
           <div className="mx-auto w-full max-w-xs rounded-xl overflow-hidden shadow-md gap-6">
             <div className="relative w-full h-56 sm:h-44 md:h-52">
