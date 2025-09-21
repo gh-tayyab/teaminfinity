@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <>
       <section
-        className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] top-24 flex items-center justify-center text-center text-white"
+        className="relative w-full h-[60vh] lg:h-[70vh] top-24 flex items-center justify-center text-center text-white"
         aria-labelledby="social-hero-heading"
       >
         {/* Background Image (fills parent) */}
