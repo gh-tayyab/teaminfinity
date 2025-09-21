@@ -7,76 +7,114 @@ export default function StatsSection() {
       aria-labelledby="why-heading"
       className="relative bg-gradient-to-r from-white to-cyan-50 py-16"
     >
-     <div
+      {/* Decorative blur (only desktop) */}
+      <div
         aria-hidden="true"
         className="hidden lg:block absolute top-0 right-0 w-[60px] h-[350px] bg-cyan-500 rounded-full blur-3xl"
       />
 
       <div className="container mx-auto px-6">
-        {/* Images row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 items-start justify-center mb-8 gap-4">
+        {/* ---- Mobile Layout (image + stat pair) ---- */}
+        <div className="sm:hidden space-y-10">
           {/* Card 1 */}
-          <div className="mx-auto w-full max-w-xs rounded-xl overflow-hidden shadow-md gap-6">
-            <div className="relative w-full h-56 sm:h-44 md:h-52">
+          <div className="flex flex-col items-center">
+            <div className="relative w-full max-w-xs h-56 rounded-xl overflow-hidden shadow-md">
               <Image
                 src="/images/about.svg"
                 alt="Team collaborating around laptop"
                 fill
                 className="object-cover"
-                sizes="(max-width: 640px) 100vw, 33vw"
-                priority
+                sizes="100vw"
               />
+            </div>
+            <div className="mt-4 text-center">
+              <div className="text-3xl font-extrabold">😎 34+</div>
+              <div className="mt-2 text-sm text-gray-500">Years Experience</div>
             </div>
           </div>
 
-          {/* Card 2 (center) */}
-          <div className="mx-auto w-full max-w-xs rounded-xl overflow-hidden shadow-md">
-            <div className="relative w-full h-56 sm:h-44 md:h-52">
+          {/* Card 2 */}
+          <div className="flex flex-col items-center">
+            <div className="relative w-full max-w-xs h-56 rounded-xl overflow-hidden shadow-md">
               <Image
                 src="/images/footer.svg"
                 alt="Team meeting in office"
                 fill
                 className="object-cover"
-                sizes="(max-width: 640px) 100vw, 33vw"
+                sizes="100vw"
               />
+            </div>
+            <div className="mt-4 text-center">
+              <div className="text-3xl font-extrabold">💖 68M</div>
+              <div className="mt-2 text-sm text-gray-500">Followers Tik Tok</div>
             </div>
           </div>
 
           {/* Card 3 */}
-          <div className="mx-auto w-full max-w-xs rounded-xl overflow-hidden shadow-md">
-            <div className="relative w-full h-56 sm:h-44 md:h-52">
+          <div className="flex flex-col items-center">
+            <div className="relative w-full max-w-xs h-56 rounded-xl overflow-hidden shadow-md">
               <Image
                 src="/images/servicei.svg"
                 alt="Team celebrating success"
                 fill
                 className="object-cover"
-                sizes="(max-width: 640px) 100vw, 33vw"
+                sizes="100vw"
               />
+            </div>
+            <div className="mt-4 text-center">
+              <div className="text-3xl font-extrabold">🤝 97%</div>
+              <div className="mt-2 text-sm text-gray-500">Project Success</div>
             </div>
           </div>
         </div>
 
-        {/* Stats row */}
-        <div className="max-w-4xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-          <div className="flex flex-col items-center">
-            <div className="text-3xl md:text-4xl font-extrabold" aria-hidden="true">
-              😎 34+
+        {/* ---- Desktop / Tablet Layout (3 images row + stats row) ---- */}
+        <div className="hidden sm:block">
+          {/* Images row */}
+          <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="relative w-full h-52 rounded-xl overflow-hidden shadow-md">
+              <Image
+                src="/images/about.svg"
+                alt="Team collaborating around laptop"
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
             </div>
-            <div className="mt-2 text-sm text-gray-500">Years Experience</div>
+            <div className="relative w-full h-52 rounded-xl overflow-hidden shadow-md">
+              <Image
+                src="/images/footer.svg"
+                alt="Team meeting in office"
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+            </div>
+            <div className="relative w-full h-52 rounded-xl overflow-hidden shadow-md">
+              <Image
+                src="/images/servicei.svg"
+                alt="Team celebrating success"
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+            </div>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="text-3xl md:text-4xl font-extrabold" aria-hidden="true">
-              💖 68M
+          {/* Stats row */}
+          <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-extrabold">😎 34+</div>
+              <div className="mt-2 text-sm text-gray-500">Years Experience</div>
             </div>
-            <div className="mt-2 text-sm text-gray-500">Followers Tik Tok</div>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <div className="text-3xl md:text-4xl font-extrabold" aria-hidden="true">
-              🤝 97%
+            <div>
+              <div className="text-3xl md:text-4xl font-extrabold">💖 68M</div>
+              <div className="mt-2 text-sm text-gray-500">Followers Tik Tok</div>
             </div>
-            <div className="mt-2 text-sm text-gray-500">Project Success</div>
+            <div>
+              <div className="text-3xl md:text-4xl font-extrabold">🤝 97%</div>
+              <div className="mt-2 text-sm text-gray-500">Project Success</div>
+            </div>
           </div>
         </div>
       </div>

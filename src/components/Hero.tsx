@@ -5,10 +5,31 @@ import Image from "next/image";
 export default function Hero() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      setSubmitted(true);
+      setEmail(""); // reset input
+    } catch (err) {
+      console.error(err);
+      alert("⚠️ Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -22,7 +43,6 @@ export default function Hero() {
         className="hidden lg:block absolute top-[130px] left-[-150px] w-[150px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl"
       />
 
-      {/* Content */}
       <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
         {/* Left Side */}
         <div className="flex flex-col justify-center">
@@ -49,20 +69,20 @@ export default function Hero() {
               </label>
               <input
                 id="hero-email"
-                name="email"
                 type="email"
                 placeholder="Enter your email"
                 className="flex-grow px-4 py-3 bg-white border rounded-md outline-none focus:ring-2 focus:ring-cyan-500 text-sm md:text-base"
                 required
-                aria-required="true"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
               />
               <button
                 type="submit"
-                className="px-5 py-3 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-[#009FB2] hover:bg-cyan-600 hover:text-white transition"
+                disabled={loading}
+                className="px-5 py-3 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-[#009FB2] hover:bg-cyan-600 hover:text-white transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Get Started
+                {loading ? "Submitting..." : "Get Started"}
               </button>
             </form>
           ) : (

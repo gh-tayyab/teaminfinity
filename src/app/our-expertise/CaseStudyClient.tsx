@@ -9,10 +9,32 @@ import Partner from "./Partner";
 export default function CaseStudyClient() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || "Something went wrong");
+
+      setSubmitted(true);
+      setEmail(""); // clear input
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -59,15 +81,19 @@ export default function CaseStudyClient() {
               aria-describedby="case-study-heading"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              disabled={loading || submitted}
               className="flex-grow min-w-0 px-4 py-3 border rounded-l-full outline-none text-sm sm:text-base"
             />
             <button
               type="submit"
+              disabled={loading || submitted}
               className="px-4 sm:px-5 py-3 bg-cyan-500 text-white rounded-r-full hover:bg-cyan-600 transition shrink-0 whitespace-nowrap text-sm sm:text-base"
             >
-              {submitted ? "Thanks" : "Get Started"}
+              {loading ? "Sending..." : submitted ? "Thanks!" : "Get Started"}
             </button>
           </form>
+
+          {error && <p className="mt-2 text-red-600 text-sm">{error}</p>}
         </div>
 
         {/* Right Images */}

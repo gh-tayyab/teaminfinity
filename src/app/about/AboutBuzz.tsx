@@ -19,7 +19,7 @@ export default function AboutBuzzz() {
           <Image
             src="/images/about.svg"
             alt="Creative team collaborating on ideas"
-            width={500}
+            width={400}
             height={400}
             className="rounded-2xl object-cover shadow-lg"
             priority
@@ -50,15 +50,15 @@ export default function AboutBuzzz() {
           drive measurable business results.
         </p>
 
-        <div className="grid grid-cols-1 mt-4 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 mt-4 md:grid-cols-2 gap-8">
           {/* Video Preview */}
-          <div className="relative w-full md:w-[350px] overflow-hidden rounded-xl shadow-md">
+          <div className="relative w-full md:w-[350px] overflow-hidden">
             <Image
               src="/images/aboutbuzz.svg"
               alt="Buzzz agency video presentation preview"
-              width={350}
+              width={300}
               height={200}
-              className="object-cover w-full h-full"
+              className="object-cover"
             />
           </div>
 

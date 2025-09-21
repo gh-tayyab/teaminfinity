@@ -1,8 +1,37 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Youtube, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) throw new Error("Failed to subscribe");
+
+      setSubmitted(true);
+      setEmail("");
+    } catch (err) {
+      console.error(err);
+      alert("⚠️ Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <footer className="bg-[#1E1E22] text-white relative">
       <div className="absolute -left-20 w-64 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0" />
@@ -26,28 +55,38 @@ export default function Footer() {
                 Let&apos;s create something powerful together.
               </p>
 
-              <form
-                className="flex flex-col sm:flex-row items-center gap-3"
-                aria-label="Subscribe to newsletter"
-              >
-                <label htmlFor="footer-email" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="footer-email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full sm:w-auto flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#009FB2]"
-                  aria-label="Email address"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-[#009FB2] text-white rounded-md font-medium hover:bg-[#008699] transition"
+              {!submitted ? (
+                <form
+                  className="flex flex-col sm:flex-row items-center gap-3"
+                  onSubmit={handleSubmit}
+                  aria-label="Subscribe to newsletter"
                 >
-                  Book A Free Consultation
-                </button>
-              </form>
+                  <label htmlFor="footer-email" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    id="footer-email"
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full sm:w-auto flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#009FB2]"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={loading}
+                  />
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="px-6 py-3 bg-[#009FB2] text-white rounded-md font-medium hover:bg-[#008699] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loading ? "Submitting..." : "Book A Free Consultation"}
+                  </button>
+                </form>
+              ) : (
+                <p className="mt-4 text-green-600 font-medium">
+                  ✅ Thanks for subscribing!
+                </p>
+              )}
             </div>
 
             {/* Right Image */}

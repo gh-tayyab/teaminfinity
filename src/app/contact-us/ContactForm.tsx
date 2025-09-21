@@ -8,44 +8,42 @@ const ContactForm = () => {
   const [accepted, setAccepted] = useState(false);
 
   // ✅ Form Submit
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  if (!accepted) {
-    alert("Please accept terms and privacy policy before submitting.");
-    return;
-  }
-
-  const form = e.currentTarget; // <-- form reference safe rakho
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-
-    if (!res.ok) {
-      const errorData = await res.json().catch(() => ({}));
-      throw new Error(errorData?.message || "Failed to send message");
+    if (!accepted) {
+      alert("Please accept terms and privacy policy before submitting.");
+      return;
     }
 
-    alert("✅ Message sent successfully!");
-    form.reset(); // <-- ab error nahi aayega
-    setAccepted(false);
-  } catch (err) {
-    console.error("Form Submit Error:", err);
-    alert("⚠️ Something went wrong. Please try again.");
-  }
-};
+    const form = e.currentTarget; // <-- form reference safe rakho
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData?.message || "Failed to send message");
+      }
+
+      alert("✅ Message sent successfully!");
+      form.reset(); // <-- ab error nahi aayega
+      setAccepted(false);
+    } catch (err) {
+      console.error("Form Submit Error:", err);
+      alert("⚠️ Something went wrong. Please try again.");
+    }
+  };
 
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start text-left">
-        
         {/* Left: Form */}
         <form
           onSubmit={handleSubmit}
@@ -74,18 +72,24 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             />
             <input
               type="url"
-              name="website"
-              placeholder="What is your website?"
+              name="link"
+              placeholder="Optional link (portfolio, website, LinkedIn, etc.)"
               className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
             />
+
             <select
               name="service"
               className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
             >
               <option value="">Select service</option>
-              <option value="web-design">Web Design</option>
-              <option value="development">Development</option>
-              <option value="marketing">Marketing</option>
+              <option value="web-design">Web Development</option>
+              <option value="development">Graphic Designing</option>
+              <option value="marketing">Digital Marketing</option>
+              <option value="marketing">AI Automation</option>
+              <option value="marketing">Search Engine Optimization</option>
+              <option value="marketing">Shopify Development</option>
+              <option value="marketing">UI/UX Designing</option>
+              <option value="marketing">Video Editing</option>
             </select>
             <select
               name="industry"
@@ -95,6 +99,18 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <option value="technology">Technology</option>
               <option value="healthcare">Healthcare</option>
               <option value="finance">Finance</option>
+              <option value="education">Education</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="real-estate">Real Estate</option>
+              <option value="travel">Travel & Hospitality</option>
+              <option value="automotive">Automotive</option>
+              <option value="fashion">Fashion & Lifestyle</option>
+              <option value="media">Media & Entertainment</option>
+              <option value="logistics">Logistics & Supply Chain</option>
+              <option value="food">Food & Beverages</option>
+              <option value="sports">Sports & Fitness</option>
+              <option value="non-profit">Non-Profit / NGOs</option>
+              <option value="government">Government & Public Sector</option>
             </select>
           </div>
 
@@ -162,24 +178,27 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div className="mt-8 py-6 text-center flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 sm:px-8">
-        
-        <div className="flex gap-4 mt-4 md:mt-0">
-          <Link href="#" aria-label="Facebook" className="hover:opacity-80">
-            <Facebook className="w-5 h-5 text-[#009FB2]" />
-          </Link>
-          <Link href="#" aria-label="Instagram" className="hover:opacity-80">
-            <Instagram className="w-5 h-5 text-[#009FB2]" />
-          </Link>
-          <Link href="#" aria-label="Youtube" className="hover:opacity-80">
-            <Youtube className="w-5 h-5 text-[#009FB2]" />
-          </Link>
-          <Link href="#" aria-label="Twitter" className="hover:opacity-80">
-            <Twitter className="w-5 h-5 text-[#009FB2]" />
-          </Link>
-          <Link href="#" aria-label="LinkedIn" className="hover:opacity-80">
-            <Linkedin className="w-5 h-5 text-[#009FB2]" />
-          </Link>
-        </div>
+            <div className="flex gap-4 mt-4 md:mt-0">
+              <Link href="#" aria-label="Facebook" className="hover:opacity-80">
+                <Facebook className="w-5 h-5 text-[#009FB2]" />
+              </Link>
+              <Link
+                href="#"
+                aria-label="Instagram"
+                className="hover:opacity-80"
+              >
+                <Instagram className="w-5 h-5 text-[#009FB2]" />
+              </Link>
+              <Link href="#" aria-label="Youtube" className="hover:opacity-80">
+                <Youtube className="w-5 h-5 text-[#009FB2]" />
+              </Link>
+              <Link href="#" aria-label="Twitter" className="hover:opacity-80">
+                <Twitter className="w-5 h-5 text-[#009FB2]" />
+              </Link>
+              <Link href="#" aria-label="LinkedIn" className="hover:opacity-80">
+                <Linkedin className="w-5 h-5 text-[#009FB2]" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -188,4 +207,3 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 };
 
 export default ContactForm;
-

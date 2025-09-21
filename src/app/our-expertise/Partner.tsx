@@ -42,7 +42,7 @@ export default function Partner() {
             with a shared vision, purpose, and lasting impact.
           </p>
           <a
-            href="#contact"
+            href="/contact-us"
             className="inline-block px-6 py-3 bg-cyan-500 text-white rounded-full shadow-md hover:bg-cyan-600 transition"
           >
             Get A Free Consultation

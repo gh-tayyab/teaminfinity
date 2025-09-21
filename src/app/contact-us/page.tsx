@@ -2,6 +2,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { Metadata } from "next";
 import ContactForm from "./ContactForm";
 import FAQ from "./FAQ";
+import NewsletterForm from "./NewsletterForm"; // ✅ new import
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -27,26 +28,8 @@ export default function ContactUs() {
           marketing and innovative development solutions.
         </p>
 
-        {/* Email input CTA */}
-        <form
-          className="flex flex-row items-center justify-center gap-3 mb-20 flex-wrap"
-          aria-label="Email subscription form"
-        >
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 min-w-[180px] sm:w-80 px-4 py-3 bg-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00B7CD]"
-            aria-label="Enter your email"
-            required
-          />
-          <button
-            type="submit"
-            className="px-4 py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-[#009FB2] hover:bg-[#00B7CD] transition whitespace-nowrap"
-            aria-label="Submit email"
-          >
-            Get Started
-          </button>
-        </form>
+        {/* ✅ Newsletter Form (client) */}
+        <NewsletterForm />
 
         {/* Section Title */}
         <div className="mb-10">
