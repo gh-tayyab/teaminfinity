@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import React from "react";
 import Image from "next/image";
 import StatsSection from "./StatsSection";
-import WhyChooseUs from "./WhyChooseUs";
-import BenefitsSection from "./BenefitsSection";
+import WhyChooseUs from "@/app/web-development/WhyChooseUs";
+import BenefitsSection from "@/app/web-development/BenefitsSection";
 import ProjectsSection from "./ProjectsSection";
 import TestimonialsSection from "./TestimonialsSection";
 
