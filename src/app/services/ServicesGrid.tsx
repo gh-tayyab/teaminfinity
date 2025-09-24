@@ -273,7 +273,7 @@ const SmallCard = ({ s }: { s: (typeof services)[number] }) => (
 
       <div className="lg:absolute lg:left-6 lg:bottom-6 mt-4 lg:mt-0">
         <Link
-          href={`/services/${s.key}`}
+          href={`/${s.key}`}
           aria-label={`Learn more about ${s.title}`}
           className="inline-flex items-center gap-2 px-4 py-2 bg-[#00B7CD] text-white rounded-full text-sm font-medium hover:bg-cyan-600 transition"
         >
