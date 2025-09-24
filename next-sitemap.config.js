@@ -1,4 +1,5 @@
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL,
-  generateRobotsTxt: true, // robots.txt bhi generate karega
+  siteUrl: process.env.SITE_URL || 'https://www.teaminfinity.uk',
+  generateRobotsTxt: true,
 };
