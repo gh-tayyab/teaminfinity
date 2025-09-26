@@ -55,7 +55,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <section>
-          <ul className="hidden md:flex items-center gap-8 font-thin" role="menubar">
+          <ul className="hidden lg:flex items-center gap-8 font-thin" role="menubar">
             <li role="none">
               <Link href="/" role="menuitem" className="hover:text-cyan-600 ">
                 Home
@@ -130,7 +130,7 @@ export default function Navbar() {
         <aside>
           <Link
             href="/contact-us"
-            className="hidden md:inline-block px-4 py-2 sm:py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-black hover:bg-cyan-600 transition whitespace-nowra"
+            className="hidden lg:inline-block px-4 py-2 sm:py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-black hover:bg-cyan-600 transition whitespace-nowra"
           >
             Get Started
           </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-gray-700"
+          className="lg:hidden text-gray-700"
           onClick={toggleMobile}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
@@ -155,7 +155,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white shadow-lg px-6 pb-4 space-y-3"
+            className="lg:hidden bg-white shadow-lg px-6 pb-4 space-y-3"
           >
             <ul className="space-y-3" role="menu">
               <li><Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Home</Link></li>

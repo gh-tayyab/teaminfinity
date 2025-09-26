@@ -39,10 +39,10 @@ export default function Hero() {
       {/* Decorative background */}
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute top-[170px] left-[-150px] w-[150px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl"
+        className="hidden lg:block absolute top-[170px] left-[-150px] w-[150px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
       />
 
-      <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">
         {/* Left Side */}
         <motion.article
           className="flex flex-col justify-center"
@@ -53,7 +53,7 @@ export default function Hero() {
         >
           <motion.h1
             id="hero-heading"
-            className="text-4xl font-bold leading-tight text-gray-900"
+            className="text-3xl md:text-4xl font-bold leading-tight text-gray-900"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7 }}
@@ -76,7 +76,7 @@ export default function Hero() {
           {/* Email Signup */}
           {!submitted ? (
             <motion.form
-              className="mt-6 flex flex-col sm:flex-row gap-2 w-full max-w-md"
+              className="mt-6 flex flex-col sm:flex-row items-stretch gap-2 w-full max-w-md"
               onSubmit={handleSubmit}
               aria-label="Subscribe to newsletter"
               initial={{ opacity: 0, y: 30 }}
@@ -91,7 +91,7 @@ export default function Hero() {
                 id="hero-email"
                 type="email"
                 placeholder="Enter your email"
-                className="flex-grow px-4 py-3 bg-white border rounded-md outline-none focus:ring-2 focus:ring-cyan-500 text-sm md:text-base"
+                className="flex-grow px-4 py-3 bg-white border border-gray-300 rounded-md sm:rounded-r-none sm:border-r-0 outline-none focus:ring-2 focus:ring-cyan-500 text-sm md:text-base"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -172,8 +172,9 @@ export default function Hero() {
             alt="Businesswoman working on a laptop illustration"
             width={600}
             height={600}
-            className="rounded-lg w-full h-auto max-w-[500px]"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+            className="rounded-lg w-full h-auto max-w-[400px] sm:max-w-[500px] md:max-w-[500px]"
+            sizes="(max-width: 640px) 90vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+            fetchPriority="high"
             priority
           />
         </motion.aside>

@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-instrument-sans)", "sans-serif"], // ✅ Correct variable
+        sans: ["var(--font-instrument-sans)", "sans-serif"], // ✅ font variable mapped
       },
     },
   },

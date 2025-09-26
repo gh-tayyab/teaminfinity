@@ -115,7 +115,7 @@ export default function Testimonials(): React.JSX.Element {
 
         {/* Testimonial list */}
         <motion.ul
-          className="space-y-8"
+          className="space-y-8 max-w-4xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -123,11 +123,22 @@ export default function Testimonials(): React.JSX.Element {
         >
           {/* Card 1 */}
           <motion.li variants={cardVariants} whileHover="hover">
+            {/* Review microdata: Review */}
             <article
               itemScope
               itemType="https://schema.org/Review"
               className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
             >
+              {/* REQUIRED: itemReviewed - describe what was reviewed (Organization/Service/Product) */}
+              <div
+                itemProp="itemReviewed"
+                itemScope
+                itemType="https://schema.org/Organization"
+                className="sr-only"
+              >
+                <meta itemProp="name" content="Team Infinity" />
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 items-center">
                 {/* Left: image */}
                 <figure className="relative p-6 md:p-8">
@@ -153,9 +164,14 @@ export default function Testimonials(): React.JSX.Element {
                     “They transformed our online presence and brought us more
                     customers than we imagined.”
                   </blockquote>
-                  <p itemProp="author" className="text-sm text-gray-500 mb-6">
-                    Maya Olivia — Marketing Lead at Urban Bloom
-                  </p>
+
+                  {/* author must be a Person type (not generic Thing). include visible name but use microdata Person */}
+                  <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                    <meta itemProp="name" content="Maya Olivia" />
+                    <p className="text-sm text-gray-500 mb-6">
+                      Maya Olivia — Marketing Lead at Urban Bloom
+                    </p>
+                  </div>
 
                   <div className="flex gap-4 flex-wrap" aria-label="Key results">
                     <motion.div
@@ -186,6 +202,15 @@ export default function Testimonials(): React.JSX.Element {
               itemType="https://schema.org/Review"
               className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
             >
+              <div
+                itemProp="itemReviewed"
+                itemScope
+                itemType="https://schema.org/Organization"
+                className="sr-only"
+              >
+                <meta itemProp="name" content="Team Infinity" />
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 items-center">
                 {/* Left: image */}
                 <figure className="relative p-6 md:p-8">
@@ -210,9 +235,13 @@ export default function Testimonials(): React.JSX.Element {
                   >
                     “Professional, reliable, and results driven — highly recommended.”
                   </blockquote>
-                  <p itemProp="author" className="text-sm text-gray-500 mb-6">
-                    Nadya Sarah — Founder of Matcha Mood
-                  </p>
+
+                  <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                    <meta itemProp="name" content="Nadya Sarah" />
+                    <p className="text-sm text-gray-500 mb-6">
+                      Nadya Sarah — Founder of Matcha Mood
+                    </p>
+                  </div>
 
                   <div className="flex gap-4 flex-wrap" aria-label="Key results">
                     <motion.div

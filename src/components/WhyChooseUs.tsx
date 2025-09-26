@@ -45,22 +45,11 @@ const cards: Card[] = [
 ];
 
 export default function WhyChooseUs(): React.JSX.Element {
-  /**
-   * Framer Motion variants
-   *
-   * Notes:
-   * - We cast the variant objects to `Variants` (via unknown) to avoid strict TS type mismatches
-   *   that appear when TS widens string-typed transition fields like `type: "spring"` or `ease: "easeOut"`.
-   * - For `ease` we either use a cubic-bezier array or omit it for spring transitions.
-   */
-
   const cardVariants = {
     offscreen: { opacity: 0, y: 40 },
     onscreen: {
       opacity: 1,
       y: 0,
-      // Use spring-like motion parameters without causing TS literal-string issues.
-      // We're casting the whole object to Variants below.
       transition: { bounce: 0.3, duration: 0.6 },
     },
     hover: { scale: 1.03 },
@@ -69,18 +58,7 @@ export default function WhyChooseUs(): React.JSX.Element {
   const containerVariants = {
     hidden: {},
     show: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  } as unknown as Variants;
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    onscreen: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+      transition: { staggerChildren: 0.15 },
     },
   } as unknown as Variants;
 
@@ -90,11 +68,6 @@ export default function WhyChooseUs(): React.JSX.Element {
         <title>Why Choose Us? — Team Infinity</title>
         <meta
           name="description"
-          content="Discover why clients pick us: transparent process, experienced team, data-driven results, creative + technical expertise, and end-to-end solutions."
-        />
-        <meta property="og:title" content="Why Choose Us? — Team Infinity" />
-        <meta
-          property="og:description"
           content="Discover why clients pick us: transparent process, experienced team, data-driven results, creative + technical expertise, and end-to-end solutions."
         />
       </Head>
@@ -148,17 +121,18 @@ export default function WhyChooseUs(): React.JSX.Element {
         {/* Cards Section */}
         <main className="relative max-w-7xl mx-auto md:-mt-4 px-6 z-10 flex justify-center">
           <motion.div
-            className="w-full flex justify-center"
+            className="w-full"
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center w-full">
+            {/* 4 Cards Grid */}
+            <ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center w-full lg:max-w-4xl mx-auto">
               {cards.slice(0, 4).map((c, idx) => (
                 <motion.li
                   key={c.id}
-                  className="w-full max-w-[440px]"
+                  className="w-full md:w-[440px]"
                   initial="offscreen"
                   whileInView="onscreen"
                   whileHover="hover"
@@ -167,7 +141,8 @@ export default function WhyChooseUs(): React.JSX.Element {
                   variants={cardVariants}
                 >
                   <article
-                    className="bg-white rounded-[16px] shadow-lg p-6 md:p-8 flex flex-col border border-gray-200"
+                    className="bg-white rounded-[16px] shadow-lg p-6 md:p-8 border border-gray-200 
+                               h-[200px] flex flex-col"
                     role="group"
                     aria-labelledby={`why-${c.id}-title`}
                   >
@@ -202,7 +177,7 @@ export default function WhyChooseUs(): React.JSX.Element {
 
               {/* Fifth centered card */}
               <motion.li
-                className="md:col-span-2 flex justify-center w-full"
+                className="md:col-span-1 lg:col-span-2 flex justify-center w-full"
                 initial="offscreen"
                 whileInView="onscreen"
                 whileHover="hover"
@@ -211,7 +186,8 @@ export default function WhyChooseUs(): React.JSX.Element {
                 variants={cardVariants}
               >
                 <article
-                  className="bg-white rounded-[16px] shadow-lg p-6 md:p-8 w-full max-w-[440px] border border-gray-200"
+                  className="bg-white rounded-[16px] shadow-lg p-6 md:p-8 border border-gray-200 
+                             w-full md:w-[440px] h-[200px] flex flex-col"
                   role="group"
                   aria-labelledby={`why-${cards[4].id}-title`}
                 >
@@ -246,7 +222,7 @@ export default function WhyChooseUs(): React.JSX.Element {
           </motion.div>
         </main>
 
-        {/* Bottom gradient overlay (decorative) */}
+        {/* Bottom gradient overlay */}
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b1720] to-transparent z-0"
           aria-hidden="true"

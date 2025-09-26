@@ -5,10 +5,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 
-// ✅ Import Instrument Sans with variable binding
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-instrument-sans",
+  variable: "--font-instrument-sans", // ✅ custom property ban gaya
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
@@ -58,7 +57,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://teaminfinity.uk"),
 };
 
-// ✅ Viewport settings
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -66,13 +64,13 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${instrumentSans.variable} font-sans`}>
+    <html lang="en" className={`${instrumentSans.className} font-sans`}>
+      <head>
+        <link rel="preload" as="image" href="/images/hero.svg" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="antialiased bg-[#F2FBFD] text-gray-900">
         <Navbar />
         <main>{children}</main>
