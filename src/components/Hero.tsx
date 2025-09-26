@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const [email, setEmail] = useState("");
@@ -18,12 +19,10 @@ export default function Hero() {
         body: JSON.stringify({ email }),
       });
 
-      if (!res.ok) {
-        throw new Error("Failed to subscribe");
-      }
+      if (!res.ok) throw new Error("Failed to subscribe");
 
       setSubmitted(true);
-      setEmail(""); // reset input
+      setEmail("");
     } catch (err) {
       console.error(err);
       alert("⚠️ Something went wrong. Please try again.");
@@ -33,36 +32,57 @@ export default function Hero() {
   };
 
   return (
-    <section
-      className="relative bg-[#F2FBFD] pt-28 pb-16 flex justify-center items-center"
+    <header
+      className="relative bg-[#F2FBFD] pt-30 pb-16 flex justify-center items-center"
       aria-labelledby="hero-heading"
     >
       {/* Decorative background */}
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute top-[130px] left-[-150px] w-[150px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl"
+        className="hidden lg:block absolute top-[170px] left-[-150px] w-[150px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl"
       />
 
       <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
         {/* Left Side */}
-        <div className="flex flex-col justify-center">
-          <h1
+        <motion.article
+          className="flex flex-col justify-center"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <motion.h1
             id="hero-heading"
             className="text-4xl font-bold leading-tight text-gray-900"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            viewport={{ once: true }}
           >
             We Build Brands & Digital Experiences That Drive Results
-          </h1>
-          <p className="mt-4 text-gray-600 text-base md:text-lg">
+          </motion.h1>
+
+          <motion.p
+            className="mt-4 text-gray-600 text-base md:text-lg"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            viewport={{ once: true }}
+          >
             From strategy to execution, we help businesses grow through powerful{" "}
             marketing and innovative development solutions.
-          </p>
+          </motion.p>
 
           {/* Email Signup */}
           {!submitted ? (
-            <form
+            <motion.form
               className="mt-6 flex flex-col sm:flex-row gap-2 w-full max-w-md"
               onSubmit={handleSubmit}
               aria-label="Subscribe to newsletter"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.7 }}
+              viewport={{ once: true }}
             >
               <label htmlFor="hero-email" className="sr-only">
                 Email address
@@ -84,19 +104,30 @@ export default function Hero() {
               >
                 {loading ? "Submitting..." : "Get Started"}
               </button>
-            </form>
+            </motion.form>
           ) : (
-            <p className="mt-6 text-green-600 font-medium">
+            <motion.p
+              className="mt-6 text-green-600 font-medium"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
               ✅ Thanks for subscribing!
-            </p>
+            </motion.p>
           )}
 
           {/* Clients */}
-          <div className="flex items-center gap-3 mt-6">
+          <motion.figure
+            className="flex items-center gap-3 mt-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.7 }}
+            viewport={{ once: true }}
+          >
             <div className="flex -space-x-3">
               <Image
                 src="/images/avatar1.svg"
-                alt="Client avatar"
+                alt="Happy client 1"
                 width={40}
                 height={40}
                 className="rounded-full border w-10 h-10"
@@ -105,7 +136,7 @@ export default function Hero() {
               />
               <Image
                 src="/images/avatar2.svg"
-                alt="Client avatar"
+                alt="Happy client 2"
                 width={40}
                 height={40}
                 className="rounded-full border w-10 h-10"
@@ -114,7 +145,7 @@ export default function Hero() {
               />
               <Image
                 src="/images/avatar3.svg"
-                alt="Client avatar"
+                alt="Happy client 3"
                 width={40}
                 height={40}
                 className="rounded-full border w-10 h-10"
@@ -122,14 +153,20 @@ export default function Hero() {
                 loading="lazy"
               />
             </div>
-            <p className="text-gray-700 font-medium text-sm md:text-base">
+            <figcaption className="text-gray-700 font-medium text-sm md:text-base">
               Happy Clients <span className="font-bold">357K+</span>
-            </p>
-          </div>
-        </div>
+            </figcaption>
+          </motion.figure>
+        </motion.article>
 
         {/* Right Side Image */}
-        <div className="relative flex justify-center">
+        <motion.aside
+          className="relative flex justify-center"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <Image
             src="/images/hero.svg"
             alt="Businesswoman working on a laptop illustration"
@@ -139,8 +176,8 @@ export default function Hero() {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
             priority
           />
-        </div>
+        </motion.aside>
       </div>
-    </section>
+    </header>
   );
 }

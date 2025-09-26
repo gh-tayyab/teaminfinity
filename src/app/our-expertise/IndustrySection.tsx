@@ -1,8 +1,31 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 export default function IndustriesSection(): React.JSX.Element {
+  // Variants for staggered animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.25 },
+    },
+  } as unknown as Variants;
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        // use cubic-bezier array instead of string for `ease`
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  } as unknown as Variants;
+
   return (
     <section
       id="industries"
@@ -11,7 +34,13 @@ export default function IndustriesSection(): React.JSX.Element {
     >
       <div className="container mx-auto px-6">
         {/* Intro */}
-        <div className="max-w-3xl mx-auto text-center">
+        <motion.header
+          className="max-w-3xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
           <p className="text-xs text-cyan-600 uppercase tracking-wider mb-3">
             Case Studies • Industry
           </p>
@@ -21,39 +50,47 @@ export default function IndustriesSection(): React.JSX.Element {
           >
             Discover how we impact each industry niche.
           </h2>
-        </div>
+        </motion.header>
 
         {/* Cards */}
-        <div className="mt-10 space-y-6">
+        <motion.div
+          className="mt-10 space-y-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* Card 1 — E-commerce */}
-          <article
+          <motion.article
+            variants={itemVariants}
             className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8"
             aria-labelledby="industry-ecommerce"
           >
-            {/* Text */}
             <div className="p-6 md:w-1/2 flex flex-col justify-center">
-              <h3
-                id="industry-ecommerce"
-                className="text-lg font-semibold text-gray-900"
-              >
-                E-commerce
-              </h3>
+              <header>
+                <h3
+                  id="industry-ecommerce"
+                  className="text-lg font-semibold text-gray-900"
+                >
+                  E-commerce
+                </h3>
+              </header>
               <p className="mt-3 text-sm text-gray-600 max-w-xl">
                 From fashion brands to digital gadgets, we help online stores
                 grow through smart content strategies, targeted ad distribution,
                 and brand messaging.
               </p>
 
-              <div className="mt-6 flex items-center gap-6">
+              <dl className="mt-6 flex items-center gap-6">
                 <div className="bg-violet-50 text-violet-700 rounded-lg px-4 py-3 text-center">
-                  <div className="text-xl font-bold">17+</div>
-                  <div className="text-xs mt-1">Case Studies</div>
+                  <dt className="sr-only">Case Studies</dt>
+                  <dd className="text-xl font-bold">17+</dd>
+                  <span className="text-xs mt-1 block">Case Studies</span>
                 </div>
-              </div>
+              </dl>
             </div>
 
-            {/* Image */}
-            <div className="md:w-1/2 px-6">
+            <figure className="md:w-1/2 px-6">
               <div className="relative w-full h-64 md:h-72 lg:h-80">
                 <Image
                   src="/images/industry1.svg"
@@ -64,36 +101,43 @@ export default function IndustriesSection(): React.JSX.Element {
                   priority
                 />
               </div>
-            </div>
-          </article>
+              <figcaption className="sr-only">
+                Visual representation of E-commerce industry
+              </figcaption>
+            </figure>
+          </motion.article>
 
           {/* Card 2 — Hospitality */}
-          <article
+          <motion.article
+            variants={itemVariants}
             className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8"
             aria-labelledby="industry-hospitality"
           >
             <div className="p-6 md:w-1/2 flex flex-col justify-center">
-              <h3
-                id="industry-hospitality"
-                className="text-lg font-semibold text-gray-900"
-              >
-                Hospitality
-              </h3>
+              <header>
+                <h3
+                  id="industry-hospitality"
+                  className="text-lg font-semibold text-gray-900"
+                >
+                  Hospitality
+                </h3>
+              </header>
               <p className="mt-3 text-sm text-gray-600 max-w-xl">
                 We’ve partnered with hotels, villas, and restaurants to build
                 brand awareness and boost bookings through visual storytelling
                 and digital engagement.
               </p>
 
-              <div className="mt-6 flex items-center gap-6">
+              <dl className="mt-6 flex items-center gap-6">
                 <div className="bg-violet-50 text-violet-700 rounded-lg px-4 py-3 text-center">
-                  <div className="text-xl font-bold">15+</div>
-                  <div className="text-xs mt-1">Case Studies</div>
+                  <dt className="sr-only">Case Studies</dt>
+                  <dd className="text-xl font-bold">15+</dd>
+                  <span className="text-xs mt-1 block">Case Studies</span>
                 </div>
-              </div>
+              </dl>
             </div>
 
-            <div className="md:w-1/2 px-6">
+            <figure className="md:w-1/2 px-6">
               <div className="relative w-full h-64 md:h-72 lg:h-80">
                 <Image
                   src="/images/industry2.svg"
@@ -104,36 +148,43 @@ export default function IndustriesSection(): React.JSX.Element {
                   className="object-cover rounded-2xl"
                 />
               </div>
-            </div>
-          </article>
+              <figcaption className="sr-only">
+                Visual representation of Hospitality industry
+              </figcaption>
+            </figure>
+          </motion.article>
 
           {/* Card 3 — Education */}
-          <article
+          <motion.article
+            variants={itemVariants}
             className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8"
             aria-labelledby="industry-education"
           >
             <div className="p-6 md:w-1/2 flex flex-col justify-center">
-              <h3
-                id="industry-education"
-                className="text-lg font-semibold text-gray-900"
-              >
-                Education
-              </h3>
+              <header>
+                <h3
+                  id="industry-education"
+                  className="text-lg font-semibold text-gray-900"
+                >
+                  Education
+                </h3>
+              </header>
               <p className="mt-3 text-sm text-gray-600 max-w-xl">
                 From online learning platforms to formal institutions, our
                 approach combines educational content with effective strategies
                 to reach the right audience.
               </p>
 
-              <div className="mt-6 flex items-center gap-6">
+              <dl className="mt-6 flex items-center gap-6">
                 <div className="bg-violet-50 text-violet-700 rounded-lg px-4 py-3 text-center">
-                  <div className="text-xl font-bold">12+</div>
-                  <div className="text-xs mt-1">Case Studies</div>
+                  <dt className="sr-only">Case Studies</dt>
+                  <dd className="text-xl font-bold">12+</dd>
+                  <span className="text-xs mt-1 block">Case Studies</span>
                 </div>
-              </div>
+              </dl>
             </div>
 
-            <div className="md:w-1/2 px-6">
+            <figure className="md:w-1/2 px-6">
               <div className="relative w-full h-64 md:h-72 lg:h-80">
                 <Image
                   src="/images/industry3.svg"
@@ -144,9 +195,12 @@ export default function IndustriesSection(): React.JSX.Element {
                   className="object-cover rounded-2xl"
                 />
               </div>
-            </div>
-          </article>
-        </div>
+              <figcaption className="sr-only">
+                Visual representation of Education industry
+              </figcaption>
+            </figure>
+          </motion.article>
+        </motion.div>
       </div>
     </section>
   );

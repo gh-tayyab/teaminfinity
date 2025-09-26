@@ -9,11 +9,7 @@ export default function BackToTop() {
   // scroll listener
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -29,16 +25,20 @@ export default function BackToTop() {
   };
 
   return (
-    <>
+    <aside
+      aria-live="polite"
+      role="complementary"
+      className="fixed bottom-6 right-6 z-50"
+    >
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-cyan-600 hover:bg-cyan-700 text-white p-3 rounded-full shadow-lg transition"
+          className="bg-cyan-600 hover:bg-cyan-700 text-white p-3 rounded-full shadow-lg transition"
           aria-label="Back to Top"
         >
           <ArrowUp size={22} />
         </button>
       )}
-    </>
+    </aside>
   );
 }

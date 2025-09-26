@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function BrandsSection() {
   const brands = [
@@ -9,79 +12,116 @@ export default function BrandsSection() {
   ];
 
   return (
-    <section
-      id="brands"
-      aria-labelledby="brands-heading"
-      className="relative py-16 bg-[#F2FBFD] overflow-hidden"
-    >
-      {/* Background Blurs */}
-      <div
-        className="absolute top-20 right-0 w-32 h-80 bg-[#00B7CD] opacity-20 rounded-full blur-3xl"
-        aria-hidden="true"
-      />
+    <main id="main-content">
+      <article
+        id="brands"
+        aria-labelledby="brands-heading"
+        className="relative py-16 bg-[#F2FBFD] overflow-hidden"
+      >
+        {/* Background Blurs */}
+        <motion.div
+          className="absolute top-20 right-0 w-32 h-80 bg-[#00B7CD] opacity-20 rounded-full blur-3xl"
+          aria-hidden="true"
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 0.2, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        />
 
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center justify-center">
-        {/* Left Decorative Image */}
-        <div className="flex items-center justify-start">
-          <Image
-            src="/images/image17.svg"
-            alt=""
-            width={220}
-            height={220}
-            className="object-contain"
-            loading="lazy"
-            sizes="250px"
-            aria-hidden="true"
-          />
-        </div>
+        <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center justify-center">
+          {/* Left Decorative Image */}
+          <aside className="flex items-center justify-start">
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src="/images/image17.svg"
+                alt=""
+                width={220}
+                height={220}
+                className="object-contain"
+                loading="lazy"
+                sizes="250px"
+                aria-hidden="true"
+                role="presentation"
+              />
+            </motion.div>
+          </aside>
 
-        {/* Center Logos */}
-        <div className="col-span-2 text-center flex flex-col items-center">
-          {/* Heading */}
-          <h2
-            id="brands-heading"
-            className="flex items-center justify-center gap-2 mb-12 text-sm font-semibold text-[#27272B] tracking-wider"
-          >
-            <Star aria-hidden="true" className="w-4 h-4 text-[#36E1F8]" />
-            <span>We Work With</span>
-          </h2>
-
-          {/* Logos Grid */}
-          <div className="space-y-8">
-            {brands.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="flex items-center justify-center gap-6 md:gap-10 lg:gap-12 flex-wrap"
+          {/* Center Content */}
+          <section className="col-span-2 text-center flex flex-col items-center">
+            {/* Heading */}
+            <motion.header
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2
+                id="brands-heading"
+                className="flex items-center justify-center gap-2 mb-12 text-sm font-semibold text-[#27272B] tracking-wider"
               >
-                {row.map((logo, logoIndex) => {
-                  const rawName = logo.split("/").pop() || `brand-${rowIndex}-${logoIndex}`;
-                  const friendlyName = rawName
-                    .replace(/\.(svg|png|jpg|jpeg)/i, "")
-                    .replace(/[-_\d]+/g, " ")
-                    .trim();
+                <Star aria-hidden="true" className="w-4 h-4 text-[#36E1F8]" />
+                <span>We Work With</span>
+              </h2>
+            </motion.header>
 
-                  return (
-                    <div
-                      key={logoIndex}
-                      className="flex items-center justify-center min-w-[90px] h-12 px-2"
-                    >
-                      <Image
-                        src={logo}
-                        alt={friendlyName ? `${friendlyName} logo` : `Brand logo ${logoIndex + 1}`}
-                        width={90}
-                        height={40}
-                        className="object-contain grayscale hover:grayscale-0 transition"
-                        loading="lazy"
-                        sizes="90px"
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
+            {/* Logos Grid */}
+            <div className="space-y-8">
+              {brands.map((row, rowIndex) => (
+                <motion.ul
+                  key={rowIndex}
+                  className="flex items-center justify-center gap-6 md:gap-10 lg:gap-12 flex-wrap"
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { staggerChildren: 0.15 },
+                    },
+                  }}
+                  viewport={{ once: true }}
+                >
+                  {row.map((logo, logoIndex) => {
+                    const rawName = logo.split("/").pop() || `brand-${rowIndex}-${logoIndex}`;
+                    const friendlyName = rawName
+                      .replace(/\.(svg|png|jpg|jpeg)/i, "")
+                      .replace(/[-_\d]+/g, " ")
+                      .trim();
+
+                    return (
+                      <motion.li
+                        key={logoIndex}
+                        className="flex items-center justify-center min-w-[90px] h-12 px-2"
+                        variants={{
+                          hidden: { opacity: 0, scale: 0.8 },
+                          visible: { opacity: 1, scale: 1 },
+                        }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Image
+                          src={logo}
+                          alt={friendlyName ? `${friendlyName} logo` : `Brand logo ${logoIndex + 1}`}
+                          width={90}
+                          height={40}
+                          className="object-contain grayscale hover:grayscale-0 transition"
+                          loading="lazy"
+                          sizes="90px"
+                        />
+                      </motion.li>
+                    );
+                  })}
+                </motion.ul>
+              ))}
+            </div>
+          </section>
         </div>
-      </div>
-    </section>
+      </article>
+    </main>
   );
 }

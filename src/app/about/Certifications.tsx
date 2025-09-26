@@ -1,7 +1,6 @@
+"use client";
 import Image from "next/image";
-import Link from "next/link";
-
-
+import { motion } from "framer-motion";
 
 const certifications = [
   {
@@ -29,15 +28,37 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section
+    <motion.section
       id="certifications"
       aria-labelledby="certifications-heading"
       className="relative min-h-[80vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-20 bg-[#27272B] overflow-hidden"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
       {/* Left Side - Certifications List */}
-      <div className="relative z-10 md:w-1/2 bg-white rounded-2xl shadow-lg p-8 divide-y">
+      <motion.aside
+        className="relative z-10 md:w-1/2 bg-white rounded-2xl shadow-lg p-8 divide-y"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.2 } },
+        }}
+      >
         {certifications.map((cert) => (
-          <div key={cert.id} className="flex items-start justify-between py-4">
+          <motion.article
+            key={cert.id}
+            className="flex items-start justify-between py-4"
+            aria-label={cert.title}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              show: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <div className="flex items-start gap-4">
               <Image
                 src={cert.icon}
@@ -46,22 +67,35 @@ export default function Certifications() {
                 height={32}
                 className="w-8 h-8 object-contain"
               />
-              <div>
+              <header>
                 <h3 className="text-lg font-semibold text-gray-900">
                   {cert.title}
                 </h3>
                 <p className="text-gray-600 text-sm">{cert.desc}</p>
-              </div>
+              </header>
             </div>
-            <span className="bg-cyan-500 text-white text-xs font-medium px-3 py-1 rounded-full">
+            <motion.time
+              dateTime={cert.year}
+              className="bg-cyan-500 text-white text-xs font-medium px-3 py-1 rounded-full"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               {cert.year}
-            </span>
-          </div>
+            </motion.time>
+          </motion.article>
         ))}
-      </div>
+      </motion.aside>
 
-      {/* Right Side - Text */}
-      <div className="relative z-10 mt-10 md:mt-0 md:w-1/2 md:pl-12 space-y-6 text-center md:text-left">
+      {/* Right Side - Text Content */}
+      <motion.div
+        className="relative z-10 mt-10 md:mt-0 md:w-1/2 md:pl-12 space-y-6 text-center md:text-left"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+        viewport={{ once: true }}
+      >
         <span className="uppercase text-sm font-semibold text-cyan-400 tracking-wider">
           Certification
         </span>
@@ -76,20 +110,15 @@ export default function Certifications() {
           the digital marketing landscape, ensuring your brand gets the expert
           attention it deserves.
         </p>
-        <Link
-          href="/certifications"
-          aria-label="View all certifications"
-          className="inline-block px-6 py-3 bg-cyan-500 text-white rounded-full shadow hover:bg-cyan-600 transition"
-        >
-          View All Certifications
-        </Link>
-      </div>
+      </motion.div>
 
       {/* Decorative Blur Layer */}
-      <div
+      <motion.div
         aria-hidden="true"
         className="absolute left-[-150px] bottom-[-100px] w-[350px] h-[350px] bg-cyan-500/30 rounded-full blur-3xl"
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
       />
-    </section>
+    </motion.section>
   );
 }

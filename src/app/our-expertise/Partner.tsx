@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export default function Partner() {
   return (
@@ -7,15 +10,19 @@ export default function Partner() {
       aria-labelledby="partner-heading"
       className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-white to-cyan-50 px-6 md:px-12 py-20 overflow-hidden"
     >
-      {/* Top Left Blur */}
+      {/* Decorative Blurs */}
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-cyan-200/40 rounded-full blur-3xl" />
-
-      {/* Bottom Right Blur */}
       <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-blue-300/40 rounded-full blur-3xl" />
 
-      <div className="relative z-10 grid md:grid-cols-3 items-center gap-10 max-w-7xl w-full">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 items-center gap-10 max-w-7xl w-full">
         {/* Left Image */}
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
           <Image
             src="/images/partnerleft.svg"
             alt="Creative partner collaboration illustration"
@@ -24,10 +31,16 @@ export default function Partner() {
             className="rounded-2xl shadow-lg object-cover"
             loading="lazy"
           />
-        </div>
+        </motion.div>
 
         {/* Center Content */}
-        <div className="text-center space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center space-y-6"
+        >
           <span className="uppercase tracking-widest text-sm font-semibold text-cyan-600">
             Start a Collaboration
           </span>
@@ -43,30 +56,40 @@ export default function Partner() {
           </p>
           <a
             href="/contact-us"
-            className="inline-block px-6 py-3 bg-cyan-500 text-white rounded-full shadow-md hover:bg-cyan-600 transition"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 text-white rounded-full shadow-md hover:bg-cyan-600 transition"
           >
-            Get A Free Consultation
+            Get A Free Consultation <ArrowRight size={18} />
           </a>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 pt-8">
-            <div className="bg-white shadow rounded-2xl p-4 text-center">
-              <h3 className="text-2xl font-bold text-gray-900">23+</h3>
-              <p className="text-gray-500 text-sm">Years of Experience</p>
-            </div>
-            <div className="bg-white shadow rounded-2xl p-4 text-center">
-              <h3 className="text-2xl font-bold text-gray-900">200+</h3>
-              <p className="text-gray-500 text-sm">Projects Completed</p>
-            </div>
-            <div className="bg-white shadow rounded-2xl p-4 text-center">
-              <h3 className="text-2xl font-bold text-gray-900">357K+</h3>
-              <p className="text-gray-500 text-sm">Happy Clients</p>
-            </div>
+            {[
+              { value: "23+", label: "Years of Experience" },
+              { value: "200+", label: "Projects Completed" },
+              { value: "357K+", label: "Happy Clients" },
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white shadow rounded-2xl p-4 text-center transition"
+              >
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {stat.value}
+                </h3>
+                <p className="text-gray-500 text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Image */}
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
           <Image
             src="/images/partnerright.svg"
             alt="Teamwork and success illustration"
@@ -75,7 +98,7 @@ export default function Partner() {
             className="rounded-2xl shadow-lg object-cover"
             loading="lazy"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

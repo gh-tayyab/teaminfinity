@@ -7,7 +7,6 @@ import React, { useState } from "react";
 const ContactForm = () => {
   const [accepted, setAccepted] = useState(false);
 
-  // ✅ Form Submit
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -16,7 +15,7 @@ const ContactForm = () => {
       return;
     }
 
-    const form = e.currentTarget; // <-- form reference safe rakho
+    const form = e.currentTarget;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
@@ -33,7 +32,7 @@ const ContactForm = () => {
       }
 
       alert("✅ Message sent successfully!");
-      form.reset(); // <-- ab error nahi aayega
+      form.reset();
       setAccepted(false);
     } catch (err) {
       console.error("Form Submit Error:", err);
@@ -42,57 +41,75 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section
+      id="contact"
+      className="relative py-20 overflow-hidden"
+      aria-labelledby="contact-form-heading"
+    >
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start text-left">
+        
         {/* Left: Form */}
         <form
           onSubmit={handleSubmit}
           className="bg-white rounded-xl shadow-md p-4 space-y-6"
         >
+          <h2 id="contact-form-heading" className="sr-only">
+            Contact Form
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               type="text"
               name="fullName"
               placeholder="Full name"
-              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
+              aria-label="Full name"
               required
+              aria-required="true"
+              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
             />
             <input
               type="email"
               name="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
+              aria-label="Email address"
               required
+              aria-required="true"
+              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
             />
             <input
               type="tel"
               name="phone"
               placeholder="Phone"
+              aria-label="Phone number"
               className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
             />
             <input
               type="url"
               name="link"
               placeholder="Optional link (portfolio, website, LinkedIn, etc.)"
+              aria-label="Optional link"
               className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
             />
 
             <select
               name="service"
+              aria-label="Select service"
               className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
             >
               <option value="">Select service</option>
               <option value="web-design">Web Development</option>
-              <option value="development">Graphic Designing</option>
+              <option value="design">Graphic Designing</option>
               <option value="marketing">Digital Marketing</option>
-              <option value="marketing">AI Automation</option>
-              <option value="marketing">Search Engine Optimization</option>
-              <option value="marketing">Shopify Development</option>
-              <option value="marketing">UI/UX Designing</option>
-              <option value="marketing">Video Editing</option>
+              <option value="ai">AI Automation</option>
+              <option value="seo">Search Engine Optimization</option>
+              <option value="shopify">Shopify Development</option>
+              <option value="uiux">UI/UX Designing</option>
+              <option value="video">Video Editing</option>
             </select>
+
             <select
               name="industry"
+              aria-label="Select industry"
               className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
             >
               <option value="">Select industry</option>
@@ -118,12 +135,14 @@ const ContactForm = () => {
             name="message"
             placeholder="Your Message"
             rows={4}
+            aria-label="Your message"
             className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#00B7CD] outline-none"
           ></textarea>
 
           {/* Checkbox */}
-          <label className="flex items-center gap-2 text-sm text-gray-600">
+          <label htmlFor="accept-terms" className="flex items-center gap-2 text-sm text-gray-600">
             <input
+              id="accept-terms"
               type="checkbox"
               checked={accepted}
               onChange={() => setAccepted(!accepted)}
@@ -141,7 +160,7 @@ const ContactForm = () => {
         </form>
 
         {/* Right: Content */}
-        <div className="space-y-8">
+        <article className="space-y-8">
           <div>
             <p className="text-sm uppercase text-[#00B7CD] tracking-wider mb-2">
               ✱ Contact Us
@@ -158,7 +177,7 @@ const ContactForm = () => {
 
           {/* Image + Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <div className="rounded-xl overflow-hidden shadow-md">
+            <figure className="rounded-xl overflow-hidden shadow-md">
               <Image
                 src="/images/contact.svg"
                 alt="Our creative team discussing a project"
@@ -166,27 +185,27 @@ const ContactForm = () => {
                 height={300}
                 className="object-cover"
               />
-            </div>
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <h3 className="text-4xl font-bold text-[#00B7CD] mb-2">98%</h3>
-              <p className="font-semibold">Client Satisfaction</p>
+            </figure>
+            <dl className="bg-white rounded-xl shadow-md p-6">
+              <dt className="text-4xl font-bold text-[#00B7CD] mb-2">98%</dt>
+              <dd className="font-semibold">Client Satisfaction</dd>
               <p className="text-gray-600 text-sm">
                 Trusted by clients for our quality work, clear communication,
                 and consistent results.
               </p>
-            </div>
+            </dl>
           </div>
 
-          <div className="mt-8 py-6 text-center flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 sm:px-8">
+          {/* Social Links */}
+          <nav
+            aria-label="Social media"
+            className="mt-8 py-6 text-center flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 sm:px-8"
+          >
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link href="#" aria-label="Facebook" className="hover:opacity-80">
                 <Facebook className="w-5 h-5 text-[#009FB2]" />
               </Link>
-              <Link
-                href="#"
-                aria-label="Instagram"
-                className="hover:opacity-80"
-              >
+              <Link href="#" aria-label="Instagram" className="hover:opacity-80">
                 <Instagram className="w-5 h-5 text-[#009FB2]" />
               </Link>
               <Link href="#" aria-label="Youtube" className="hover:opacity-80">
@@ -199,8 +218,8 @@ const ContactForm = () => {
                 <Linkedin className="w-5 h-5 text-[#009FB2]" />
               </Link>
             </div>
-          </div>
-        </div>
+          </nav>
+        </article>
       </div>
     </section>
   );

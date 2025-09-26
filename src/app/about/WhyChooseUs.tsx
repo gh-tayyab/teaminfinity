@@ -1,19 +1,34 @@
+"use client";
 import Image from "next/image";
 import { Users, Lightbulb, Rocket, Layers } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-white to-cyan-50">
+    <motion.section
+      id="why-choose-us"
+      aria-labelledby="why-choose-us-heading"
+      className="relative py-20 bg-gradient-to-br from-white to-cyan-50"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 px-6">
         {/* Left Content */}
-        <div>
-          <p
-            className="text-sm font-medium text-cyan-600 mb-2 flex items-center gap-1"
-            aria-label="Why choose us section"
-          >
+        <motion.header
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-medium text-cyan-600 mb-2 flex items-center gap-1">
             <span className="text-lg">✦</span> WHY CHOOSE US
           </p>
-          <h2 className="text-4xl font-bold text-gray-900 leading-snug mb-6">
+          <h2
+            id="why-choose-us-heading"
+            className="text-4xl font-bold text-gray-900 leading-snug mb-6"
+          >
             Reasons why leading <br /> brands choose us.
           </h2>
           <p className="text-gray-600 mb-8 max-w-lg">
@@ -23,46 +38,78 @@ export default function WhyChooseUs() {
           </p>
 
           {/* Clients */}
-          <div className="flex items-center gap-4">
+          <aside className="flex items-center gap-4">
             <div className="flex -space-x-3">
               {["avatar1.svg", "avatar2.svg", "avatar3.svg"].map(
                 (avatar, index) => (
-                  <Image
+                  <motion.div
                     key={index}
-                    src={`/images/${avatar}`}
-                    alt={`Client avatar ${index + 1}`}
-                    width={40}
-                    height={40}
-                    className="rounded-full border-2 border-white"
-                  />
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <Image
+                      src={`/images/${avatar}`}
+                      alt={`Client avatar ${index + 1}`}
+                      width={40}
+                      height={40}
+                      className="rounded-full border-2 border-white"
+                    />
+                  </motion.div>
                 )
               )}
             </div>
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
               <p className="font-semibold text-gray-900">355K+</p>
               <p className="text-sm text-gray-600">Happy Clients</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </aside>
+        </motion.header>
 
         {/* Right Grid */}
-        <div className="grid sm:grid-cols-2 gap-6">
+        <motion.div
+          className="grid sm:grid-cols-2 gap-6"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.2 } },
+          }}
+        >
           {cards.map(({ id, Icon, title, description }) => (
-            <div
+            <motion.article
               key={id}
               className="bg-white rounded-2xl shadow-sm p-6 border hover:shadow-md transition"
+              aria-labelledby={`card-title-${id}`}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                show: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
             >
               <div className="flex items-center gap-3 mb-3">
                 <Icon className="w-7 h-7 text-cyan-600" />
-                <h3 className="font-semibold text-gray-900">{title}</h3>
+                <h3
+                  id={`card-title-${id}`}
+                  className="font-semibold text-gray-900"
+                >
+                  {title}
+                </h3>
               </div>
               <hr className="border-gray-200 mb-3" />
               <p className="text-gray-600 text-sm">{description}</p>
-            </div>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

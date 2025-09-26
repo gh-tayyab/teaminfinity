@@ -1,6 +1,9 @@
 // components/WhyChooseUs.tsx
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function WhyChooseUs(): React.JSX.Element {
   return (
@@ -21,25 +24,36 @@ export default function WhyChooseUs(): React.JSX.Element {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Heading */}
-        <div className="text-center mb-12">
-          <p className="text-sm uppercase tracking-wider text-cyan-600 font-semibold">
+        <header className="text-center mb-12">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-sm uppercase tracking-wider text-cyan-600 font-semibold"
+          >
             Value Proposition
-          </p>
-          <h2
+          </motion.h3>
+
+          <motion.h2
             id="why-choose-us-heading"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+            viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-gray-900"
           >
             Why Choose Us?
-          </h2>
-        </div>
+          </motion.h2>
+        </header>
 
-        {/* Visuals: horizontal on desktop, vertical on mobile */}
-        <div className="w-full flex justify-center items-center">
+        {/* Visuals */}
+        <figure className="w-full flex justify-center items-center">
           {/* Desktop (horizontal layout) */}
           <div className="hidden md:block w-full max-w-5xl">
             <Image
               src="/images/servicesprocess.svg"
-              alt="Why choose us process visual in horizontal layout"
+              alt="Our structured process that highlights the value of choosing our services"
               width={1200}
               height={420}
               className="w-full h-auto object-cover"
@@ -51,14 +65,18 @@ export default function WhyChooseUs(): React.JSX.Element {
           <div className="block md:hidden w-full max-w-xs">
             <Image
               src="/images/servicesprocess.svg"
-              alt="Why choose us process visual in vertical layout"
+              alt="Our structured process that highlights the value of choosing our services"
               width={420}
               height={840}
               className="w-full h-auto object-cover"
               priority
             />
           </div>
-        </div>
+
+          <figcaption className="sr-only">
+            Visual representation of our process showing how we deliver value.
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

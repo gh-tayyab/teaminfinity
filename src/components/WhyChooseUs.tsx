@@ -1,5 +1,8 @@
+"use client";
+
 import Head from "next/head";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 import React from "react";
 
 type Card = {
@@ -42,6 +45,45 @@ const cards: Card[] = [
 ];
 
 export default function WhyChooseUs(): React.JSX.Element {
+  /**
+   * Framer Motion variants
+   *
+   * Notes:
+   * - We cast the variant objects to `Variants` (via unknown) to avoid strict TS type mismatches
+   *   that appear when TS widens string-typed transition fields like `type: "spring"` or `ease: "easeOut"`.
+   * - For `ease` we either use a cubic-bezier array or omit it for spring transitions.
+   */
+
+  const cardVariants = {
+    offscreen: { opacity: 0, y: 40 },
+    onscreen: {
+      opacity: 1,
+      y: 0,
+      // Use spring-like motion parameters without causing TS literal-string issues.
+      // We're casting the whole object to Variants below.
+      transition: { bounce: 0.3, duration: 0.6 },
+    },
+    hover: { scale: 1.03 },
+  } as unknown as Variants;
+
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  } as unknown as Variants;
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    onscreen: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
+  } as unknown as Variants;
+
   return (
     <>
       <Head>
@@ -61,26 +103,36 @@ export default function WhyChooseUs(): React.JSX.Element {
         aria-labelledby="why-choose-heading"
         className="relative bg-transparent py-12"
       >
-        {/* Heading band */}
-        <div className="bg-[#27272B] relative z-10 md:-mt-10">
+        {/* Heading Section */}
+        <header className="bg-[#27272B] relative z-10 md:-mt-10">
           <div className="max-w-7xl mx-auto md:px-6 py-6 sm:py-8 md:py-12 text-center">
-            <p className="text-xs uppercase text-[#60d1db] tracking-wider mb-2 flex items-center justify-center gap-2">
+            <motion.p
+              className="text-xs uppercase text-[#60d1db] tracking-wider mb-2 flex items-center justify-center gap-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <span className="text-sm" aria-hidden="true">
                 ✷
               </span>
               <span className="text-white">Value Proposition</span>
-            </p>
-            <h2
+            </motion.p>
+            <motion.h2
               id="why-choose-heading"
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
             >
               Why Choose Us?
-            </h2>
+            </motion.h2>
           </div>
-        </div>
+        </header>
 
         {/* Decorative background image */}
-        <div
+        <figure
           className="absolute inset-0 z-0 pointer-events-none min-h-[680px]"
           aria-hidden="true"
         >
@@ -91,28 +143,43 @@ export default function WhyChooseUs(): React.JSX.Element {
             className="object-cover"
             priority={false}
           />
-        </div>
+        </figure>
 
-        {/* Cards */}
-        <div className="relative max-w-7xl mx-auto md:-mt-4 px-6 z-10 flex justify-center">
-          <div className="w-full flex justify-center">
+        {/* Cards Section */}
+        <main className="relative max-w-7xl mx-auto md:-mt-4 px-6 z-10 flex justify-center">
+          <motion.div
+            className="w-full flex justify-center"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center w-full">
-              {cards.slice(0, 4).map((c) => (
-                <li key={c.id} className="w-full max-w-[440px]">
+              {cards.slice(0, 4).map((c, idx) => (
+                <motion.li
+                  key={c.id}
+                  className="w-full max-w-[440px]"
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  whileHover="hover"
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ delay: idx * 0.15 }}
+                  variants={cardVariants}
+                >
                   <article
                     className="bg-white rounded-[16px] shadow-lg p-6 md:p-8 flex flex-col border border-gray-200"
                     role="group"
                     aria-labelledby={`why-${c.id}-title`}
                   >
-                    <div className="flex items-start gap-2">
+                    <header className="flex items-start gap-2">
                       <div className="flex items-center gap-2">
-                        <div
+                        <span
                           className="flex items-center justify-center w-8 h-8 rounded-md text-[#00b8c4] font-semibold"
                           aria-hidden="true"
                         >
                           {c.id}
-                        </div>
-                        <div
+                        </span>
+                        <span
                           className="hidden md:block h-px w-6 bg-[#e6f7f9]"
                           aria-hidden="true"
                         />
@@ -128,27 +195,35 @@ export default function WhyChooseUs(): React.JSX.Element {
                           {c.description}
                         </p>
                       </div>
-                    </div>
+                    </header>
                   </article>
-                </li>
+                </motion.li>
               ))}
 
               {/* Fifth centered card */}
-              <li className="md:col-span-2 flex justify-center w-full">
+              <motion.li
+                className="md:col-span-2 flex justify-center w-full"
+                initial="offscreen"
+                whileInView="onscreen"
+                whileHover="hover"
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: 4 * 0.15 }}
+                variants={cardVariants}
+              >
                 <article
                   className="bg-white rounded-[16px] shadow-lg p-6 md:p-8 w-full max-w-[440px] border border-gray-200"
                   role="group"
                   aria-labelledby={`why-${cards[4].id}-title`}
                 >
-                  <div className="flex items-start gap-3">
+                  <header className="flex items-start gap-3">
                     <div className="flex items-center gap-2">
-                      <div
+                      <span
                         className="flex items-center justify-center w-8 h-8 rounded-md text-[#00b8c4] font-semibold"
                         aria-hidden="true"
                       >
                         {cards[4].id}
-                      </div>
-                      <div
+                      </span>
+                      <span
                         className="hidden md:block h-px w-6 bg-[#e6f7f9]"
                         aria-hidden="true"
                       />
@@ -164,12 +239,12 @@ export default function WhyChooseUs(): React.JSX.Element {
                         {cards[4].description}
                       </p>
                     </div>
-                  </div>
+                  </header>
                 </article>
-              </li>
+              </motion.li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </main>
 
         {/* Bottom gradient overlay (decorative) */}
         <div
