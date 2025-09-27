@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
             id="why-choose-us-heading"
             className="text-4xl font-bold text-gray-900 leading-snug mb-6"
           >
-            Reasons why leading <br /> brands choose us.
+            Reasons why leading  brands choose us.
           </h2>
           <p className="text-gray-600 mb-8 max-w-lg">
             We blend strategy, creativity, and technology to deliver measurable
@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <p className="font-semibold text-gray-900">355K+</p>
+              <p className="font-semibold text-gray-900">255+</p>
               <p className="text-sm text-gray-600">Happy Clients</p>
             </motion.div>
           </aside>

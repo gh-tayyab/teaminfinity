@@ -39,7 +39,7 @@ export default function AboutClient() {
       <section
         id="about-hero"
         aria-labelledby="about-heading"
-        className="relative h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-12 py-20 bg-gradient-to-b from-white to-cyan-50 overflow-hidden"
+        className="relative top-16 md:top-0 flex flex-col md:flex-row items-center justify-center px-6 md:px-12 py-20 bg-gradient-to-b from-white to-cyan-50 overflow-hidden"
       >
         {/* Left Blur Layer (decorative only) */}
         <div
@@ -77,10 +77,10 @@ export default function AboutClient() {
             marketing and innovative development solutions.
           </motion.p>
 
-          {/* Newsletter Form */}
+          {/* Newsletter Form - made responsive like Hero */}
           <motion.form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 mt-4"
+            className="mt-4 w-full max-w-md flex flex-col sm:flex-row items-stretch gap-3 justify-center md:justify-start"
             role="form"
             aria-label="Subscribe to our newsletter"
             initial={{ opacity: 0, y: 40 }}
@@ -99,17 +99,18 @@ export default function AboutClient() {
               onChange={(e) => setEmail(e.target.value)}
               required
               aria-label="Email address input"
-              className="w-64 md:w-80 px-4 py-3 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-400 outline-none"
+              disabled={loading || submitted}
+              className="flex-grow px-4 py-3 bg-white border border-gray-300 rounded-md sm:rounded-r-none sm:border-r-0 outline-none focus:ring-2 focus:ring-cyan-400 text-sm md:text-base"
             />
             <motion.button
               type="submit"
-              disabled={loading}
+              disabled={loading || submitted}
               aria-label="Submit newsletter form"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 sm:py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-black hover:bg-cyan-600 transition whitespace-nowrap"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-5 py-3 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-black hover:bg-cyan-600 transition whitespace-nowrap w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? "Sending..." : "Get Started"}
+              {loading ? "Sending..." : submitted ? "Thanks!" : "Get Started"}
             </motion.button>
           </motion.form>
 
@@ -128,7 +129,7 @@ export default function AboutClient() {
 
         {/* RIGHT IMAGE */}
         <motion.figure
-          className="relative z-10 mt-10 md:mt-20 md:w-120 flex justify-center"
+          className="relative z-10 mt-10 md:left-12 lg:left-0 md:mt-20 md:w-120 flex justify-center"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}

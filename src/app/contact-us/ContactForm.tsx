@@ -182,8 +182,8 @@ const ContactForm = () => {
                 src="/images/contact.svg"
                 alt="Our creative team discussing a project"
                 width={400}
-                height={300}
-                className="object-cover"
+                height={200}
+                className="object-cover h-[240px] rounded-2xl"
               />
             </figure>
             <dl className="bg-white rounded-xl shadow-md p-6">

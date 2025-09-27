@@ -13,7 +13,7 @@ export default function HeaderClient() {
   return (
     <>
       <section
-        className="relative w-full h-[60vh] lg:h-[70vh] top-24 flex items-center justify-center text-center text-white overflow-hidden"
+        className="relative w-full h-[80vh] lg:h-[70vh] top-24 flex items-center justify-center text-center text-white overflow-hidden"
         aria-labelledby="social-hero-heading"
       >
         {/* Background Image */}

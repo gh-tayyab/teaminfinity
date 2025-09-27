@@ -154,7 +154,7 @@ export default function Hero() {
               />
             </div>
             <figcaption className="text-gray-700 font-medium text-sm md:text-base">
-              Happy Clients <span className="font-bold">357K+</span>
+              Happy Clients <span className="font-bold">255+</span>
             </figcaption>
           </motion.figure>
         </motion.article>

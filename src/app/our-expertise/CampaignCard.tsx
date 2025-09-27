@@ -130,16 +130,6 @@ export default function CampaignsSection(): React.JSX.Element {
               Campaigns that deliver measurable business results.
             </h2>
           </div>
-
-          <div className="mt-4 md:mt-2">
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center px-4 py-2 bg-cyan-500 text-white rounded-full text-sm shadow-md hover:bg-cyan-600 transition"
-              aria-label="View all case studies"
-            >
-              View All Case Studies
-            </Link>
-          </div>
         </motion.header>
 
         {/* Grid */}

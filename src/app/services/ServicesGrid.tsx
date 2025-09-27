@@ -5,11 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
-/**
- * Fixed Framer Motion typing:
- * - Replaced `ease: "easeOut"` with a cubic-bezier array [0.22, 1, 0.36, 1]
- * - Cast variant objects to `Variants` (using unknown -> Variants) to avoid TS issues
- */
+
 
 // Animation variants
 const fadeUp = {
@@ -205,25 +201,36 @@ const LargeCard = ({ s }: { s: (typeof services)[number] }) => (
     aria-labelledby={`svc-${s.key}-title`}
   >
     <div className="h-full flex flex-col lg:flex-row">
-      <header className="p-6 flex-1">
-        <div className="flex items-start gap-4">
-          <div className="flex-shrink-0 bg-[#ECFEFF] rounded-lg p-3">{s.icon}</div>
-          <div>
-            <h3 id={`svc-${s.key}-title`} className="text-lg font-semibold text-gray-900 mb-1">
-              {s.title}
-            </h3>
-            <p className="text-sm text-gray-600 mb-3">{s.desc}</p>
-            <ul className="text-sm text-gray-600 space-y-1">
-              {s.bullets.map((b, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="mt-1 text-[#06b6d4]" aria-hidden="true">
-                    ✓
-                  </span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
+      <header className="p-6 flex-1 flex flex-col justify-between">
+        <div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 bg-[#ECFEFF] rounded-lg p-3">{s.icon}</div>
+            <div>
+              <h3 id={`svc-${s.key}-title`} className="text-lg font-semibold text-gray-900 mb-1">
+                {s.title}
+              </h3>
+              <p className="text-sm text-gray-600 mb-3">{s.desc}</p>
+              <ul className="text-sm text-gray-600 space-y-1">
+                {s.bullets.map((b, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="mt-1 text-[#06b6d4]" aria-hidden="true">✓</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+        </div>
+
+        {/* Button always bottom-left inside content, like SmallCard */}
+        <div className="mt-4">
+          <Link
+            href={`/services/${s.key}`}
+            aria-label={`Learn more about ${s.title}`}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#00B7CD] text-white rounded-full text-sm font-medium hover:bg-cyan-600 transition"
+          >
+            Learn More
+          </Link>
         </div>
       </header>
 
@@ -231,18 +238,10 @@ const LargeCard = ({ s }: { s: (typeof services)[number] }) => (
         <Image src={s.img} alt={`${s.title} preview`} width={280} height={308} className="object-cover w-full h-full" />
       </figure>
     </div>
-
-    <footer className="lg:absolute lg:left-6 lg:bottom-6 p-6 lg:p-0">
-      <Link
-        href={`/services/${s.key}`}
-        aria-label={`Learn more about ${s.title}`}
-        className="inline-flex items-center gap-2 px-4 py-2 bg-[#00B7CD] text-white rounded-full text-sm font-medium hover:bg-cyan-600 transition"
-      >
-        Learn More
-      </Link>
-    </footer>
   </motion.article>
 );
+
+
 
 // Small Card
 const SmallCard = ({ s }: { s: (typeof services)[number] }) => (

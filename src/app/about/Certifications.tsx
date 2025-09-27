@@ -101,7 +101,7 @@ export default function Certifications() {
         </span>
         <h2
           id="certifications-heading"
-          className="text-3xl md:text-4xl font-bold text-white leading-snug"
+          className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-snug"
         >
           Trusted certifications that validate our proven marketing skills.
         </h2>

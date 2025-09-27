@@ -93,7 +93,7 @@ export default function IndustriesSection(): React.JSX.Element {
             <figure className="md:w-1/2 px-6">
               <div className="relative w-full h-64 md:h-72 lg:h-80">
                 <Image
-                  src="/images/industry1.svg"
+                  src="/images/industry1.jpg"
                   alt="Person packing e-commerce orders on a desk with laptop and boxes"
                   fill
                   sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
@@ -140,7 +140,7 @@ export default function IndustriesSection(): React.JSX.Element {
             <figure className="md:w-1/2 px-6">
               <div className="relative w-full h-64 md:h-72 lg:h-80">
                 <Image
-                  src="/images/industry2.svg"
+                  src="/images/industry2.jpg"
                   alt="Hotel staff welcoming guests in a hotel lobby"
                   fill
                   loading="lazy"
@@ -187,7 +187,7 @@ export default function IndustriesSection(): React.JSX.Element {
             <figure className="md:w-1/2 px-6">
               <div className="relative w-full h-64 md:h-72 lg:h-80">
                 <Image
-                  src="/images/industry3.svg"
+                  src="/images/industry3.jpg"
                   alt="Group of people in a classroom or workshop setting"
                   fill
                   loading="lazy"

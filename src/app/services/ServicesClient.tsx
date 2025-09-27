@@ -55,7 +55,7 @@ export default function ServicesClient() {
           className="pointer-events-none absolute -right-10 top-12 w-72 h-[520px] bg-[#CFF8FB] rounded-2xl blur-2xl opacity-80 z-0"
         />
 
-        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Left Content */}
           <motion.header
             className="flex flex-col justify-center items-start py-6 text-left"
@@ -78,8 +78,8 @@ export default function ServicesClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
             >
-              From strategy to execution we help businesses grow through powerful
-              marketing and innovative development solutions.
+              From strategy to execution we help businesses grow through
+              powerful marketing and innovative development solutions.
             </motion.p>
 
             {/* Newsletter Form */}
@@ -132,7 +132,7 @@ export default function ServicesClient() {
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
           >
-            <div className="relative z-20 w-[420px] sm:w-[380px] md:w-[420px] lg:w-[440px] overflow-hidden">
+            <div className="relative z-20 w-[420px] sm:w-[380px] md:w-[420px] lg:w-[440px] md:left-14 lg:left-0 overflow-hidden">
               <Image
                 src="/images/services.svg"
                 alt="Illustration showcasing our digital services"

@@ -3,10 +3,39 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import ContactForm from "./ContactForm";
 import FAQ from "./FAQ";
-import NewsletterForm from "./NewsletterForm";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 
 export default function ContactUsClient() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to subscribe");
+
+      setSubmitted(true);
+      setEmail("");
+    } catch (err: any) {
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-white to-cyan-50 pt-44 pb-20 overflow-hidden">
       {/* Background blur layers */}
@@ -22,34 +51,55 @@ export default function ContactUsClient() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Contact Us
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             From strategy to execution, we help businesses grow through powerful
             marketing and innovative development solutions.
           </p>
         </motion.div>
 
-        {/* Newsletter Form */}
+        {/* Newsletter Form (responsive like Hero) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className=""
         >
-          <NewsletterForm />
+          <form
+            onSubmit={handleNewsletterSubmit}
+            className="w-full max-w-3xl mx-auto flex flex-col sm:flex-row items-stretch gap-3"
+            aria-label="Subscribe to newsletter"
+          >
+            <label htmlFor="contact-newsletter" className="sr-only">
+              Email address
+            </label>
+            <input
+              id="contact-newsletter"
+              type="email"
+              placeholder="Enter your email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={loading || submitted}
+              className="flex-grow px-4 py-3 bg-white border border-gray-300 rounded-md sm:rounded-r-none sm:border-r-0 outline-none focus:ring-2 focus:ring-cyan-400 text-sm md:text-base"
+            />
+
+            <button
+              type="submit"
+              disabled={loading || submitted}
+              className="px-5 py-3 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-[#009FB2] hover:bg-cyan-600 hover:text-white transition w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+            >
+              {loading ? "Sending..." : submitted ? "Thanks!" : "Subscribe"}
+            </button>
+          </form>
+
+          {error && <p className="mt-2 text-red-600 text-sm">{error}</p>}
         </motion.div>
 
         {/* Section Title */}
         <div>
-          <p className="text-sm uppercase text-[#00B7CD] tracking-wider mb-2">
-            ✱ Get in Touch
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            Let’s connect and build something great.
-          </h2>
+          <p className="text-sm uppercase text-[#00B7CD] tracking-wider mb-2">✱ Get in Touch</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Let’s connect and build something great.</h2>
         </div>
 
         {/* Info Cards */}
@@ -80,9 +130,7 @@ export default function ContactUsClient() {
               whileHover={{ scale: 1.05 }}
               className="bg-white shadow-md rounded-xl p-6 flex flex-col items-center transition"
             >
-              <div className="w-12 h-12 flex items-center justify-center bg-cyan-100 rounded-full text-[#00B7CD] mb-3">
-                {card.icon}
-              </div>
+              <div className="w-12 h-12 flex items-center justify-center bg-cyan-100 rounded-full text-[#00B7CD] mb-3">{card.icon}</div>
               <h3 className="font-semibold mb-1">{card.title}</h3>
               <p className="text-gray-600 text-sm">{card.desc}</p>
             </motion.div>
@@ -111,7 +159,6 @@ export default function ContactUsClient() {
         {/* Contact Form + FAQ */}
         <ContactForm />
         <FAQ />
-        
       </div>
     </section>
   );
