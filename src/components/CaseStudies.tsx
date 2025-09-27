@@ -101,10 +101,9 @@ export default function CaseStudies(): React.JSX.Element {
                 <motion.figure
                   className="rounded-lg overflow-hidden border border-gray-100 shadow-sm relative h-40 md:h-72"
                   variants={itemVariants}
-                  whileHover="hover"
                 >
                   <Image
-                    src="/images/case1.svg"
+                    src="/images/case1.jpg"
                     alt="Case study: project overview"
                     fill
                     className="object-cover"
@@ -117,12 +116,11 @@ export default function CaseStudies(): React.JSX.Element {
 
                 {/* Two small images */}
                 <div className="grid grid-cols-2 gap-4">
-                  {["/images/case2.svg", "/images/case3.svg"].map((img, idx) => (
+                  {["/images/case2.jpg", "/images/case3.jpg"].map((img, idx) => (
                     <motion.figure
                       key={idx}
                       className="rounded-lg overflow-hidden border border-gray-100 shadow-sm relative h-24 md:h-44"
                       variants={itemVariants}
-                      whileHover="hover"
                     >
                       <Image
                         src={img}
