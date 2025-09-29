@@ -39,7 +39,12 @@ export default function Hero() {
       {/* Decorative background */}
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute top-[170px] left-[-150px] w-[150px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+        className="hidden lg:block absolute top-[170px] left-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+      />
+      {/* Right Decorative background */}
+      <div
+        aria-hidden="true"
+        className="hidden lg:block absolute -top-40 right-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-[60]"
       />
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">

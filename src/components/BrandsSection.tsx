@@ -19,11 +19,11 @@ export default function BrandsSection() {
       <article
         id="brands"
         aria-labelledby="brands-heading"
-        className="relative py-16 bg-[#F2FBFD] overflow-hidden"
+        className="relative py-16 bg-[#F2FBFD]"
       >
         {/* Background blur */}
         <motion.div
-          className="absolute top-20 right-0 w-32 h-80 bg-[#00B7CD] opacity-20 rounded-full blur-3xl"
+          className="absolute top-32 -right-20 w-[170px] h-[450px] z-30 bg-[#00B7CD] rounded-full blur-3xl"
           aria-hidden="true"
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 0.2, scale: 1 }}
@@ -70,7 +70,7 @@ export default function BrandsSection() {
                   className="flex items-center justify-center gap-2 mb-8 text-sm font-semibold text-[#27272B] tracking-wider"
                 >
                   <Star aria-hidden="true" className="w-4 h-4 text-[#36E1F8]" />
-                  <span>We Work With</span>
+                  <span>WE WORK WITH</span>
                 </h2>
               </div>
             </motion.header>

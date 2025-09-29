@@ -11,22 +11,28 @@ export default function About() {
         aria-labelledby="about-heading"
         className="relative bg-[#F2FBFD] py-20"
       >
+        <div
+          aria-hidden="true"
+          className="hidden lg:block absolute top-[170px] left-[-150px] w-[140px] h-[440px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+        />
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side Image */}
           <motion.figure
-            className="relative w-full h-[350px] md:h-[400px]"
+            className="flex justify-center items-center"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Image
-              src="/images/about.svg"
-              alt="Team Infinity professionals collaborating on a project"
-              fill
-              priority
-              className="object-cover rounded-xl shadow-lg"
-            />
+            <div className="relative w-[280px] h-[280px] md:w-[340px] md:h-[400px] lg:w-[380px] lg:h-[380px]">
+              <Image
+                src="/images/about.svg"
+                alt="Team Infinity professionals collaborating on a project"
+                fill
+                priority
+                className="object-contain rounded-xl"
+              />
+            </div>
           </motion.figure>
 
           {/* Right Side Content */}
@@ -36,9 +42,9 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <p className="flex items-center gap-2 text-sm font-semibold text-[#009FB2] uppercase tracking-wide mb-3">
+            <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide mb-3">
               <motion.span
-                className="text-lg"
+                className="text-lg text-[#009FB2]" // star cyan hi rahega
                 aria-hidden="true"
                 initial={{ rotate: -90, opacity: 0 }}
                 whileInView={{ rotate: 0, opacity: 1 }}
@@ -47,7 +53,7 @@ export default function About() {
               >
                 ✱
               </motion.span>
-              Who We Are
+              <span className="text-black">Who We Are</span> {/* text black */}
             </p>
 
             <header>
@@ -92,7 +98,7 @@ export default function About() {
 
         {/* Decorative Bottom-Right Image */}
         <motion.aside
-          className="absolute bottom-0 right-0 w-[200px] md:w-[300px] opacity-70 pointer-events-none"
+          className="absolute bottom-0 right-0 w-[200px] md:w-[300px] pointer-events-none"
           aria-hidden="true"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}

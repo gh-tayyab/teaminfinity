@@ -152,7 +152,7 @@ export default function ServicesSection() {
               <span className="text-lg" aria-hidden="true">
                 ✱
               </span>
-              Our Services
+              <span className="text-black">Our Services</span>
             </p>
             <h2
               id="services-heading"
@@ -199,15 +199,15 @@ export default function ServicesSection() {
                 aria-label={`Open ${s.title} details`}
               >
                 <article
-                  className="bg-white p-8 shadow-2xl border border-transparent transition-transform duration-300 transform hover:scale-105 hover:shadow-3xl relative flex flex-col items-center text-center cursor-pointer h-full min-h-[350px]"
+                  className="bg-white p-8 border border-transparent transition-transform duration-500 transform hover:scale-110 hover:shadow-3xl relative flex flex-col items-center text-center cursor-pointer h-full min-h-[350px]"
                   role="group"
                   aria-labelledby={`service-title-${idx}`}
                 >
                   {/* Icon block */}
                   <div className="mb-6">
-                    <div className="w-20 h-20 rounded-lg border-2 border-gray-100 flex items-center justify-center transition-colors duration-300 group-hover:border-[#009FB2]">
+                    <div className="w-20 h-20 rounded-lg border-2 border-gray-100 flex items-center justify-center transition-colors duration-300 group-hover:border-[#00B7CD]">
                       <span
-                        className="text-gray-800 group-hover:text-[#009FB2]"
+                        className="text-gray-800 group-hover:text-[#00B7CD]"
                         aria-hidden="true"
                       >
                         {s.icon}
@@ -218,7 +218,7 @@ export default function ServicesSection() {
                   {/* Title */}
                   <h3
                     id={`service-title-${idx}`}
-                    className="text-lg md:text-xl font-semibold text-gray-900 mb-4 group-hover:text-[#009FB2] transition-colors"
+                    className="text-lg md:text-xl font-semibold text-gray-900 mb-4 group-hover:text-[#00B7CD] transition-colors"
                   >
                     {s.title}
                   </h3>
@@ -231,7 +231,7 @@ export default function ServicesSection() {
                     {s.items.map((it) => (
                       <li key={it} className="flex items-start gap-3">
                         <Check
-                          className="w-4 h-4 mt-1 text-[#009FB2] flex-shrink-0"
+                          className="w-4 h-4 mt-1 text-[#00B7CD] flex-shrink-0"
                           aria-hidden="true"
                         />
                         <span>{it}</span>
@@ -240,7 +240,7 @@ export default function ServicesSection() {
                   </ul>
 
                   {/* Bottom accent bar */}
-                  <span className="absolute left-0 bottom-0 w-full h-1 rounded-b-xl bg-transparent group-hover:bg-[#009FB2] transition-colors duration-300" />
+                  <span className="absolute left-0 bottom-0 w-full h-1 rounded-b-xl bg-transparent group-hover:bg-[#00B7CD] transition-colors duration-300" />
                 </article>
               </Link>
             </SwiperSlide>

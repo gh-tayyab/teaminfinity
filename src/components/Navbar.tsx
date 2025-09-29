@@ -130,7 +130,7 @@ export default function Navbar() {
         <aside>
           <Link
             href="/contact-us"
-            className="hidden lg:inline-block px-4 py-2 sm:py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-black hover:bg-cyan-600 transition whitespace-nowra"
+            className="hidden lg:inline-block px-2 py-2 sm:py-3 sm:px-8 bg-transparent text-black font-bold rounded-2xl border-2 border-black hover:bg-cyan-300 transition whitespace-nowra"
           >
             Get Started
           </Link>
@@ -201,7 +201,7 @@ export default function Navbar() {
             <Link
               href="/contact-us"
               onClick={() => setIsOpen(false)}
-              className="block mt-2 px-4 py-2 text-center sm:py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-black hover:bg-cyan-600 transition whitespace-nowra"
+              className="block mt-2 px-4 py-2 text-center sm:py-3 sm:px-8 bg-transparent text-black font-bold rounded-full border-2 border-black hover:bg-cyan-300 transition whitespace-nowra"
             >
               Get Started
             </Link>
