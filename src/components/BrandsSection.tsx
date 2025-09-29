@@ -11,6 +11,9 @@ export default function BrandsSection() {
     ["/images/brand10.svg", "/images/brand11.svg", "/images/brand12.svg"],
   ];
 
+  // Flatten array for grid layout
+  const allBrands = brands.flat();
+
   return (
     <main id="main-content">
       <article
@@ -18,7 +21,7 @@ export default function BrandsSection() {
         aria-labelledby="brands-heading"
         className="relative py-16 bg-[#F2FBFD] overflow-hidden"
       >
-        {/* Background blur (keeps same) */}
+        {/* Background blur */}
         <motion.div
           className="absolute top-20 right-0 w-32 h-80 bg-[#00B7CD] opacity-20 rounded-full blur-3xl"
           aria-hidden="true"
@@ -30,7 +33,7 @@ export default function BrandsSection() {
 
         {/* Container */}
         <div className="relative max-w-7xl mx-auto px-6">
-          {/* Decorative left image (absolute so it doesn't push center content) */}
+          {/* Decorative left image */}
           <motion.div
             className="hidden md:block -left-10 -top-20 absolute z-10 pointer-events-none"
             aria-hidden="true"
@@ -51,7 +54,7 @@ export default function BrandsSection() {
             />
           </motion.div>
 
-          {/* Centered content wrapper (this is the important change) */}
+          {/* Content */}
           <section className="relative z-20 flex flex-col items-center text-center">
             {/* Heading */}
             <motion.header
@@ -72,8 +75,46 @@ export default function BrandsSection() {
               </div>
             </motion.header>
 
-            {/* Logos Grid -> centered via max-w wrapper */}
-            <div className="w-full">
+            {/* ✅ Mobile & Tablet Grid */}
+            <motion.ul
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="
+                grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8
+                lg:hidden
+                max-w-4xl mx-auto
+              "
+            >
+              {allBrands.map((logo, idx) => {
+                const rawName = logo.split("/").pop() || `brand-${idx}`;
+                const friendlyName = rawName
+                  .replace(/\.(svg|png|jpg|jpeg)/i, "")
+                  .replace(/[-_\d]+/g, " ")
+                  .trim();
+
+                return (
+                  <li
+                    key={idx}
+                    className="flex items-center justify-center min-w-[80px] h-12 px-2"
+                  >
+                    <Image
+                      src={logo}
+                      alt={friendlyName ? `${friendlyName} logo` : `Brand logo ${idx + 1}`}
+                      width={90}
+                      height={40}
+                      className="object-contain grayscale hover:grayscale-0 transition"
+                      loading="lazy"
+                      sizes="(max-width: 640px) 60px, 90px"
+                    />
+                  </li>
+                );
+              })}
+            </motion.ul>
+
+            {/* ✅ Desktop Flex Rows (original layout) */}
+            <div className="hidden lg:block w-full">
               <div className="max-w-4xl mx-auto space-y-8">
                 {brands.map((row, rowIndex) => (
                   <motion.ul
