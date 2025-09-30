@@ -33,18 +33,18 @@ export default function Hero() {
 
   return (
     <header
-      className="relative bg-[#F2FBFD] pt-30 pb-16 flex justify-center items-center"
+      className="relative bg-[#F2FBFD] pt-30 top-2 pb-16 flex justify-center items-center"
       aria-labelledby="hero-heading"
     >
       {/* Decorative background */}
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute top-[170px] left-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+        className="hidden md:block absolute top-[170px] left-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
       />
       {/* Right Decorative background */}
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute -top-40 right-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-[60]"
+        className="hidden lg:block absolute -top-40 -right-[80px] w-[80px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-[60]"
       />
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">

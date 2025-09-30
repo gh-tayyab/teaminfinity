@@ -115,7 +115,7 @@ export default function ServicesSection() {
     >
       {/* Decorative bottom images */}
       <div
-        className="absolute left-6 bottom-0 pointer-events-none opacity-70"
+        className="absolute left-0 bottom-0 pointer-events-none"
         aria-hidden="true"
       >
         <Image
@@ -127,7 +127,7 @@ export default function ServicesSection() {
         />
       </div>
       <div
-        className="absolute right-6 bottom-0 pointer-events-none opacity-70"
+        className="absolute right-6 bottom-0 pointer-events-none"
         aria-hidden="true"
       >
         <Image

@@ -39,7 +39,7 @@ export default function Testimonials(): React.JSX.Element {
         className="pointer-events-none md:block absolute top-5 h-60 w-9/12 z-0"
         aria-hidden="true"
         initial={{ opacity: 0, x: -60 }}
-        whileInView={{ opacity: 0.3, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
@@ -57,7 +57,7 @@ export default function Testimonials(): React.JSX.Element {
         className="pointer-events-none absolute bottom-0 left-0 z-0"
         aria-hidden="true"
         initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 0.4, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
         viewport={{ once: true }}
       >
@@ -76,7 +76,7 @@ export default function Testimonials(): React.JSX.Element {
         className="pointer-events-none absolute bottom-0 right-0 z-0"
         aria-hidden="true"
         initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 0.4, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
       >
@@ -99,7 +99,7 @@ export default function Testimonials(): React.JSX.Element {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            ★ Testimonials
+            ★ <span className="text-black">Testimonials</span> 
           </motion.p>
           <motion.h2
             id="testimonials-heading"
@@ -175,19 +175,19 @@ export default function Testimonials(): React.JSX.Element {
 
                   <div className="flex gap-4 flex-wrap" aria-label="Key results">
                     <motion.div
-                      className="bg-[#f7fbfb] border border-gray-100 rounded-lg px-4 py-3"
+                      className="bg-[#F0F0F0] border border-gray-100 rounded-lg px-4 py-3"
                       variants={fadeInUp}
                     >
                       <div className="text-xs text-gray-500">Paid Ad Efficiency</div>
-                      <div className="font-semibold text-xl text-gray-900">40%</div>
+                      <div className="font-semibold text-xl text-gray-900">40<span className="text-[#60d1db]">%</span></div>
                     </motion.div>
 
                     <motion.div
-                      className="bg-[#f7fbfb] border border-gray-100 rounded-lg px-4 py-3"
+                      className="bg-[#F0F0F0] border border-gray-100 rounded-lg px-4 py-3"
                       variants={fadeInUp}
                     >
                       <div className="text-xs text-gray-500">Total Campaign Reach</div>
-                      <div className="font-semibold text-xl text-gray-900">2.8M+</div>
+                      <div className="font-semibold text-xl text-gray-900">2.8<span className="text-[#60d1db]">M+</span></div>
                     </motion.div>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ export default function Testimonials(): React.JSX.Element {
 
                   <div className="flex gap-4 flex-wrap" aria-label="Key results">
                     <motion.div
-                      className="bg-[#f7fbfb] border border-gray-100 rounded-lg px-4 py-3"
+                      className="bg-[#F0F0F0] border border-gray-100 rounded-lg px-4 py-3"
                       variants={fadeInUp}
                     >
                       <div className="text-xs text-gray-500">Social Impressions</div>
@@ -255,7 +255,7 @@ export default function Testimonials(): React.JSX.Element {
                     </motion.div>
 
                     <motion.div
-                      className="bg-[#f7fbfb] border border-gray-100 rounded-lg px-4 py-3"
+                      className="bg-[#F0F0F0] border border-gray-100 rounded-lg px-4 py-3"
                       variants={fadeInUp}
                     >
                       <div className="text-xs text-gray-500">Content Save Growth</div>

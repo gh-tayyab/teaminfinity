@@ -70,7 +70,7 @@ export default function Footer() {
                 <span className="text-lg" aria-hidden="true">
                   ✱
                 </span>
-                SUBSCRIBE FOR MORE
+                <span className="text-black">SUBSCRIBE FOR MORE</span>
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold mb-2">
                 Ready to grow your business?
@@ -102,7 +102,7 @@ export default function Footer() {
                   <motion.button
                     type="submit"
                     disabled={loading}
-                    className="px-6 py-3 bg-[#009FB2] text-white rounded-md font-medium hover:bg-[#008699] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-6 py-3 bg-[#36E1F8] text-black rounded-full border-b-4 border-b-black font-medium hover:bg-[#008699] transition disabled:opacity-50 disabled:cursor-not-allowed"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

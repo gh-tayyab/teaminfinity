@@ -64,51 +64,12 @@ export default function WhyChooseUs(): React.JSX.Element {
 
   return (
     <>
-      <Head>
-        <title>Why Choose Us? — Team Infinity</title>
-        <meta
-          name="description"
-          content="Discover why clients pick us: transparent process, experienced team, data-driven results, creative + technical expertise, and end-to-end solutions."
-        />
-      </Head>
-
       <section
         aria-labelledby="why-choose-heading"
-        className="relative bg-transparent py-12"
+        className="relative py-16 md:py-20"
       >
-        {/* Heading Section */}
-        <header className="bg-[#27272B] relative z-10 md:-mt-10">
-          <div className="max-w-7xl mx-auto md:px-6 py-6 sm:py-8 md:py-12 text-center">
-            <motion.p
-              className="text-xs uppercase text-[#60d1db] tracking-wider mb-2 flex items-center justify-center gap-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-sm" aria-hidden="true">
-                ✷
-              </span>
-              <span className="text-white">Value Proposition</span>
-            </motion.p>
-            <motion.h2
-              id="why-choose-heading"
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Why Choose Us?
-            </motion.h2>
-          </div>
-        </header>
-
-        {/* Decorative background image */}
-        <figure
-          className="absolute inset-0 z-0 pointer-events-none min-h-[680px]"
-          aria-hidden="true"
-        >
+        {/* Background Image */}
+        <figure className="absolute inset-0 -z-10">
           <Image
             src="/images/whychooseus.svg"
             alt=""
@@ -118,8 +79,34 @@ export default function WhyChooseUs(): React.JSX.Element {
           />
         </figure>
 
-        {/* Cards Section */}
-        <main className="relative max-w-7xl mx-auto md:-mt-4 px-6 z-10 flex justify-center">
+        {/* Heading */}
+        <header className="relative z-10 text-center">
+          <motion.p
+            className="text-xs uppercase text-[#60d1db] tracking-wider mb-2 flex items-center justify-center gap-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-sm" aria-hidden="true">
+              ✷
+            </span>
+            <span className="text-white">Value Proposition</span>
+          </motion.p>
+          <motion.h2
+            id="why-choose-heading"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Why Choose Us?
+          </motion.h2>
+        </header>
+
+        {/* Cards */}
+        <main className="relative max-w-7xl mx-auto mt-10 px-6 z-10 flex justify-center">
           <motion.div
             className="w-full"
             variants={containerVariants}
@@ -127,7 +114,6 @@ export default function WhyChooseUs(): React.JSX.Element {
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {/* 4 Cards Grid */}
             <ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center w-full lg:max-w-4xl mx-auto">
               {cards.slice(0, 4).map((c, idx) => (
                 <motion.li
@@ -142,7 +128,7 @@ export default function WhyChooseUs(): React.JSX.Element {
                 >
                   <article
                     className="bg-white rounded-[16px] shadow-lg p-6 md:p-8 border border-gray-200 
-                               h-[200px] flex flex-col"
+                               min-h-[200px] flex flex-col"
                     role="group"
                     aria-labelledby={`why-${c.id}-title`}
                   >
@@ -175,7 +161,7 @@ export default function WhyChooseUs(): React.JSX.Element {
                 </motion.li>
               ))}
 
-              {/* Fifth centered card */}
+              {/* Fifth Card */}
               <motion.li
                 className="md:col-span-1 lg:col-span-2 flex justify-center w-full"
                 initial="offscreen"
@@ -187,7 +173,7 @@ export default function WhyChooseUs(): React.JSX.Element {
               >
                 <article
                   className="bg-white rounded-[16px] shadow-lg p-6 md:p-8 border border-gray-200 
-                             w-full md:w-[440px] h-[200px] flex flex-col"
+                             w-full md:w-[440px] min-h-[200px] flex flex-col"
                   role="group"
                   aria-labelledby={`why-${cards[4].id}-title`}
                 >
@@ -221,12 +207,6 @@ export default function WhyChooseUs(): React.JSX.Element {
             </ul>
           </motion.div>
         </main>
-
-        {/* Bottom gradient overlay */}
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b1720] to-transparent z-0"
-          aria-hidden="true"
-        />
       </section>
     </>
   );

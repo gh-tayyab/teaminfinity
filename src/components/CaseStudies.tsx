@@ -24,21 +24,6 @@ export default function CaseStudies(): React.JSX.Element {
 
   return (
     <>
-      <Head>
-        <title>Case Studies & Portfolio — Team Infinity</title>
-        <meta
-          name="description"
-          content="See how we've helped businesses achieve measurable growth — case studies and portfolio highlights."
-        />
-        <meta
-          property="og:title"
-          content="Case Studies & Portfolio — Team Infinity"
-        />
-        <meta
-          property="og:description"
-          content="See how we've helped businesses achieve measurable growth — case studies and portfolio highlights."
-        />
-      </Head>
 
       <main>
         <section
@@ -46,23 +31,10 @@ export default function CaseStudies(): React.JSX.Element {
           aria-labelledby="case-studies-heading"
           className="relative py-20 md:py-28"
         >
-          {/* Top background image (decorative) */}
-          <div
-            className="absolute inset-x-0 top-0 h-40 md:h-48 lg:h-56 pointer-events-none -z-10"
-            aria-hidden="true"
-          >
-            <Image
-              src="/images/bg.png"
-              alt=""
-              fill
-              className="object-cover"
-              loading="lazy"
-            />
-          </div>
 
           {/* Decorative blur circle */}
           <div
-            className="absolute top-6 right-6 md:top-10 md:right-10 lg:top-14 lg:right-14 w-32 h-32 bg-[#36E1F8] opacity-20 rounded-full blur-3xl pointer-events-none"
+            className="absolute top-6 right-6 md:top-10 md:right-10 lg:top-14 lg:right-14 w-32 h-32 bg-[#36E1F8] opacity-20 rounded-md blur-3xl pointer-events-none"
             aria-hidden="true"
           />
 
