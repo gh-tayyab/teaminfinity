@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 
-body {
+html,body {
   overflow-x: hidden;
 }
 
