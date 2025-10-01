@@ -96,8 +96,11 @@ export default function Certifications() {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <span className="uppercase text-sm font-semibold text-cyan-400 tracking-wider">
-          Certification
+        <span className="text-cyan-600 text-sm font-semibold tracking-wider">
+          ✱{" "}
+          <span className="uppercase text-sm font-semibold text-white tracking-wider">
+            Certification
+          </span>
         </span>
         <h2
           id="certifications-heading"

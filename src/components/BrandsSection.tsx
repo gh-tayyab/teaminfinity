@@ -35,7 +35,7 @@ export default function BrandsSection() {
         <div className="relative max-w-7xl mx-auto px-6">
           {/* Decorative left image */}
           <motion.div
-            className="hidden md:block -left-10 -top-20 absolute z-10 pointer-events-none"
+            className="hidden md:block left-0 -top-20 absolute z-10 pointer-events-none"
             aria-hidden="true"
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}

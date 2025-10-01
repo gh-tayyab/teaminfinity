@@ -8,12 +8,16 @@ export default function WhyChooseUs() {
     <motion.section
       id="why-choose-us"
       aria-labelledby="why-choose-us-heading"
-      className="relative py-20 bg-gradient-to-br from-white to-cyan-50"
+      className="relative py-20 bg-[#F2FBFD]"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
     >
+      <div
+        aria-hidden="true"
+        className="hidden md:block absolute top-[170px] right-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+      />
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 px-6">
         {/* Left Content */}
         <motion.header
@@ -23,7 +27,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
         >
           <p className="text-sm font-medium text-cyan-600 mb-2 flex items-center gap-1">
-            <span className="text-lg">✦</span> WHY CHOOSE US
+            <span className="text-sm">✦ <span className="text-black">WHY CHOOSE US</span></span>
           </p>
           <h2
             id="why-choose-us-heading"

@@ -39,7 +39,7 @@ export default function AboutClient() {
       <section
         id="about-hero"
         aria-labelledby="about-heading"
-        className="relative top-16 md:top-0 flex flex-col md:flex-row items-center justify-center px-6 md:px-12 py-20 bg-gradient-to-b from-white to-cyan-50 overflow-hidden"
+        className="relative top-16 md:top-0 flex flex-col md:flex-row items-center justify-center px-6 md:px-12 py-20 bg-[#F2FBFD] overflow-hidden"
       >
         {/* Left Blur Layer (decorative only) */}
         <div

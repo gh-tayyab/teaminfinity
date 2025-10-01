@@ -29,7 +29,7 @@ export default function CaseStudies(): React.JSX.Element {
         <section
           id="case-studies"
           aria-labelledby="case-studies-heading"
-          className="relative py-20 md:py-28"
+          className="relative py-20 md:py-28 bg-[#F2FBFD]"
         >
 
           {/* Decorative blur circle */}

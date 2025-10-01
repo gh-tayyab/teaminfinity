@@ -45,6 +45,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1E1E22] text-white relative">
+      <div
+        aria-hidden="true"
+        className="hidden lg:block absolute top-[650px] right-32 w-[130px] h-[180px] bg-[#00B7CD] rounded-full blur-3xl"
+      />
       <div className="absolute -left-20 w-64 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0" />
 
       {/* Newsletter Section */}

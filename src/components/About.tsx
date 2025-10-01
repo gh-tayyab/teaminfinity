@@ -100,7 +100,7 @@ export default function About() {
         <motion.aside
           className="absolute bottom-0 right-0 w-[200px] md:w-[300px] pointer-events-none"
           aria-hidden="true"
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 1, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
           viewport={{ once: true }}

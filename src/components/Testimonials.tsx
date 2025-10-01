@@ -34,9 +34,13 @@ export default function Testimonials(): React.JSX.Element {
       aria-labelledby="testimonials-heading"
       className="relative py-24 bg-[#F2FBFD]"
     >
+      <div
+        aria-hidden="true"
+        className="hidden md:block absolute -top-20 -left-14 w-[130px] h-[200px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+      />
       {/* Left decorative image */}
       <motion.div
-        className="pointer-events-none md:block absolute top-5 h-60 w-9/12 z-0"
+        className="pointer-events-none md:block left-0 -top-28 absolute h-[280px] w-[700px] z-10"
         aria-hidden="true"
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -51,7 +55,10 @@ export default function Testimonials(): React.JSX.Element {
           loading="lazy"
         />
       </motion.div>
-
+      <div
+        aria-hidden="true"
+        className="hidden md:block absolute bottom-0 right-[-150px] w-[150px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+      />
       {/* Bottom-left decorative */}
       <motion.div
         className="pointer-events-none absolute bottom-0 left-0 z-0"
@@ -64,8 +71,8 @@ export default function Testimonials(): React.JSX.Element {
         <Image
           src="/images/testimonialsbottom.svg"
           alt=""
-          width={400}
-          height={300}
+          width={300}
+          height={200}
           className="object-cover"
           loading="lazy"
         />
@@ -83,8 +90,8 @@ export default function Testimonials(): React.JSX.Element {
         <Image
           src="/images/testimonialsbottomleft.svg"
           alt=""
-          width={400}
-          height={300}
+          width={300}
+          height={200}
           className="object-cover"
           loading="lazy"
         />

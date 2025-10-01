@@ -7,7 +7,7 @@ export default function AboutBuzzz() {
     <motion.section
       id="about-buzzz"
       aria-labelledby="aboutbuzzz-heading"
-      className="relative min-h-[80vh] flex flex-col items-center px-6 md:px-12 py-20 bg-gradient-to-b from-white to-cyan-50 overflow-hidden"
+      className="relative min-h-[80vh] flex flex-col items-center px-6 md:px-12 py-20 bg-[#F2FBFD] overflow-hidden"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -16,7 +16,7 @@ export default function AboutBuzzz() {
       {/* Decorative Blur Layer */}
       <div
         aria-hidden="true"
-        className="absolute top-[-100px] left-[-150px] w-[350px] h-[350px] bg-cyan-200/40 rounded-full blur-3xl"
+        className="absolute bottom-[-100px] right-[-150px] w-[350px] h-[350px] bg-cyan-200/40 rounded-full blur-3xl"
       />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-8">
