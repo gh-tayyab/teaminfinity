@@ -47,8 +47,8 @@ export default function Navbar() {
         className="hidden lg:block absolute -top-40 -right-[90px] w-[80px] h-[260px] bg-[#00B7CD] rounded-full blur-3xl z-[60]"
       />
       {/* IMPORTANT: header is a flex container so give it min-w-0 to allow children to shrink */}
-      <header className="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8 min-w-0 overflow-x-hidden">
-      {/* Logo - prevent it from shrinking unexpectedly */}
+      <header className="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8 min-w-0">
+        {/* Logo - prevent it from shrinking unexpectedly */}
         <Link href="/" aria-label="Team Infinity Home" className="flex items-center flex-shrink-0">
           <Image
             src="/logo/logo.svg"
