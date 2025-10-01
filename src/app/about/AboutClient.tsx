@@ -129,14 +129,14 @@ export default function AboutClient() {
 
         {/* RIGHT IMAGE */}
         <motion.figure
-          className="relative z-10 mt-10 md:left-12 lg:left-0 md:mt-20 md:w-120 flex justify-center"
+          className="relative z-10 mt-10 md:left-12 lg:left-0 md:w-120 flex justify-center"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <Image
-            src="/images/services.svg"
+            src="/images/about.png"
             alt="Illustration of Team Infinity professionals working on digital solutions"
             width={400}
             height={200}

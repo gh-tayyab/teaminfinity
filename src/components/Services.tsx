@@ -1,18 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Code, BarChart, Lightbulb } from "lucide-react";
+import { Check } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { motion } from "framer-motion"; // 👈 Framer Motion import
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 
 type Service = {
   title: string;
   items: string[];
-  icon: React.ReactNode;
+  icon: string;       // normal icon
+  iconHover: string;  // hover icon
   href: string;
 };
 
@@ -25,7 +26,8 @@ const services: Service[] = [
       "Paid Advertising (Google & Social Ads)",
       "SEO & Content Marketing",
     ],
-    icon: <Lightbulb className="w-8 h-8" aria-hidden="true" />,
+    icon: "/images/digital.png",
+    iconHover: "/images/digitalh.png",
     href: "/digital-marketing",
   },
   {
@@ -36,7 +38,8 @@ const services: Service[] = [
       "Mobile App Development",
       "UI/UX Design & Optimization",
     ],
-    icon: <Code className="w-8 h-8" aria-hidden="true" />,
+    icon: "/images/web.png",
+    iconHover: "/images/webh.png",
     href: "/web-development",
   },
   {
@@ -46,7 +49,8 @@ const services: Service[] = [
       "Strategy Consulting",
       "Ongoing Maintenance & Support",
     ],
-    icon: <BarChart className="w-8 h-8" aria-hidden="true" />,
+    icon: "/images/seo.png",
+    iconHover: "/images/seoh.png",
     href: "/search-engine-optimization",
   },
   {
@@ -57,7 +61,8 @@ const services: Service[] = [
       "Social Media Graphics",
       "Packaging & Print Design",
     ],
-    icon: <Lightbulb className="w-8 h-8" aria-hidden="true" />,
+    icon: "/images/graphic.png",
+    iconHover: "/images/graphich.png",
     href: "/graphic-designing",
   },
   {
@@ -68,7 +73,8 @@ const services: Service[] = [
       "Business Process Optimization",
       "Integration of AI Tools & APIs",
     ],
-    icon: <Code className="w-8 h-8" aria-hidden="true" />,
+    icon: "/images/ai.png",
+    iconHover: "/images/aih.png",
     href: "/ai-automation",
   },
   {
@@ -79,7 +85,8 @@ const services: Service[] = [
       "App Integration & Optimization",
       "Conversion Rate Optimization",
     ],
-    icon: <Code className="w-8 h-8" aria-hidden="true" />,
+    icon: "/images/shopify.png",
+    iconHover: "/images/shopifyh.png",
     href: "/shopify-development",
   },
   {
@@ -90,7 +97,8 @@ const services: Service[] = [
       "User Journey Mapping",
       "Design System & Style Guide Creation",
     ],
-    icon: <Lightbulb className="w-8 h-8" aria-hidden="true" />,
+    icon: "/images/uiux.png",
+    iconHover: "/images/uiuxh.png",
     href: "/ui-ux-designing",
   },
   {
@@ -101,7 +109,8 @@ const services: Service[] = [
       "Social Media Reels & Shorts",
       "Motion Graphics & Animations",
     ],
-    icon: <BarChart className="w-8 h-8" aria-hidden="true" />,
+    icon: "/images/video.png",
+    iconHover: "/images/videoh.png",
     href: "/video-editing",
   },
 ];
@@ -203,16 +212,22 @@ export default function ServicesSection() {
                   role="group"
                   aria-labelledby={`service-title-${idx}`}
                 >
-                  {/* Icon block */}
-                  <div className="mb-6">
-                    <div className="w-20 h-20 rounded-lg border-2 border-gray-100 flex items-center justify-center transition-colors duration-300 group-hover:border-[#00B7CD]">
-                      <span
-                        className="text-gray-800 group-hover:text-[#00B7CD]"
-                        aria-hidden="true"
-                      >
-                        {s.icon}
-                      </span>
-                    </div>
+                  {/* Icon block with hover swap */}
+                  <div className="mb-6 relative w-20 h-20">
+                    <Image
+                      src={s.icon}
+                      alt={`${s.title} icon`}
+                      width={80}
+                      height={80}
+                      className="object-contain absolute inset-0 group-hover:hidden"
+                    />
+                    <Image
+                      src={s.iconHover}
+                      alt={`${s.title} icon hover`}
+                      width={80}
+                      height={80}
+                      className="object-contain absolute inset-0 hidden group-hover:block"
+                    />
                   </div>
 
                   {/* Title */}

@@ -134,7 +134,7 @@ export default function ServicesClient() {
           >
             <div className="relative z-20 w-[420px] sm:w-[380px] md:w-[420px] lg:w-[440px] md:left-14 lg:left-0 overflow-hidden">
               <Image
-                src="/images/services.svg"
+                src="/images/services.png"
                 alt="Illustration showcasing our digital services"
                 width={800}
                 height={1000}
