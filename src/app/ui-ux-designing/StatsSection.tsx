@@ -50,7 +50,7 @@ export default function StatsSection() {
   return (
     <section
       aria-labelledby="stats-heading"
-      className="relative bg-gradient-to-r from-white to-cyan-50 py-16"
+      className="relative bg-[#F2FBFD] py-16"
     >
       {/* Decorative blur */}
       <div

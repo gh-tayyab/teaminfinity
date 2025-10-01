@@ -109,7 +109,7 @@ export default function CampaignsSection(): React.JSX.Element {
   return (
     <section
       aria-labelledby="campaigns-heading"
-      className="relative py-16 bg-gradient-to-r from-cyan-50/60 via-white to-white"
+      className="relative py-16 bg-[#F2FBFD]"
     >
       <div className="container mx-auto px-6">
         <motion.header

@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-white to-cyan-50 py-16 px-6">
+    <section className="relative bg-[#F2FBFD] py-16 px-6">
       {/* Decorative Blur */}
       <div
         aria-hidden="true"

@@ -47,9 +47,9 @@ export default function CaseStudyClient() {
       >
         {/* Decorative Blur Layers */}
         <div
-          aria-hidden="true"
-          className="absolute top-52 -left-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 -z-10"
-        />
+        aria-hidden="true"
+        className="hidden md:block absolute top-[170px] left-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+      />
 
         <section className="container mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
           {/* Left Content */}

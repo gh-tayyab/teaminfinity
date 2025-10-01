@@ -8,7 +8,7 @@ export default function Partner() {
     <section
       id="partner"
       aria-labelledby="partner-heading"
-      className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-white to-cyan-50 px-6 md:px-12 py-12 md:py-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center bg-[#F2FBFD] px-6 md:px-12 py-12 md:py-20 overflow-hidden"
     >
       {/* Decorative Blurs */}
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-cyan-200/40 rounded-full blur-3xl" />

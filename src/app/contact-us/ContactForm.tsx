@@ -43,7 +43,7 @@ const ContactForm = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 overflow-hidden"
+      className="relative py-20 overflow-hidden bg-[#F2FBFD]"
       aria-labelledby="contact-form-heading"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start text-left">

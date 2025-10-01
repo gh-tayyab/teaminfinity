@@ -30,7 +30,7 @@ export default function IndustriesSection(): React.JSX.Element {
     <section
       id="industries"
       aria-labelledby="industries-heading"
-      className="relative py-16 bg-gradient-to-r from-cyan-50/60 via-white to-white"
+      className="relative py-16 bg-[#F2FBFD]"
     >
       <div className="container mx-auto px-6">
         {/* Intro */}

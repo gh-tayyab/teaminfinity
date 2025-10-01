@@ -296,7 +296,7 @@ const ServicesGrid: React.FC = () => {
   }
 
   return (
-    <section aria-labelledby="services-grid-heading" className="relative py-16 bg-gradient-to-b from-transparent to-white">
+    <section aria-labelledby="services-grid-heading" className="relative py-16 bg-[#F2FBFD]">
       <div className="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-[#00B7CD] opacity-20 blur-3xl z-0" />
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
         <motion.header initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>

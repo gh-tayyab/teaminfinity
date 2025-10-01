@@ -69,7 +69,7 @@ const ProjectsSection: React.FC = () => {
   return (
     <section
       aria-labelledby="projects-heading"
-      className="py-16 bg-gradient-to-r from-white to-cyan-50"
+      className="py-16 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}

@@ -37,7 +37,7 @@ export default function ContactUsClient() {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-white to-cyan-50 pt-44 pb-20 overflow-hidden">
+    <section className="relative min-h-screen bg-[#F2FBFD] pt-44 pb-20 overflow-hidden">
       {/* Background blur layers */}
       <div className="absolute top-52 -left-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0" />
       <div className="absolute top-52 -right-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0" />

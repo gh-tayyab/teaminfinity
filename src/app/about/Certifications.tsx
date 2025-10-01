@@ -31,7 +31,7 @@ export default function Certifications() {
     <motion.section
       id="certifications"
       aria-labelledby="certifications-heading"
-      className="relative min-h-[80vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-20 bg-[#27272B] overflow-hidden"
+      className="relative min-h-[80vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-20 bg-[#F2FBFD] overflow-hidden"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}

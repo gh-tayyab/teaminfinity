@@ -45,7 +45,7 @@ const policies = [
 
 export default function PoliciesClient() {
   return (
-    <div>
+    <div className="bg-[#F2FBFD]">
       {policies.map((policy, idx) => (
         <motion.article
           key={policy.title}

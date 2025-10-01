@@ -14,7 +14,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-cyan-50 text-center px-6">
+    <section className="min-h-screen flex flex-col justify-center items-center bg-[#F2FBFD] text-center px-6">
       <h2 className="text-3xl font-semibold text-gray-800">
         Something went wrong!
       </h2>

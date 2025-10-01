@@ -57,7 +57,7 @@ export default function SupportClient() {
   return (
     <>
       {/* Support Options */}
-      <section aria-label="Support Options">
+      <section aria-label="Support Options" className="bg-[#F2FBFD]">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
           {supportOptions.map((opt, idx) => (
             <motion.article

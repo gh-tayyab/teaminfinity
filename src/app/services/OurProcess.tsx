@@ -75,12 +75,7 @@ const STEPS = [
 export default function OurProcess(): React.JSX.Element {
   return (
     <section
-      className="relative w-full py-24"
-      style={{
-        backgroundImage: "url('/images/our-process-bg.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative w-full py-24 bg-[#F2FBFD]"
       aria-labelledby="our-process-heading"
     >
       {/* Decorative Blur Layers */}

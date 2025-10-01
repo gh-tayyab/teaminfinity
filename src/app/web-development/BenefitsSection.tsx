@@ -38,7 +38,7 @@ const BenefitsSection: React.FC = () => {
   return (
     <section
       aria-labelledby="benefits-heading"
-      className="py-16 bg-gradient-to-r from-white to-cyan-50 relative"
+      className="py-16 bg-[#F2FBFD] relative"
     >
       {/* Blur Shape */}
       <div

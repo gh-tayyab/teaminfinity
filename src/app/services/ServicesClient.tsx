@@ -40,7 +40,7 @@ export default function ServicesClient() {
       <motion.section
         id="services-hero"
         aria-labelledby="services-heading"
-        className="relative py-24 overflow-hidden bg-gradient-to-r from-white to-cyan-50"
+        className="relative py-24 overflow-hidden bg-[#F2FBFD]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
