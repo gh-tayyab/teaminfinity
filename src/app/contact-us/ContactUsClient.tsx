@@ -108,7 +108,7 @@ export default function ContactUsClient() {
             {
               icon: <Phone size={24} />,
               title: "Phone Number",
-              desc: "+44 327 286 388",
+              desc: "+92 331 290 212",
             },
             {
               icon: <Mail size={24} />,
@@ -118,7 +118,7 @@ export default function ContactUsClient() {
             {
               icon: <MapPin size={24} />,
               title: "Office Address",
-              desc: "123 Tech District, London, UK",
+              desc: "John Charles Tower 24 Thunderer Street, London, UK",
             },
           ].map((card, idx) => (
             <motion.div

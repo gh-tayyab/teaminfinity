@@ -12,7 +12,7 @@ export default function PoliciesPage() {
     <section
       id="policies"
       aria-labelledby="policies-heading"
-      className="relative min-h-screen bg-gradient-to-b from-white to-cyan-50 pt-32 pb-20 overflow-hidden"
+      className="relative min-h-screen bg-[#F2FBFD] pt-32 pb-20 overflow-hidden"
     >
       {/* Decorative blobs */}
       <div className="absolute top-40 -left-10 w-72 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20" />

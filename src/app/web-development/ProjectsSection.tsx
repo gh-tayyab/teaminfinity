@@ -30,11 +30,11 @@ const featured = {
 
 const projects: Project[] = [
   {
-    key: "macopieprivee",
-    title: "Macopieprivee",
+    key: "furniro",
+    title: "Furniro",
     img: "/projects/web1.png",
-    desc: "A simple guide to help businesses reclaim fees, cut storage costs, and save thousands of euros.",
-    href: "https://macopieprivee.com/",
+    desc: "Stylish, high-quality, and affordable furniture for every room in your home.",
+    href: "https://marketplace-hackathon-ecommerce-project.vercel.app/",
   },
   {
     key: "noble-brit",
@@ -49,6 +49,13 @@ const projects: Project[] = [
     img: "/projects/web3.png",
     desc: "A contemporary Pakistani fashion brand blending timeless tradition with modern tailoring in menswear and womenswear.",
     href: "https://www.deepakandfahad.com/",
+  },
+  {
+    key: "macopieprivee",
+    title: "Macopieprivee",
+    img: "/projects/web4.png",
+    desc: "A simple guide to help businesses reclaim fees, cut storage costs, and save thousands of euros.",
+    href: "https://macopieprivee.com/",
   },
 ];
 

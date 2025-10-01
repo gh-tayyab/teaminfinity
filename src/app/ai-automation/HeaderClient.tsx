@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import StatsSection from "./StatsSection";
+import StatsSection from "@/app/web-development/StatsSection";
 import WhyChooseUs from "@/app/web-development/WhyChooseUs";
 import BenefitsSection from "@/app/web-development/BenefitsSection";
 import ProjectsSection from "./ProjectsSection";

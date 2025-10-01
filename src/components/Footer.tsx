@@ -47,7 +47,7 @@ export default function Footer() {
     <footer className="bg-[#1E1E22] text-white relative">
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute top-[650px] right-32 w-[130px] h-[180px] bg-[#00B7CD] rounded-full blur-3xl"
+        className="hidden lg:block absolute opacity-70 top-[650px] -right-10 w-[130px] h-[230px] bg-[#00B7CD] rounded-full blur-3xl"
       />
       <div className="absolute -left-20 w-64 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0" />
 
@@ -212,10 +212,10 @@ export default function Footer() {
         {/* Address + Contact */}
         <motion.address className="not-italic" variants={fadeUp}>
           <h4 className="font-semibold mb-4">Address:</h4>
-          <p className="text-gray-400 text-sm">123 Business Road, London, UK</p>
+          <p className="text-gray-400 text-sm">John Charles Tower 24 Thunderer Street, London, UK</p>
           <h4 className="font-semibold mt-6 mb-2">Contact:</h4>
           <p className="text-gray-400 text-sm">info@teaminfinity.uk</p>
-          <p className="text-gray-400 text-sm">+44 123 456 7890</p>
+          <p className="text-gray-400 text-sm">+92 331 290 212</p>
         </motion.address>
       </motion.section>
 

@@ -7,19 +7,19 @@ const stats = [
   {
     img: "/images/about.svg",
     alt: "Team collaborating around laptop",
-    value: "😎 34+",
+    value: "2+",
     label: "Years Experience",
   },
   {
     img: "/images/footer.svg",
     alt: "Team meeting in office",
-    value: "💖 68M",
-    label: "Followers Tik Tok",
+    value: "5k+",
+    label: "Followers Instagram",
   },
   {
     img: "/images/servicei.svg",
     alt: "Team celebrating success",
-    value: "🤝 97%",
+    value: "97%",
     label: "Project Success",
   },
 ];
