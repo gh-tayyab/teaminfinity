@@ -16,7 +16,7 @@ export default function AboutBuzzz() {
       {/* Decorative Blur Layer */}
       <div
         aria-hidden="true"
-        className="absolute bottom-[-100px] right-[-150px] w-[350px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl"
+        className="absolute bottom-[80px] right-[-300px] w-[350px] h-[150px] bg-[#00B7CD] rounded-full blur-3xl z-10"
       />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-8">
