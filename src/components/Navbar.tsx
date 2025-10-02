@@ -108,14 +108,14 @@ export default function Navbar() {
                     role="menu"
                   >
                     {/* keep each item whitespace-nowrap so it doesn't force width */}
-                    <li><Link href="/web-development" className="block hover:text-cyan-600 whitespace-nowrap">Web Development</Link></li>
-                    <li><Link href="/graphic-designing" className="block hover:text-cyan-600 whitespace-nowrap">Graphic Designing</Link></li>
-                    <li><Link href="/digital-marketing" className="block hover:text-cyan-600 whitespace-nowrap">Digital Marketing</Link></li>
-                    <li><Link href="/ai-automation" className="block hover:text-cyan-600 whitespace-nowrap">AI Automation</Link></li>
-                    <li><Link href="/search-engine-optimization" className="block hover:text-cyan-600 whitespace-nowrap">Search Engine Optimization</Link></li>
-                    <li><Link href="/shopify-development" className="block hover:text-cyan-600 whitespace-nowrap">Shopify Development</Link></li>
-                    <li><Link href="/ui-ux-designing" className="block hover:text-cyan-600 whitespace-nowrap">UI/UX Designing</Link></li>
-                    <li><Link href="/video-editing" className="block hover:text-cyan-600 whitespace-nowrap">Video Editing</Link></li>
+                    <li><Link href="/services/web-development" className="block hover:text-cyan-600 whitespace-nowrap">Web Development</Link></li>
+                    <li><Link href="/services/graphic-designing" className="block hover:text-cyan-600 whitespace-nowrap">Graphic Designing</Link></li>
+                    <li><Link href="/services/digital-marketing" className="block hover:text-cyan-600 whitespace-nowrap">Digital Marketing</Link></li>
+                    <li><Link href="/services/ai-automation" className="block hover:text-cyan-600 whitespace-nowrap">AI Automation</Link></li>
+                    <li><Link href="/services/search-engine-optimization" className="block hover:text-cyan-600 whitespace-nowrap">Search Engine Optimization</Link></li>
+                    <li><Link href="/services/shopify-development" className="block hover:text-cyan-600 whitespace-nowrap">Shopify Development</Link></li>
+                    <li><Link href="/services/ui-ux-designing" className="block hover:text-cyan-600 whitespace-nowrap">UI/UX Designing</Link></li>
+                    <li><Link href="/services/video-editing" className="block hover:text-cyan-600 whitespace-nowrap">Video Editing</Link></li>
                   </motion.ul>
                 )}
               </AnimatePresence>
@@ -189,14 +189,14 @@ export default function Navbar() {
                       className="pl-4 space-y-1 overflow-hidden"
                       role="menu"
                     >
-                      <li><Link href="/web-development" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Web Development</Link></li>
-                      <li><Link href="/graphic-designing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Graphic Designing</Link></li>
-                      <li><Link href="/digital-marketing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Digital Marketing</Link></li>
-                      <li><Link href="/ai-automation" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">AI Automation</Link></li>
-                      <li><Link href="/search-engine-optimization" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Search Engine Optimization</Link></li>
-                      <li><Link href="/shopify-development" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Shopify Development</Link></li>
-                      <li><Link href="/ui-ux-designing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">UI/UX Designing</Link></li>
-                      <li><Link href="/video-editing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Video Editing</Link></li>
+                      <li><Link href="/services/web-development" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Web Development</Link></li>
+                      <li><Link href="/services/graphic-designing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Graphic Designing</Link></li>
+                      <li><Link href="/services/digital-marketing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Digital Marketing</Link></li>
+                      <li><Link href="/services/ai-automation" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">AI Automation</Link></li>
+                      <li><Link href="/services/search-engine-optimization" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Search Engine Optimization</Link></li>
+                      <li><Link href="/services/shopify-development" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Shopify Development</Link></li>
+                      <li><Link href="/services/ui-ux-designing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">UI/UX Designing</Link></li>
+                      <li><Link href="/services/video-editing" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Video Editing</Link></li>
                     </motion.ul>
                   )}
                 </AnimatePresence>
