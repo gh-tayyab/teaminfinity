@@ -28,7 +28,7 @@ const services: Service[] = [
     ],
     icon: "/images/digital.png",
     iconHover: "/images/digitalh.png",
-    href: "/digital-marketing",
+    href: "/services/digital-marketing",
   },
   {
     title: "Development Services",
@@ -40,7 +40,7 @@ const services: Service[] = [
     ],
     icon: "/images/web.png",
     iconHover: "/images/webh.png",
-    href: "/web-development",
+    href: "/services/web-development",
   },
   {
     title: "Growth & Support",
@@ -51,7 +51,7 @@ const services: Service[] = [
     ],
     icon: "/images/seo.png",
     iconHover: "/images/seoh.png",
-    href: "/search-engine-optimization",
+    href: "/services/search-engine-optimization",
   },
   {
     title: "Graphic Designing",
@@ -63,7 +63,7 @@ const services: Service[] = [
     ],
     icon: "/images/graphic.png",
     iconHover: "/images/graphich.png",
-    href: "/graphic-designing",
+    href: "/services/graphic-designing",
   },
   {
     title: "AI Automation",
@@ -75,7 +75,7 @@ const services: Service[] = [
     ],
     icon: "/images/ai.png",
     iconHover: "/images/aih.png",
-    href: "/ai-automation",
+    href: "/services/ai-automation",
   },
   {
     title: "Shopify Development",
@@ -87,7 +87,7 @@ const services: Service[] = [
     ],
     icon: "/images/shopify.png",
     iconHover: "/images/shopifyh.png",
-    href: "/shopify-development",
+    href: "/services/shopify-development",
   },
   {
     title: "UI/UX Designing",
@@ -99,7 +99,7 @@ const services: Service[] = [
     ],
     icon: "/images/uiux.png",
     iconHover: "/images/uiuxh.png",
-    href: "/ui-ux-designing",
+    href: "/services/ui-ux-designing",
   },
   {
     title: "Video Editing",
@@ -111,7 +111,7 @@ const services: Service[] = [
     ],
     icon: "/images/video.png",
     iconHover: "/images/videoh.png",
-    href: "/video-editing",
+    href: "/services/video-editing",
   },
 ];
 

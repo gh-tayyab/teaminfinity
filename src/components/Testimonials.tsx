@@ -40,7 +40,7 @@ export default function Testimonials(): React.JSX.Element {
       />
       {/* Left decorative image */}
       <motion.div
-        className="pointer-events-none md:block left-0 -top-28 absolute h-[280px] w-[700px] z-10"
+        className="pointer-events-none hidden md:block left-0 -top-28 absolute h-[280px] w-[700px] z-10"
         aria-hidden="true"
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}

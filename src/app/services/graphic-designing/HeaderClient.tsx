@@ -3,9 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import StatsSection from "@/app/web-development/StatsSection";
-import WhyChooseUs from "@/app/web-development/WhyChooseUs";
-import BenefitsSection from "@/app/web-development/BenefitsSection";
+import StatsSection from "@/app/services/web-development/StatsSection";
+import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
+import BenefitsSection from "@/app/services/web-development/BenefitsSection";
 import ProjectsSection from "./ProjectsSection";
 import TestimonialsSection from "./TestimonialsSection";
 
