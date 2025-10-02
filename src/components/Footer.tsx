@@ -184,7 +184,7 @@ export default function Footer() {
               "AI Automation",
               "Search Engine Optimization",
               "Shopify Development",
-              "UI/UX Designing",
+              "UI-UX Designing",
               "Video Editing",
             ].map((service) => (
               <li key={service}>
