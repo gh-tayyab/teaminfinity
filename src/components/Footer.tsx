@@ -188,7 +188,7 @@ export default function Footer() {
               "Video Editing",
             ].map((service) => (
               <li key={service}>
-                <Link href={`/${service.toLowerCase().replace(/\s+/g, "-")}`} className="block hover:text-cyan-600">
+                <Link href={`/services/${service.toLowerCase().replace(/\s+/g, "-")}`} className="block hover:text-cyan-600">
                   {service}
                 </Link>
               </li>
