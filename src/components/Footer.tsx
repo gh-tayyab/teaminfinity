@@ -145,7 +145,10 @@ export default function Footer() {
         variants={staggerContainer}
       >
         {/* Left Logo + Tagline */}
-        <motion.article className="col-span-1 md:col-span-2 flex flex-col items-start" variants={fadeUp}>
+        <motion.article
+          className="col-span-1 md:col-span-2 flex flex-col items-start"
+          variants={fadeUp}
+        >
           <div className="mb-4">
             <Image
               src="/logo/logo1.svg"
@@ -164,13 +167,18 @@ export default function Footer() {
         <motion.nav aria-label="Company" variants={fadeUp}>
           <h4 className="font-semibold mb-4">Company</h4>
           <ul className="space-y-2 text-gray-400 text-sm">
-            {["About", "Our Expertise", "Services", "Contact Us"].map((item) => (
-              <li key={item}>
-                <Link href={`/${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:underline">
-                  {item}
-                </Link>
-              </li>
-            ))}
+            {["About", "Our Expertise", "Services", "Contact Us"].map(
+              (item) => (
+                <li key={item}>
+                  <Link
+                    href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="hover:underline"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </motion.nav>
 
@@ -188,7 +196,12 @@ export default function Footer() {
               "Video Editing",
             ].map((service) => (
               <li key={service}>
-                <Link href={`/services/${service.toLowerCase().replace(/\s+/g, "-")}`} className="block hover:text-cyan-600">
+                <Link
+                  href={`/services/${service
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                  className="block hover:text-cyan-600"
+                >
                   {service}
                 </Link>
               </li>
@@ -201,7 +214,10 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-400 text-sm">
             {["FAQs", "Live Chat", "Support", "Policies"].map((item) => (
               <li key={item}>
-                <Link href={`/${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:underline">
+                <Link
+                  href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="hover:underline"
+                >
                   {item}
                 </Link>
               </li>
@@ -212,7 +228,9 @@ export default function Footer() {
         {/* Address + Contact */}
         <motion.address className="not-italic" variants={fadeUp}>
           <h4 className="font-semibold mb-4">Address:</h4>
-          <p className="text-gray-400 text-sm">John Charles Tower 24 Thunderer Street, London, UK</p>
+          <p className="text-gray-400 text-sm">
+            John Charles Tower 24 Thunderer Street, London, UK
+          </p>
           <h4 className="font-semibold mt-6 mb-2">Contact:</h4>
           <p className="text-gray-400 text-sm">info@teaminfinity.uk</p>
           <p className="text-gray-400 text-sm">+92 333 1290212</p>
@@ -229,22 +247,38 @@ export default function Footer() {
         <p className="text-gray-500 text-sm">
           Copyright © {new Date().getFullYear()} Design By Team Infinity
         </p>
+
+        {/* Social Media */}
         <motion.nav
           aria-label="Social Media"
           className="flex gap-4 mt-4 md:mt-0"
           variants={staggerContainer}
         >
-          {[Facebook, Instagram, Youtube, Twitter, Linkedin].map((Icon, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
+          {/* LinkedIn */}
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+            <Link
+              href="https://www.linkedin.com/company/teaminfinity"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80"
             >
-              <Link href="#" aria-label="Social Media" className="hover:opacity-80">
-                <Icon className="w-5 h-5 text-[#009FB2]" />
-              </Link>
-            </motion.div>
-          ))}
+              <Linkedin className="w-5 h-5 text-[#009FB2]" />
+            </Link>
+          </motion.div>
+
+          {/* Instagram */}
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+            <Link
+              href="https://www.instagram.com/teaminfinity.uk"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80"
+            >
+              <Instagram className="w-5 h-5 text-[#009FB2]" />
+            </Link>
+          </motion.div>
         </motion.nav>
       </motion.section>
     </footer>

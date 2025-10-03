@@ -202,19 +202,10 @@ const ContactForm = () => {
             className="mt-8 py-6 text-center flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 sm:px-8"
           >
             <div className="flex gap-4 mt-4 md:mt-0">
-              <Link href="#" aria-label="Facebook" className="hover:opacity-80">
-                <Facebook className="w-5 h-5 text-[#009FB2]" />
-              </Link>
-              <Link href="#" aria-label="Instagram" className="hover:opacity-80">
+              <Link href="https://www.instagram.com/teaminfinity.uk" target="_blank" aria-label="Instagram" className="hover:opacity-80">
                 <Instagram className="w-5 h-5 text-[#009FB2]" />
               </Link>
-              <Link href="#" aria-label="Youtube" className="hover:opacity-80">
-                <Youtube className="w-5 h-5 text-[#009FB2]" />
-              </Link>
-              <Link href="#" aria-label="Twitter" className="hover:opacity-80">
-                <Twitter className="w-5 h-5 text-[#009FB2]" />
-              </Link>
-              <Link href="#" aria-label="LinkedIn" className="hover:opacity-80">
+              <Link href="https://www.linkedin.com/company/teaminfinity" target="_blank" aria-label="LinkedIn" className="hover:opacity-80">
                 <Linkedin className="w-5 h-5 text-[#009FB2]" />
               </Link>
             </div>

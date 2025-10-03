@@ -146,7 +146,7 @@ export default function ContactUsClient() {
           className="rounded-xl overflow-hidden shadow-lg mb-20"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19801.59775952265!2d-0.1277586!3d51.5032974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900f1e26f%3A0xa81d70cbb8b5e3f!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1694106900000!5m2!1sen!2suk"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19906.3!2d0.008!3d51.5319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487603aa2b1e9d5d%3A0x0!2sJohn+Charles+Tower%2C+24+Thunderer+Street%2C+London%2C+E13+9GS!5e0!3m2!1sen!2suk!4v1696460000000"
             width="100%"
             height="400"
             style={{ border: 0 }}
