@@ -215,7 +215,7 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">John Charles Tower 24 Thunderer Street, London, UK</p>
           <h4 className="font-semibold mt-6 mb-2">Contact:</h4>
           <p className="text-gray-400 text-sm">info@teaminfinity.uk</p>
-          <p className="text-gray-400 text-sm">+92 331 290 212</p>
+          <p className="text-gray-400 text-sm">+92 333 1290212</p>
         </motion.address>
       </motion.section>
 

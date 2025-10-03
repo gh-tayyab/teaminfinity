@@ -108,7 +108,7 @@ export default function ContactUsClient() {
             {
               icon: <Phone size={24} />,
               title: "Phone Number",
-              desc: "+92 331 290 212",
+              desc: "+92 333 1290212",
             },
             {
               icon: <Mail size={24} />,

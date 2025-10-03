@@ -23,7 +23,7 @@ const supportOptions = [
     icon: <Phone className="text-[#00B7CD] mb-3" size={32} />,
     title: "Call Us",
     desc: "Talk directly with our support team.",
-    link: <p className="text-[#00B7CD] font-medium">+92 331 290 212</p>,
+    link: <p className="text-[#00B7CD] font-medium">+92 333 1290212</p>,
   },
   {
     icon: <MessageCircle className="text-[#00B7CD] mb-3" size={32} />,
