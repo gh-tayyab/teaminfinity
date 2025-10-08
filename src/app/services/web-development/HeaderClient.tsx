@@ -43,19 +43,16 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Boost Your Social Media Presence with Our Expert Agency Services
+            Professional Web Development Services for Business Growth
           </motion.h1>
 
           <motion.p
-            className="mt-4 text-base md:text-lg text-gray-100 max-w-2xl"
+            className="mt-4 text-base md:text-md text-gray-100 max-w-2xl"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
           >
-            Placerat justo amet elit in tincidunt est risus vel purus. A
-            convallis vel bibendum odio nunc. Lectus faucibus ac in ipsum amet
-            nullam turpis. Vel vitae aliquam eget faucibus at libero dignissim
-            arcu aliquam.
+            We create fast, responsive websites built to attract customers and boost sales. Team Infinity delivers SEO-friendly, mobile-optimized web solutions for businesses in worldwide.
           </motion.p>
         </div>
 

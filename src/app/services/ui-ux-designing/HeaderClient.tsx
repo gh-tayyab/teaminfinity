@@ -43,7 +43,7 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Boost Your Social Media Presence with Our Expert Agency Services
+            Deliver Better Experiences with User-Focused UI/UX Design
           </motion.h1>
 
           <motion.p
@@ -52,10 +52,7 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
           >
-            Placerat justo amet elit in tincidunt est risus vel purus. A
-            convallis vel bibendum odio nunc. Lectus faucibus ac in ipsum amet
-            nullam turpis. Vel vitae aliquam eget faucibus at libero dignissim
-            arcu aliquam.
+            Our designers create simple, modern interfaces that users love. Team Infinity builds clean, intuitive layouts that improve engagement and make navigation effortless across all devices.
           </motion.p>
         </div>
 

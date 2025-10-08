@@ -7,7 +7,7 @@ import BackToTop from "@/components/BackToTop";
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-instrument-sans", // ✅ custom property ban gaya
+  variable: "--font-instrument-sans",
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
@@ -78,11 +78,47 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        {/* Add viewport meta tag to prevent zoom */}
+
+        {/* Viewport Meta */}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
+
+        {/* ✅ Universal OG & Twitter Meta Tags for all platforms */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Team Infinity – IT Solutions & Web Development"
+        />
+        <meta
+          property="og:description"
+          content="Providing top-notch IT services, AI solutions, and scalable web applications for your business success."
+        />
+        <meta property="og:url" content="https://teaminfinity.uk" />
+        <meta
+          property="og:image"
+          content="https://teaminfinity.uk/og-image.jpg"
+        />
+        <meta property="og:site_name" content="Team Infinity" />
+
+        {/* Twitter / X */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Team Infinity – IT Solutions & Web Development"
+        />
+        <meta
+          name="twitter:description"
+          content="Providing top-notch IT services, AI solutions, and scalable web applications for your business success."
+        />
+        <meta
+          name="twitter:image"
+          content="https://teaminfinity.uk/og-image.jpg"
+        />
+
+        {/* For WhatsApp, LinkedIn, Telegram, etc — they all use OG tags above */}
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body className="antialiased bg-[#F2FBFD] text-gray-900">
         <Navbar />

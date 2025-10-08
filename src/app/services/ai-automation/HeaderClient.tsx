@@ -43,7 +43,7 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Boost Your Social Media Presence with Our Expert Agency Services
+            Automate Your Business with Smart AI-Driven Solutions
           </motion.h1>
 
           <motion.p
@@ -52,10 +52,7 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
           >
-            Placerat justo amet elit in tincidunt est risus vel purus. A
-            convallis vel bibendum odio nunc. Lectus faucibus ac in ipsum amet
-            nullam turpis. Vel vitae aliquam eget faucibus at libero dignissim
-            arcu aliquam.
+            Save time and cut costs with AI automation. We build intelligent systems that manage repetitive tasks, streamline workflows, and improve productivity for companies across the world.
           </motion.p>
         </div>
 

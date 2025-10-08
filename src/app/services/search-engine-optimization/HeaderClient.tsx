@@ -43,7 +43,7 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Boost Your Social Media Presence with Our Expert Agency Services
+            Improve Your Google Rankings with Expert SEO Services
           </motion.h1>
 
           <motion.p
@@ -52,10 +52,7 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
           >
-            Placerat justo amet elit in tincidunt est risus vel purus. A
-            convallis vel bibendum odio nunc. Lectus faucibus ac in ipsum amet
-            nullam turpis. Vel vitae aliquam eget faucibus at libero dignissim
-            arcu aliquam.
+            Team Infinity helps your website rank higher and reach real customers. Our SEO experts boost visibility through keyword optimization, link-building, and content strategies that drive traffic and growth.
           </motion.p>
         </div>
 

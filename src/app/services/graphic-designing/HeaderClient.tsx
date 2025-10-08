@@ -43,7 +43,7 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Boost Your Social Media Presence with Our Expert Agency Services
+            Create Strong Brand Identity with Professional Graphic Design
           </motion.h1>
 
           <motion.p
@@ -52,10 +52,7 @@ export default function HeaderClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
           >
-            Placerat justo amet elit in tincidunt est risus vel purus. A
-            convallis vel bibendum odio nunc. Lectus faucibus ac in ipsum amet
-            nullam turpis. Vel vitae aliquam eget faucibus at libero dignissim
-            arcu aliquam.
+            We design logos, banners, and visuals that make your brand stand out. Team Infinity helps businesses build clear, consistent, and attractive designs for online and offline platforms.
           </motion.p>
         </div>
 
