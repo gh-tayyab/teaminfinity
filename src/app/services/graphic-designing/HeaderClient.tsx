@@ -25,15 +25,6 @@ export default function HeaderClient() {
           priority
         />
 
-        {/* Overlay */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute inset-0 bg-[#06859F]"
-          aria-hidden="true"
-        />
-
         {/* Content */}
         <div className="relative z-10 max-w-3xl px-6 flex flex-col items-center justify-center -top-10 h-full">
           <motion.h1
