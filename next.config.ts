@@ -5,16 +5,24 @@ import bundleAnalyzer from "@next/bundle-analyzer";
 // Bundle Analyzer wrapper
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
-  openAnalyzer: false, // ✅ Stops auto-opening in browser
+  openAnalyzer: false, // Prevents auto-opening in browser
 });
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  // ✅ Optimize images
+  // ✅ Optimize images + allow external flags
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 
   experimental: {
@@ -27,7 +35,6 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === "production",
   },
 
-  // ✅ Typed webpack config
   webpack(config: WebpackConfig, { isServer }: { isServer: boolean }) {
     if (!isServer) {
       config.resolve = config.resolve || {};

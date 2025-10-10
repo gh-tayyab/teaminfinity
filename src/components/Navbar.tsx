@@ -73,6 +73,11 @@ export default function Navbar() {
                 About Us
               </Link>
             </li>
+            <li role="none">
+              <Link href="/our-work" role="menuitem" className="hover:text-cyan-600 whitespace-nowrap">
+                Our Work
+              </Link>
+            </li>
 
             {/* Dropdown with Main Services Page */}
             <li
@@ -138,7 +143,7 @@ export default function Navbar() {
         <aside className="flex-shrink-0">
           <Link
             href="/contact-us"
-            className="hidden lg:inline-block px-2 py-2 sm:py-3 sm:px-8 bg-transparent text-black font-bold rounded-2xl border-2 border-black hover:bg-cyan-300 transition whitespace-nowrap"
+            className="hidden lg:inline-block px-2 py-2 sm:py-3 sm:px-8 bg-transparent text-black font-bold rounded-2xl border-2 border-black transition whitespace-nowrap"
           >
             Get Started
           </Link>
@@ -168,6 +173,7 @@ export default function Navbar() {
             <ul className="space-y-3" role="menu">
               <li><Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Home</Link></li>
               <li><Link href="/about" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">About</Link></li>
+              <li><Link href="/our-work" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Our Work</Link></li>
               <li><Link href="/services" onClick={() => setIsOpen(false)} className="block hover:text-cyan-600">Services</Link></li>
 
               {/* Sub Services */}

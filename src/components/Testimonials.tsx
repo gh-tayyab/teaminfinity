@@ -151,7 +151,7 @@ export default function Testimonials(): React.JSX.Element {
                 <figure className="relative p-6 md:p-8">
                   <div className="rounded-xl overflow-hidden relative h-56 md:h-64">
                     <Image
-                      src="/images/testimonials-1.svg"
+                      src="/images/testimonials1.jpg"
                       alt="Maya Olivia — Marketing Lead at Urban Bloom"
                       fill
                       className="object-cover rounded-xl"
@@ -168,15 +168,14 @@ export default function Testimonials(): React.JSX.Element {
                     itemProp="reviewBody"
                     className="text-gray-700 mb-4 text-lg md:text-xl leading-relaxed"
                   >
-                    “They transformed our online presence and brought us more
-                    customers than we imagined.”
+                    “Team Infinity helped us boost our online presence and attract more clients in no time. Truly professional and result-driven.”
                   </blockquote>
 
                   {/* author must be a Person type (not generic Thing). include visible name but use microdata Person */}
                   <div itemProp="author" itemScope itemType="https://schema.org/Person">
                     <meta itemProp="name" content="Maya Olivia" />
                     <p className="text-sm text-gray-500 mb-6">
-                      Maya Olivia — Marketing Lead at Urban Bloom
+                    Amina Rahman, BrightNest, Bangladesh
                     </p>
                   </div>
 
@@ -240,13 +239,13 @@ export default function Testimonials(): React.JSX.Element {
                     itemProp="reviewBody"
                     className="text-gray-700 mb-4 text-lg md:text-xl leading-relaxed"
                   >
-                    “Professional, reliable, and results driven — highly recommended.”
+                    “The team was super easy to work with and got things done fast. Our online reach has improved a lot since.”
                   </blockquote>
 
                   <div itemProp="author" itemScope itemType="https://schema.org/Person">
                     <meta itemProp="name" content="Nadya Sarah" />
                     <p className="text-sm text-gray-500 mb-6">
-                      Nadya Sarah — Founder of Matcha Mood
+                    Emily Carter, GlowEdge, Australia
                     </p>
                   </div>
 

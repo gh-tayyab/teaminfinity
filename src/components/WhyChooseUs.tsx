@@ -16,13 +16,13 @@ const cards: Card[] = [
     id: "01",
     title: "Transparent Process",
     description:
-      "We keep things simple and clear at every step so you always know what's happening. No hidden details — just full visibility and honest communication.",
+      "We believe trust builds great partnerships. That's why we keep you updated at every step — no hidden fees, no confusion, just clear communication and complete transparency.",
   },
   {
     id: "02",
     title: "Experienced Team",
     description:
-      "Our team brings years of expertise across diverse industries. We combine proven strategies with fresh perspectives to deliver outstanding results.",
+      "Our team brings together creative thinkers, developers, and strategists with real-world experience. We know what works — and how to make it work for your business.",
   },
   {
     id: "03",
@@ -38,9 +38,9 @@ const cards: Card[] = [
   },
   {
     id: "05",
-    title: "End-To-End Solutions",
+    title: "Complete End-to-End Solutions",
     description:
-      "From strategy to execution, we handle everything under one roof for a seamless experience and consistent quality.",
+      "We manage everything from strategy to execution under one roof — so you get consistent quality, faster delivery, and results that truly align with your goals.",
   },
 ];
 

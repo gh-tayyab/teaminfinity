@@ -59,7 +59,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.7 }}
             viewport={{ once: true }}
           >
-            We Build Brands & Digital Experiences That Drive Results
+            We Create Smart Digital Solutions That Grow Your Business
           </motion.h1>
 
           <motion.p

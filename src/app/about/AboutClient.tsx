@@ -39,7 +39,7 @@ export default function AboutClient() {
       <section
         id="about-hero"
         aria-labelledby="about-heading"
-        className="relative top-16 md:top-0 flex flex-col md:flex-row items-center justify-center px-6 md:px-12 py-20 bg-[#F2FBFD] overflow-hidden"
+        className="relative pt-28 md:pt-32 flex flex-col md:flex-row items-center justify-center px-6 md:px-12 pb-20 bg-[#F2FBFD] overflow-hidden"
       >
         {/* Left Blur Layer (decorative only) */}
         <div
@@ -73,8 +73,13 @@ export default function AboutClient() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
           >
-            From strategy to execution we help businesses grow through powerful
-            marketing and innovative development solutions.
+            With offices in Pakistan and London, Team Infinity connects global
+            strategy with local expertise. We help businesses grow through smart
+            marketing, AI automation, and modern development solutions. We offer
+            up to <span className="font-bold">30% lower rates than the market</span> without compromising on
+            quality, experience, or performance. Having worked with over <span className="font-bold">500
+            local businesses and 64 international companies</span>, we deliver premium
+            results that drive real growth
           </motion.p>
 
           {/* Newsletter Form - made responsive like Hero */}

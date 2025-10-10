@@ -45,6 +45,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1E1E22] text-white relative">
+      {/* Gradient Background */}
       <div
         aria-hidden="true"
         className="hidden lg:block absolute opacity-70 top-[650px] -right-10 w-[130px] h-[230px] bg-[#00B7CD] rounded-full blur-3xl"
@@ -80,7 +81,8 @@ export default function Footer() {
                 Ready to grow your business?
               </h2>
               <p className="text-gray-600 mb-6">
-                Let&apos;s create something powerful together.
+                Let’s build something powerful without breaking the budget.
+                Smart results. Honest prices.
               </p>
 
               {!submitted ? (
@@ -144,7 +146,7 @@ export default function Footer() {
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        {/* Left Logo + Tagline */}
+        {/* Logo + Description */}
         <motion.article
           className="col-span-1 md:col-span-2 flex flex-col items-start"
           variants={fadeUp}
@@ -159,26 +161,26 @@ export default function Footer() {
             />
           </div>
           <p className="text-gray-300 text-sm max-w-xs">
-            Driving Brand Growth with Social Media
+            Driving Brand Growth with Social Media & Smart Digital Solutions. We
+            help businesses scale faster with creative marketing, AI automation,
+            and data-driven strategies.
           </p>
         </motion.article>
 
-        {/* Navigation Links */}
+        {/* Navigation */}
         <motion.nav aria-label="Company" variants={fadeUp}>
           <h4 className="font-semibold mb-4">Company</h4>
           <ul className="space-y-2 text-gray-400 text-sm">
-            {["About", "Our Expertise", "Services", "Contact Us"].map(
-              (item) => (
-                <li key={item}>
-                  <Link
-                    href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="hover:underline"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              )
-            )}
+            {["About", "Our Expertise", "Services", "Contact Us"].map((item) => (
+              <li key={item}>
+                <Link
+                  href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="hover:underline"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </motion.nav>
 
@@ -197,9 +199,7 @@ export default function Footer() {
             ].map((service) => (
               <li key={service}>
                 <Link
-                  href={`/services/${service
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}`}
+                  href={`/services/${service.toLowerCase().replace(/\s+/g, "-")}`}
                   className="block hover:text-cyan-600"
                 >
                   {service}
@@ -225,12 +225,40 @@ export default function Footer() {
           </ul>
         </motion.nav>
 
-        {/* Address + Contact */}
+        {/* Addresses + Contact */}
         <motion.address className="not-italic" variants={fadeUp}>
-          <h4 className="font-semibold mb-4">Address:</h4>
-          <p className="text-gray-400 text-sm">
-            John Charles Tower 24 Thunderer Street, London, UK
-          </p>
+          <h4 className="font-semibold mb-4">Our Offices:</h4>
+
+          <div className="space-y-4 text-gray-400 text-sm">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <Image
+                  src="https://flagcdn.com/w20/gb.png"
+                  alt="UK Flag"
+                  width={20}
+                  height={20}
+                  className="rounded-sm"
+                />
+                <h5 className="font-medium text-white">London, UK</h5>
+              </div>
+              <p>John Charles Tower, 24 Thunderer Street, London, UK</p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <Image
+                  src="https://flagcdn.com/w20/pk.png"
+                  alt="Pakistan Flag"
+                  width={20}
+                  height={20}
+                  className="rounded-sm"
+                />
+                <h5 className="font-medium text-white">Karachi, Pakistan</h5>
+              </div>
+              <p>A-833, Phase 2, Gulshan-e-Hadeed, Karachi, Pakistan</p>
+            </div>
+          </div>
+
           <h4 className="font-semibold mt-6 mb-2">Contact:</h4>
           <p className="text-gray-400 text-sm">info@teaminfinity.uk</p>
           <p className="text-gray-400 text-sm">+92 333 1290212</p>
@@ -248,13 +276,12 @@ export default function Footer() {
           Copyright © {new Date().getFullYear()} Design By Team Infinity
         </p>
 
-        {/* Social Media */}
+        {/* Social Links */}
         <motion.nav
           aria-label="Social Media"
           className="flex gap-4 mt-4 md:mt-0"
           variants={staggerContainer}
         >
-          {/* LinkedIn */}
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             <Link
               href="https://www.linkedin.com/company/teaminfinityuk"
@@ -267,7 +294,6 @@ export default function Footer() {
             </Link>
           </motion.div>
 
-          {/* Instagram */}
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             <Link
               href="https://www.instagram.com/teaminfinity.uk"

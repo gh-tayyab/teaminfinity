@@ -14,6 +14,7 @@ type CardProps = {
   year: string;
   imgSrc: string;
   imgAlt: string;
+  href?: string;
 };
 
 function CampaignCard({
@@ -26,12 +27,17 @@ function CampaignCard({
   year,
   imgSrc,
   imgAlt,
+  href = "#",
 }: CardProps) {
   return (
     <motion.article
       variants={{
         hidden: { opacity: 0, y: 40 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: "easeOut" },
+        },
       }}
       whileHover={{ scale: 1.02 }}
       className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col h-full transition"
@@ -52,7 +58,9 @@ function CampaignCard({
               >
                 {title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600 max-w-xl">{description}</p>
+              <p className="mt-2 text-sm text-gray-600 max-w-xl">
+                {description}
+              </p>
             </div>
           </div>
         </header>
@@ -74,15 +82,27 @@ function CampaignCard({
             <dt className="text-xs text-gray-400">Category</dt>
             <dd className="font-medium text-sm mt-1">{category}</dd>
           </div>
-          <div>
-            <dt className="text-xs text-gray-400">Year</dt>
-            <dd className="font-medium text-sm mt-1">{year}</dd>
+
+          {/* ✅ Year + Button side by side */}
+          <div className="flex items-center justify-between mt-1">
+            <div>
+              <dt className="text-xs text-gray-400">Year</dt>
+              <dd className="font-medium text-sm mt-1">{year}</dd>
+            </div>
+            <Link
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 mt-4 inline-block text-sm font-medium text-cyan-600 hover:text-cyan-800 transition"
+            >
+              View Site →
+            </Link>
           </div>
         </dl>
       </div>
 
       {/* Image */}
-      <figure className="w-full left-14 h-40 md:h-44 lg:h-80 relative rounded-3xl">
+      <figure className="w-full left-14 h-40 md:h-44 lg:h-[440px] relative">
         <Image
           src={imgSrc}
           alt={imgAlt}
@@ -142,50 +162,54 @@ export default function CampaignsSection(): React.JSX.Element {
         >
           <CampaignCard
             index="01"
-            title="Fashion Brand Campaign"
-            description="A streetwear label went viral with influencer drops and reels, gaining 4.2M views and a 60% sales boost."
-            client="Street Hypeyard"
+            title="Clothing Brand"
+            description="We helped a growing clothing brand refresh its style and reach from creative visuals to smart social media campaigns, turning followers into real customers."
+            client="Weave Wardrobe"
             category="Fashion & Apparel"
             service="Content Production"
-            year="2022 - 2024"
-            imgSrc="/images/campaign1.svg"
+            year="2024 - 2025"
+            imgSrc="/images/campaign1.jpg"
             imgAlt="Dancers in colorful streetwear campaign photoshoot"
+            href="https://weavewardrobe.com/"
           />
 
           <CampaignCard
             index="02"
-            title="Beauty Product Hype"
-            description="A clean indie beauty brand sold out in just 3 days with countdowns, teasers, and creator collabs."
-            client="Pure Bloom Spa"
-            category="Beauty & Skincare"
-            service="Influencer Marketing"
+            title="Jewelry Brand Success"
+            description="We helped a modern jewelry brand elevate its online presence through elegant design, smart marketing, and authentic brand storytelling."
+            client="RUSSET"
+            category="Jewelry"
+            service="Marketing & Web Design"
             year="2023 - 2024"
-            imgSrc="/images/campaign2.svg"
+            imgSrc="/images/campaign2.jpg"
             imgAlt="Smiling model in beauty product photoshoot"
+            href="https://shoprusset.com/"
           />
 
           <CampaignCard
             index="03"
-            title="Fitness Studio Comeback"
-            description="A fitness studio revived its brand through a challenge and local ads—tripling inquiries."
-            client="FlexVibe Fitness"
-            category="Fitness & Wellness"
-            service="Paid Advertising"
+            title="Fashion design"
+            description="We partnered with Asta Aray, a rising clothing brand, to elevate their online presence and boost sales through creative visuals, targeted ads, and a strong digital strategy — helping them turn style into a fast-growing brand loved by customers."
+            client="ASTA ARAY"
+            category="Designing"
+            service="Web Designing & SEO"
             year="2024 - 2025"
-            imgSrc="/images/campaign3.svg"
+            imgSrc="/images/campaign3.png"
             imgAlt="Trainer holding tablet in a gym with equipment"
+            href="https://www.astaaray.com/"
           />
 
           <CampaignCard
             index="04"
-            title="SaaS Brand Campaign"
-            description="A B2B SaaS brand saw a 40% lead increase after refreshing content and running LinkedIn founder campaigns."
-            client="TrueLogic Core"
-            category="B2B SaaS"
-            service="Social Strategy"
+            title="Clothing Brand"
+            description="We worked with IVAR, a Pakistani clothing brand, to enhance their digital presence through impactful marketing and eye-catching graphic design — helping them attract more customers and build a stronger identity online."
+            client="IVAR Clothing"
+            category="eCommerce"
+            service="Digital Marketing & UI/UX design"
             year="2023 - 2025"
-            imgSrc="/images/campaign4.svg"
+            imgSrc="/images/campaign4.jpg"
             imgAlt="Team celebrating around a laptop in a modern office"
+            href="https://ivarclothing.com/"
           />
         </motion.div>
       </div>

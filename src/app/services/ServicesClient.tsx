@@ -78,8 +78,12 @@ export default function ServicesClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
             >
-              From strategy to execution we help businesses grow through
-              powerful marketing and innovative development solutions.
+              From strategy to success — we help businesses grow with powerful
+              marketing, AI automation, and modern development solutions. At 
+              <span className="font-bold"> Team Infinity</span>, you get <span className="font-bold">premium-quality work at up to 30% lower
+              rates</span> — handled by experts who focus on real performance, not
+              empty promises. Smart strategies, creative execution, and
+              measurable results — all under one roof.
             </motion.p>
 
             {/* Newsletter Form */}

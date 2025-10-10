@@ -84,7 +84,7 @@ export default function IndustriesSection(): React.JSX.Element {
               <dl className="mt-6 flex items-center gap-6">
                 <div className="bg-violet-50 text-violet-700 rounded-lg px-4 py-3 text-center">
                   <dt className="sr-only">Case Studies</dt>
-                  <dd className="text-xl font-bold">17+</dd>
+                  <dd className="text-xl font-bold">70+</dd>
                   <span className="text-xs mt-1 block">Case Studies</span>
                 </div>
               </dl>
@@ -131,7 +131,7 @@ export default function IndustriesSection(): React.JSX.Element {
               <dl className="mt-6 flex items-center gap-6">
                 <div className="bg-violet-50 text-violet-700 rounded-lg px-4 py-3 text-center">
                   <dt className="sr-only">Case Studies</dt>
-                  <dd className="text-xl font-bold">15+</dd>
+                  <dd className="text-xl font-bold">37+</dd>
                   <span className="text-xs mt-1 block">Case Studies</span>
                 </div>
               </dl>
@@ -178,7 +178,7 @@ export default function IndustriesSection(): React.JSX.Element {
               <dl className="mt-6 flex items-center gap-6">
                 <div className="bg-violet-50 text-violet-700 rounded-lg px-4 py-3 text-center">
                   <dt className="sr-only">Case Studies</dt>
-                  <dd className="text-xl font-bold">12+</dd>
+                  <dd className="text-xl font-bold">45+</dd>
                   <span className="text-xs mt-1 block">Case Studies</span>
                 </div>
               </dl>

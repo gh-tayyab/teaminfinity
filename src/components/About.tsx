@@ -76,10 +76,16 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              We are a full-service Marketing & Development Agency dedicated to
-              helping businesses scale faster. Our team of experts blends
-              creativity, strategy, and technology to deliver solutions that not
-              only look great but also perform effectively.
+              <span className="font-bold">
+                We Don&apos;t Just Build Brands — We Build Momentum.
+              </span>{" "} 
+              At Team Infinity, we&apos;re a full-service marketing and development
+              agency focused on helping businesses grow with purpose. Our team
+              blends innovation, design, and data-driven strategy to create
+              solutions that not only look exceptional but drive measurable
+              success. Whether you&apos;re starting from scratch or scaling to new
+              heights, we craft tailored digital strategies that elevate your
+              presence and turn your vision into impact.
             </motion.p>
 
             <motion.p

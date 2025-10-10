@@ -9,29 +9,27 @@ import { motion } from "framer-motion";
 export default function CaseStudies(): React.JSX.Element {
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { staggerChildren: 0.2, duration: 0.6 } 
-    }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.2, duration: 0.6 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-    hover: { scale: 1.03 }
+    hover: { scale: 1.03 },
   };
 
   return (
     <>
-
       <main>
         <section
           id="case-studies"
           aria-labelledby="case-studies-heading"
           className="relative py-20 md:py-28 bg-[#F2FBFD]"
         >
-
           {/* Decorative blur circle */}
           <div
             className="absolute top-6 right-6 md:top-10 md:right-10 lg:top-14 lg:right-14 w-32 h-32 bg-[#36E1F8] opacity-20 rounded-md blur-3xl pointer-events-none"
@@ -40,7 +38,7 @@ export default function CaseStudies(): React.JSX.Element {
 
           {/* Decorative top-right image */}
           <div
-            className="hidden md:block absolute right-6 top-6 md:top-8 lg:top-10 z-20 pointer-events-none"
+            className="hidden md:block absolute right-4 top-6 md:top-8 z-20 pointer-events-none"
             aria-hidden="true"
           >
             <Image
@@ -88,24 +86,26 @@ export default function CaseStudies(): React.JSX.Element {
 
                 {/* Two small images */}
                 <div className="grid grid-cols-2 gap-4">
-                  {["/images/case2.jpg", "/images/case3.jpg"].map((img, idx) => (
-                    <motion.figure
-                      key={idx}
-                      className="rounded-lg overflow-hidden border border-gray-100 shadow-sm relative h-24 md:h-44"
-                      variants={itemVariants}
-                    >
-                      <Image
-                        src={img}
-                        alt={`Case study detail ${idx + 1}`}
-                        fill
-                        className="object-cover"
-                        loading="lazy"
-                      />
-                      <figcaption className="sr-only">
-                        Case study supporting detail {idx + 1}
-                      </figcaption>
-                    </motion.figure>
-                  ))}
+                  {["/images/case2.jpg", "/images/case3.jpg"].map(
+                    (img, idx) => (
+                      <motion.figure
+                        key={idx}
+                        className="rounded-lg overflow-hidden border border-gray-100 shadow-sm relative h-24 md:h-44"
+                        variants={itemVariants}
+                      >
+                        <Image
+                          src={img}
+                          alt={`Case study detail ${idx + 1}`}
+                          fill
+                          className="object-cover"
+                          loading="lazy"
+                        />
+                        <figcaption className="sr-only">
+                          Case study supporting detail {idx + 1}
+                        </figcaption>
+                      </motion.figure>
+                    )
+                  )}
                 </div>
               </motion.div>
 
@@ -119,7 +119,9 @@ export default function CaseStudies(): React.JSX.Element {
                     <span className="text-sm" aria-hidden="true">
                       ✷
                     </span>
-                    <span className="hidden sm:inline text-black">Show Work</span>
+                    <span className="hidden sm:inline text-black">
+                      Show Work
+                    </span>
                   </span>
 
                   <h2
@@ -131,12 +133,19 @@ export default function CaseStudies(): React.JSX.Element {
                 </header>
 
                 <p className="text-sm text-gray-600 mb-6 max-w-xl">
-                  See how we&apos;ve helped businesses like yours achieve
-                  measurable growth.
+                  See how we&apos;ve helped businesses like yours achieve measurable
+                  growth. We don&apos;t just talk about results — we deliver them.
+                  Our portfolio showcases real projects where strategy, design,
+                  and technology came together to create real impact. From
+                  startups launching their first product to established brands
+                  scaling globally, our work speaks for itself. Every project is
+                  built with one goal in mind: helping our clients grow smarter,
+                  faster, and stronger in the digital world. Explore our success
+                  stories and imagine what we can build for you.
                 </p>
 
                 <Link
-                  href="/services"
+                  href="/our-work"
                   className="inline-flex items-center justify-center px-5 py-2.5 border border-[#bfeef2] text-[#0f5670] rounded-md text-sm font-medium shadow-sm hover:shadow-md transition"
                   aria-label="View our work"
                 >

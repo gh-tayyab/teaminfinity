@@ -73,7 +73,7 @@ export default function AboutBuzzz() {
             className="uppercase text-sm font-semibold text-cyan-600 tracking-wider"
             variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
           >
-            About Buzzz
+            About Team Infinity
           </motion.span>
 
           <motion.h2
@@ -88,9 +88,7 @@ export default function AboutBuzzz() {
             className="text-gray-600 text-base md:text-lg max-w-lg"
             variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } }}
           >
-            Buzzz is a digital agency built on bold ideas and performance metrics.
-            We blend creativity with strategy to create social campaigns that
-            drive measurable business results.
+            Team Infinity is a global digital agency with offices in Pakistan and London. built on creativity, strategy, and technology. We craft AI-driven solutions, SEO strategies, and digital campaigns that help brands grow smarter and faster. With up to 30% lower rates than the market, we deliver premium quality work designed to perform, impress, and last.
           </motion.p>
 
           {/* Grid: show on small and large (lg+) inside the right column, hide on md */}
@@ -123,7 +121,7 @@ export default function AboutBuzzz() {
               <div>
                 <div className="flex justify-between text-sm font-medium text-gray-700">
                   <span>Content Creation</span>
-                  <span>98%</span>
+                  <span>94%</span>
                 </div>
                 <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div
@@ -140,7 +138,7 @@ export default function AboutBuzzz() {
               <div>
                 <div className="flex justify-between text-sm font-medium text-gray-700">
                   <span>Campaign Strategy</span>
-                  <span>92%</span>
+                  <span>89%</span>
                 </div>
                 <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div
@@ -157,7 +155,7 @@ export default function AboutBuzzz() {
               <div>
                 <div className="flex justify-between text-sm font-medium text-gray-700">
                   <span>Platform Management</span>
-                  <span>95%</span>
+                  <span>91%</span>
                 </div>
                 <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div
