@@ -24,9 +24,9 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative w-[280px] h-[280px] md:w-[340px] md:h-[400px] lg:w-[380px] lg:h-[380px]">
+            <div className="relative w-[280px] h-[280px] md:w-[340px] md:h-[400px] lg:w-[450px] lg:h-[450px]">
               <Image
-                src="/images/about.svg"
+                src="/images/abouut.jpg"
                 alt="Team Infinity professionals collaborating on a project"
                 fill
                 priority

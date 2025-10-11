@@ -20,7 +20,6 @@ export default function IndustriesSection(): React.JSX.Element {
       y: 0,
       transition: {
         duration: 0.6,
-        // use cubic-bezier array instead of string for `ease`
         ease: [0.22, 1, 0.36, 1],
       },
     },
@@ -54,7 +53,7 @@ export default function IndustriesSection(): React.JSX.Element {
 
         {/* Cards */}
         <motion.div
-          className="mt-10 space-y-6"
+          className="mt-10 flex flex-col items-center gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -63,7 +62,7 @@ export default function IndustriesSection(): React.JSX.Element {
           {/* Card 1 — E-commerce */}
           <motion.article
             variants={itemVariants}
-            className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8"
+            className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8 w-full max-w-5xl"
             aria-labelledby="industry-ecommerce"
           >
             <div className="p-6 md:w-1/2 flex flex-col justify-center">
@@ -91,7 +90,7 @@ export default function IndustriesSection(): React.JSX.Element {
             </div>
 
             <figure className="md:w-1/2 px-6">
-              <div className="relative w-full h-64 md:h-72 lg:h-80">
+              <div className="relative w-full h-60 md:h-72 lg:h-80">
                 <Image
                   src="/images/industry1.jpg"
                   alt="Person packing e-commerce orders on a desk with laptop and boxes"
@@ -110,7 +109,7 @@ export default function IndustriesSection(): React.JSX.Element {
           {/* Card 2 — Hospitality */}
           <motion.article
             variants={itemVariants}
-            className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8"
+            className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8 w-full max-w-5xl"
             aria-labelledby="industry-hospitality"
           >
             <div className="p-6 md:w-1/2 flex flex-col justify-center">
@@ -138,7 +137,7 @@ export default function IndustriesSection(): React.JSX.Element {
             </div>
 
             <figure className="md:w-1/2 px-6">
-              <div className="relative w-full h-64 md:h-72 lg:h-80">
+              <div className="relative w-full h-60 md:h-72 lg:h-80">
                 <Image
                   src="/images/industry2.jpg"
                   alt="Hotel staff welcoming guests in a hotel lobby"
@@ -157,7 +156,7 @@ export default function IndustriesSection(): React.JSX.Element {
           {/* Card 3 — Education */}
           <motion.article
             variants={itemVariants}
-            className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8"
+            className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch py-8 w-full max-w-5xl"
             aria-labelledby="industry-education"
           >
             <div className="p-6 md:w-1/2 flex flex-col justify-center">
@@ -185,7 +184,7 @@ export default function IndustriesSection(): React.JSX.Element {
             </div>
 
             <figure className="md:w-1/2 px-6">
-              <div className="relative w-full h-64 md:h-72 lg:h-80">
+              <div className="relative w-full h-60 md:h-72 lg:h-80">
                 <Image
                   src="/images/industry3.jpg"
                   alt="Group of people in a classroom or workshop setting"

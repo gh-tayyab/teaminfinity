@@ -5,7 +5,7 @@ import { useState } from "react";
 import AboutBuzzz from "./AboutBuzz";
 import Certifications from "./Certifications";
 import WhyChooseUs from "./WhyChooseUs";
-import { motion } from "framer-motion"; // 👈 import
+import { motion } from "framer-motion";
 
 export default function AboutClient() {
   const [email, setEmail] = useState("");
@@ -35,126 +35,131 @@ export default function AboutClient() {
   };
 
   return (
-    <>
-      <section
+    <main>
+      {/* Hero Section */}
+      <motion.section
         id="about-hero"
         aria-labelledby="about-heading"
-        className="relative pt-28 md:pt-32 flex flex-col md:flex-row items-center justify-center px-6 md:px-12 pb-20 bg-[#F2FBFD] overflow-hidden"
+        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#F2FBFD] py-16 mt-16"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Left Blur Layer (decorative only) */}
+        {/* Decorative Blur Elements */}
         <div
           aria-hidden="true"
-          className="absolute top-[130px] left-[-150px] w-[350px] h-[350px] bg-cyan-200/40 rounded-full blur-3xl"
+          className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-10 top-12 w-72 h-[520px] bg-[#CFF8FB] rounded-2xl blur-2xl opacity-80 z-0"
         />
 
-        {/* LEFT CONTENT */}
-        <motion.header
-          className="relative z-10 md:w-1/2 space-y-6 text-center md:text-left"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <motion.h1
-            id="about-heading"
-            className="text-3xl md:text-4xl font-bold text-gray-900"
+        {/* Center Grid */}
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          {/* LEFT CONTENT */}
+          <motion.header
+            className="flex flex-col justify-center items-start text-left"
             initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            About Us
-          </motion.h1>
-
-          <motion.p
-            className="text-gray-600 text-base md:text-lg max-w-lg mx-auto md:mx-0"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
           >
-            With offices in Pakistan and London, Team Infinity connects global
-            strategy with local expertise. We help businesses grow through smart
-            marketing, AI automation, and modern development solutions. We offer
-            up to <span className="font-bold">30% lower rates than the market</span> without compromising on
-            quality, experience, or performance. Having worked with over <span className="font-bold">500
-            local businesses and 64 international companies</span>, we deliver premium
-            results that drive real growth
-          </motion.p>
-
-          {/* Newsletter Form - made responsive like Hero */}
-          <motion.form
-            onSubmit={handleSubmit}
-            className="mt-4 w-full max-w-md flex flex-col sm:flex-row items-stretch gap-3 justify-center md:justify-start"
-            role="form"
-            aria-label="Subscribe to our newsletter"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <label htmlFor="about-email" className="sr-only">
-              Enter your email address
-            </label>
-            <input
-              id="about-email"
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              aria-label="Email address input"
-              disabled={loading || submitted}
-              className="flex-grow px-4 py-3 bg-white border border-gray-300 rounded-md sm:rounded-r-none sm:border-r-0 outline-none focus:ring-2 focus:ring-cyan-400 text-sm md:text-base"
-            />
-            <motion.button
-              type="submit"
-              disabled={loading || submitted}
-              aria-label="Submit newsletter form"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-5 py-3 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-black hover:bg-cyan-600 transition whitespace-nowrap w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+            <motion.h1
+              id="about-heading"
+              className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
             >
-              {loading ? "Sending..." : submitted ? "Thanks!" : "Get Started"}
-            </motion.button>
-          </motion.form>
+              About Us
+            </motion.h1>
 
-          {submitted && (
             <motion.p
-              className="text-green-600 mt-2"
-              aria-live="polite"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
+              className="text-gray-600 max-w-md mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
             >
-              ✅ Thanks for subscribing!
+              With offices in Pakistan and London, <span className="font-bold">Team Infinity</span> connects global
+              strategy with local expertise. We help businesses grow through smart
+              marketing, AI automation, and modern development solutions. We offer
+              up to <span className="font-bold">30% lower rates than the market</span> without compromising on
+              quality, experience, or performance. Having worked with over{" "}
+              <span className="font-bold">500 local businesses and 64 international companies</span>, we deliver
+              premium results that drive real growth.
             </motion.p>
-          )}
-        </motion.header>
 
-        {/* RIGHT IMAGE */}
-        <motion.figure
-          className="relative z-10 mt-10 md:left-12 lg:left-0 md:w-120 flex justify-center"
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <Image
-            src="/images/about.png"
-            alt="Illustration of Team Infinity professionals working on digital solutions"
-            width={400}
-            height={200}
-            className="object-cover"
-            priority
-          />
-        </motion.figure>
-      </section>
+            {/* Newsletter Form */}
+            <motion.form
+              onSubmit={handleSubmit}
+              className="flex items-center gap-3 w-full sm:w-auto"
+              role="form"
+              aria-label="Subscribe to get started"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.5 }}
+            >
+              <label htmlFor="about-email" className="sr-only">
+                Enter your email
+              </label>
+              <input
+                id="about-email"
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full sm:w-64 px-4 py-3 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00B7CD]"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-4 py-2 sm:py-3 sm:px-8 bg-[#36E1F8] text-black font-bold rounded-full border-b-4 border-[#009FB2] hover:bg-[#00B7CD] transition whitespace-nowrap"
+              >
+                {loading ? "Sending..." : submitted ? "Thanks!" : "Get Started"}
+              </button>
+            </motion.form>
 
-      {/* Subsections (no animations here) */}
+            {submitted && (
+              <motion.p
+                className="text-green-600 mt-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                ✅ Thanks for subscribing!
+              </motion.p>
+            )}
+          </motion.header>
+
+          {/* RIGHT IMAGE */}
+          <motion.figure
+            className="relative flex justify-center md:justify-end items-center"
+            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+          >
+            <div className="relative z-20 w-[340px] sm:w-[380px] md:w-[420px] lg:w-[480px] overflow-hidden rounded-md shadow-md">
+              <Image
+                src="/images/aboutmain.jpg"
+                alt="Illustration of Team Infinity professionals working on digital solutions"
+                width={800}
+                height={1000}
+                className="object-cover w-full h-full"
+                priority
+              />
+            </div>
+            <figcaption className="sr-only">
+              Illustration representing our digital and AI-driven marketing services.
+            </figcaption>
+          </motion.figure>
+        </div>
+      </motion.section>
+
+      {/* Subsections */}
       <AboutBuzzz />
       <Certifications />
       <WhyChooseUs />
-    </>
+    </main>
   );
 }

@@ -171,7 +171,7 @@ export default function Footer() {
         <motion.nav aria-label="Company" variants={fadeUp}>
           <h4 className="font-semibold mb-4">Company</h4>
           <ul className="space-y-2 text-gray-400 text-sm">
-            {["About", "Our Expertise", "Services", "Contact Us"].map((item) => (
+            {["About", "Our Work", "Our Expertise", "Services", "Contact Us"].map((item) => (
               <li key={item}>
                 <Link
                   href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}

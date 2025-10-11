@@ -1,35 +1,59 @@
-// app/faq/page.tsx (server + client merged)
+// app/faq/page.tsx
+
+"use client";
 
 import { Metadata } from "next";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-
-
 const faqs = [
   {
-    q: "What services does Buzzz offer for brands?",
-    a: "We provide tailored social media strategies, content creation, community management, and paid advertising to help brands grow.",
+    q: "What services does Team Infinity offer?",
+    a: "We offer complete digital solutions including Web Development, Graphic Designing, Digital Marketing, AI Automation, SEO, Shopify Development, UI/UX Designing, and Video Editing — all under one roof.",
   },
   {
-    q: "Which platforms do you manage?",
-    a: "We manage Facebook, Instagram, TikTok, YouTube, Twitter, and more depending on your target audience.",
+    q: "How does Team Infinity help businesses grow?",
+    a: "We combine smart marketing, innovative design, and AI-driven automation to increase brand visibility, attract new customers, and maximize your ROI through measurable strategies.",
   },
   {
-    q: "Do you offer paid ads and boosting?",
-    a: "Yes! We run paid campaigns optimized for reach, engagement, or conversions.",
+    q: "Do you work with international clients?",
+    a: "Yes! We have offices in Pakistan and London, serving over 60+ international clients across the UK, UAE, USA, and beyond with tailored digital solutions.",
   },
   {
-    q: "What's the minimum contract period?",
-    a: "We usually recommend at least 3 months to see meaningful results, but custom plans are available.",
+    q: "What makes Team Infinity different from other agencies?",
+    a: "Unlike typical agencies, we focus on data-driven strategies, transparent communication, and up to 30% lower pricing — without compromising on quality or performance.",
   },
   {
-    q: "Do you provide performance reports?",
-    a: "Absolutely. We send monthly reports with clear KPIs and insights to track growth.",
+    q: "Can I get a customized service plan?",
+    a: "Absolutely. Whether you’re a startup or an established business, our team creates customized strategies based on your goals, budget, and growth stage.",
   },
   {
-    q: "How do I get started with Buzzz?",
-    a: "Just contact us via the form and our team will create a tailored plan for your brand.",
+    q: "Do you provide regular progress reports?",
+    a: "Yes, we share detailed performance reports and analytics dashboards so you can track campaign results, engagement, and ROI in real-time.",
+  },
+  {
+    q: "How long does it take to launch a project?",
+    a: "Project timelines vary depending on scope — typically 2–4 weeks for websites, and 1–2 weeks for marketing campaigns or design projects.",
+  },
+  {
+    q: "How can I get started with Team Infinity?",
+    a: "You can book a free consultation through our website or email us at info@teaminfinity.uk. Our team will get in touch to discuss your goals and craft a tailored strategy.",
+  },
+  {
+    q: "Do you offer ongoing support after project completion?",
+    a: "Yes, we provide ongoing maintenance, strategy consulting, and performance optimization to ensure your digital presence stays strong and up-to-date.",
+  },
+  {
+    q: "Do you provide AI-based automation or chatbot solutions?",
+    a: "Yes, we specialize in AI automation, including custom chatbots, workflow optimization, and intelligent data systems that streamline your business operations.",
+  },
+  {
+    q: "Can you handle both design and development together?",
+    a: "Yes — our in-house creative and technical teams collaborate closely to deliver cohesive, high-performing digital products from concept to launch.",
+  },
+  {
+    q: "What industries do you specialize in?",
+    a: "We’ve successfully worked with clients in e-commerce, education, fashion, hospitality, and corporate sectors, delivering tailored digital strategies for each niche.",
   },
 ];
 
@@ -56,7 +80,7 @@ function FAQClient() {
                 className="w-full flex items-center justify-between py-2 px-2 text-left"
                 aria-expanded={isOpen}
               >
-                <span className="text-gray-800">{item.q}</span>
+                <span className="text-gray-800 font-medium">{item.q}</span>
                 <motion.span
                   initial={false}
                   animate={{ rotate: isOpen ? 45 : 0 }}
@@ -94,11 +118,11 @@ export default function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative py-20 -top-30"
+      className="relative py-10 md:py-16"
     >
       {/* Blur layers */}
       <div className="absolute -top-12 -right-64 w-96 h-96 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
-      <div className="absolute -bottom-12 -left-100 w-96 h-96 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
+      <div className="absolute -bottom-12 -left-64 w-96 h-96 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <p className="text-sm uppercase text-[#00B7CD] tracking-wider mb-2">

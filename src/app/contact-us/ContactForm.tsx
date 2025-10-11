@@ -179,7 +179,7 @@ const ContactForm = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <figure className="rounded-xl overflow-hidden shadow-md">
               <Image
-                src="/images/contact.svg"
+                src="/images/contact.jpg"
                 alt="Our creative team discussing a project"
                 width={400}
                 height={200}

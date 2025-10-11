@@ -40,7 +40,7 @@ export default function ServicesClient() {
       <motion.section
         id="services-hero"
         aria-labelledby="services-heading"
-        className="relative py-24 overflow-hidden bg-[#F2FBFD]"
+        className="relative py-24 mt-10 overflow-hidden bg-[#F2FBFD]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -65,7 +65,7 @@ export default function ServicesClient() {
           >
             <motion.h1
               id="services-heading"
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+              className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
@@ -136,9 +136,9 @@ export default function ServicesClient() {
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
           >
-            <div className="relative z-20 w-[420px] sm:w-[380px] md:w-[420px] lg:w-[440px] md:left-14 lg:left-0 overflow-hidden">
+            <div className="relative z-20 w-[420px] sm:w-[380px] md:w-[340px] lg:w-[500px] md:left-6 md:-top-1 lg:left-0 overflow-hidden rounded-md">
               <Image
-                src="/images/services.png"
+                src="/images/services.jpg"
                 alt="Illustration showcasing our digital services"
                 width={800}
                 height={1000}

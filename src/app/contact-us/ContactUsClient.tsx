@@ -58,7 +58,7 @@ export default function ContactUsClient() {
           </p>
         </motion.div>
 
-        {/* Newsletter Form (responsive like Hero) */}
+        {/* Newsletter Form */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -102,7 +102,7 @@ export default function ContactUsClient() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Let’s connect and build something great.</h2>
         </div>
 
-        {/* Info Cards */}
+        {/* Info Cards (icon on right, text on left) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {[
             {
@@ -128,11 +128,18 @@ export default function ContactUsClient() {
               transition={{ duration: 0.6, delay: idx * 0.2 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
-              className="bg-white shadow-md rounded-xl p-6 flex flex-col items-center transition"
+              className="bg-white shadow-md rounded-xl p-6 flex justify-between items-center text-left transition"
             >
-              <div className="w-12 h-12 flex items-center justify-center bg-cyan-100 rounded-full text-[#00B7CD] mb-3">{card.icon}</div>
-              <h3 className="font-semibold mb-1">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.desc}</p>
+              {/* Left Text */}
+              <div className="flex-1">
+                <h3 className="font-semibold mb-1 text-gray-900">{card.title}</h3>
+                <p className="text-gray-600 text-sm">{card.desc}</p>
+              </div>
+
+              {/* Right Icon */}
+              <div className="ml-4 w-12 h-12 flex items-center justify-center bg-cyan-100 rounded-full text-[#00B7CD] shrink-0">
+                {card.icon}
+              </div>
             </motion.div>
           ))}
         </div>
