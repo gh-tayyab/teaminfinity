@@ -3,29 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { motion, Variants } from "framer-motion";
-
-// Animation variants
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const staggerContainer: Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.16,
-    },
-  },
-};
 
 const services = [
   {
@@ -109,90 +86,83 @@ const services = [
     iconImg: "/images/video.png",
   },
 ];
+
 const Card = ({ s }: { s: (typeof services)[number] }) => {
   return (
     <Link
       href={`/services/${s.key}`}
       aria-label={`Open ${s.title} service page`}
+      className="relative bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden w-full max-w-[620px] h-auto group focus:outline-none focus:ring-2 focus:ring-cyan-100 transition-transform flex flex-col hover:scale-[1.02]"
     >
-      <motion.a
-        variants={fadeUp}
-        whileHover={{ scale: 1.02 }}
-        className="relative bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden w-full max-w-[620px] h-auto group focus:outline-none focus:ring-2 focus:ring-cyan-100 transition-transform flex flex-col"
-        style={{ willChange: "transform" }}
-      >
-        {/* Content */}
-        <div className="flex-1 flex flex-col justify-between p-6 bg-white">
-          <div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 hidden lg:block bg-[#ECFEFF] rounded-lg p-3">
-                {s.iconImg ? (
-                  <Image
-                    src={s.iconImg}
-                    alt={`${s.title} icon`}
-                    width={30}
-                    height={30}
-                    className="block"
-                  />
-                ) : (
-                  <div className="w-6 h-6 bg-cyan-100 rounded-sm" />
-                )}
-              </div>
+      {/* Content */}
+      <div className="flex-1 flex flex-col justify-between p-6 bg-white">
+        <div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 hidden lg:block bg-[#ECFEFF] rounded-lg p-3">
+              {s.iconImg ? (
+                <Image
+                  src={s.iconImg}
+                  alt={`${s.title} icon`}
+                  width={30}
+                  height={30}
+                  className="block"
+                />
+              ) : (
+                <div className="w-6 h-6 bg-cyan-100 rounded-sm" />
+              )}
+            </div>
 
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-gray-600 mb-3">{s.desc}</p>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                {s.title}
+              </h3>
+              <p className="text-sm text-gray-600 mb-3">{s.desc}</p>
 
-                {/* Bullets with Learn More button in last */}
-                <ul className="text-sm text-gray-600 space-y-1">
-                  {s.bullets.map((b, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start justify-between gap-2"
-                    >
-                      <div className="flex items-start gap-2">
-                        <span
-                          className="mt-1 text-[#06b6d4]"
-                          aria-hidden="true"
-                        >
-                          ✓
-                        </span>
-                        <span>{b}</span>
-                      </div>
+              {/* Bullets with Learn More button in last */}
+              <ul className="text-sm text-gray-600 space-y-1">
+                {s.bullets.map((b, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start justify-between gap-2"
+                  >
+                    <div className="flex items-start gap-2">
+                      <span
+                        className="mt-1 text-[#06b6d4]"
+                        aria-hidden="true"
+                      >
+                        ✓
+                      </span>
+                      <span>{b}</span>
+                    </div>
 
-                      {/* Agar last bullet hai to button dikhayein */}
-                      {i === s.bullets.length - 1 && (
-                        <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#00B7CD] text-white rounded-full text-xs font-medium transition-transform transform group-hover:scale-105">
-                          Learn More
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    {i === s.bullets.length - 1 && (
+                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#00B7CD] text-white rounded-full text-xs font-medium transition-transform transform group-hover:scale-105">
+                        Learn More
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Image bottom full width */}
-        <figure className="w-full h-48 lg:h-56 overflow-hidden bg-white">
-          <Image
-            src={s.img}
-            alt={`${s.title} preview`}
-            width={1200}
-            height={420}
-            className="object-cover w-full h-full"
-          />
-        </figure>
-      </motion.a>
+      {/* Image bottom full width */}
+      <figure className="w-full h-48 lg:h-56 overflow-hidden bg-white">
+        <Image
+          src={s.img}
+          alt={`${s.title} preview`}
+          width={1200}
+          height={420}
+          className="object-cover w-full h-full"
+        />
+      </figure>
     </Link>
   );
 };
 
-
-// Services Grid
+// Services Grid (no motion)
 const ServicesGrid: React.FC = () => {
   return (
     <section
@@ -201,31 +171,20 @@ const ServicesGrid: React.FC = () => {
     >
       <div className="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-[#00B7CD] opacity-20 blur-3xl z-0" />
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
-        <motion.header
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <header>
           <h2
             id="services-grid-heading"
             className="text-2xl md:text-3xl font-bold text-gray-900 mb-8"
           >
             Our Services
           </h2>
-        </motion.header>
+        </header>
 
-        <motion.main
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center"
-        >
+        <main className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
           {services.map((s) => (
             <Card key={s.key} s={s} />
           ))}
-        </motion.main>
+        </main>
       </div>
     </section>
   );
