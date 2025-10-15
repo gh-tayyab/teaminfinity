@@ -15,7 +15,7 @@ export default function About() {
           aria-hidden="true"
           className="hidden lg:block absolute top-[170px] left-[-150px] w-[140px] h-[440px] bg-[#00B7CD] rounded-full blur-3xl z-10"
         />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side Image */}
           <motion.figure
             className="flex justify-center items-center"
@@ -24,9 +24,9 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative w-[280px] h-[280px] md:w-[340px] md:h-[400px] lg:w-[450px] lg:h-[450px]">
+            <div className="relative w-[350px] h-[350px] md:w-[600px] md:h-[500px] lg:w-[500px] lg:h-[500px]">
               <Image
-                src="/images/abouut.jpg"
+                src="/images/aboutmain2.jpg"
                 alt="Team Infinity professionals collaborating on a project"
                 fill
                 priority

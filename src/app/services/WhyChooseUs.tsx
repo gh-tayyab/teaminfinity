@@ -83,12 +83,12 @@ export default function WhyChooseUs(): React.JSX.Element {
           </div>
 
           {/* Mobile / Tablet (vertical layout) */}
-          <div className="block md:hidden w-full max-w-xs">
+          <div className="block md:hidden w-screen px-0 mx-auto relative left-1/2 right-1/2 -translate-x-1/2 scale-110 -mt-4">
             <Image
               src="/images/servicesprocess.svg"
               alt="Our structured process that highlights the value of choosing our services"
-              width={420}
-              height={840}
+              width={1080}
+              height={1920}
               className="w-full h-auto object-cover"
               priority
             />
