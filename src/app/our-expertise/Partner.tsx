@@ -8,11 +8,17 @@ export default function Partner() {
     <section
       id="partner"
       aria-labelledby="partner-heading"
-      className="relative min-h-screen flex flex-col justify-center items-center bg-[#F2FBFD] px-6 md:px-12 py-12 md:py-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center bg-[#F2FBFD] px-6 md:px-12 py-12 md:py-20"
     >
       {/* Decorative Blurs */}
-      <div className="absolute -top-24 -left-24 w-72 h-72 bg-cyan-200/40 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-blue-300/40 rounded-full blur-3xl" />
+      <div
+        aria-hidden="true"
+        className="hidden md:block absolute top-0 left-[-120px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+      />
+      <div
+        aria-hidden="true"
+        className="hidden md:block absolute -bottom-20 right-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+      />
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 items-center gap-8 max-w-7xl w-full">
         {/* Left Image */}

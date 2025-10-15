@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function WhyChooseUs(): React.JSX.Element {
   return (
     <section
-      className="relative w-full flex justify-center items-start py-20 overflow-hidden bg-cover bg-center"
+      className="relative w-full flex justify-center items-start py-20 bg-cover bg-center"
       style={{ backgroundImage: "url('/images/serviceswhychoose.svg')" }}
       aria-labelledby="why-choose-us-heading"
     >
@@ -21,6 +21,27 @@ export default function WhyChooseUs(): React.JSX.Element {
         aria-hidden="true"
         className="absolute -bottom-10 -right-20 w-80 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-0"
       />
+
+      {/* Decorative Right Image */}
+      <motion.div
+        className="hidden md:block right-0 -top-36 absolute z-20 pointer-events-none"
+        aria-hidden="true"
+        initial={{ x: 50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Image
+          src="/images/image19.svg"
+          alt=""
+          width={220}
+          height={220}
+          className="object-contain"
+          loading="lazy"
+          sizes="220px"
+          role="presentation"
+        />
+      </motion.div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Heading */}

@@ -41,6 +41,10 @@ export default function Hero() {
         aria-hidden="true"
         className="hidden md:block absolute top-[170px] left-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
       />
+      <div
+        aria-hidden="true"
+        className="hidden lg:block absolute -top-40 -right-[90px] w-[80px] h-[260px] bg-[#00B7CD] rounded-full blur-3xl z-[60]"
+      />
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">
         {/* Left Side */}

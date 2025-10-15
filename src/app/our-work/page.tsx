@@ -41,7 +41,7 @@ export default function OurWorkPage() {
           href="/contact-us"
           className="inline-block bg-[#06859F] text-white px-8 py-3 rounded-full font-medium hover:bg-[#056b80] transition-all duration-300"
         >
-          Let’s Build Something Together 🚀
+          Let’s Build Something Together
         </a>
       </div>
     </section>
