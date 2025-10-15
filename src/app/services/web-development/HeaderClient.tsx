@@ -13,7 +13,7 @@ export default function HeaderClient() {
   return (
     <>
       <section
-        className="relative w-full h-[80vh] lg:h-[70vh] top-24 flex items-center justify-center text-center text-white overflow-hidden"
+        className="relative w-full h-[80vh] md:h-[70vh] lg:h-[60vh] top-24 flex items-center justify-center text-center text-white overflow-hidden"
         aria-labelledby="social-hero-heading"
       >
         {/* Background Image */}
@@ -26,24 +26,26 @@ export default function HeaderClient() {
         />
 
         {/* Content */}
-        <div className="relative z-10 max-w-3xl px-6 flex flex-col items-center justify-center -top-10 h-full">
+        <div className="relative z-10 w-full max-w-6xl px-8 flex flex-col items-center justify-center -top-10 h-full text-center">
           <motion.h1
             id="social-hero-heading"
-            className="text-3xl md:text-4xl font-bold leading-tight"
+            className="text-2xl lg:text-4xl font-bold leading-tight max-w-5xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Professional Web Development Services for Business Growth
+            Web Development Services for Business Growth
           </motion.h1>
 
           <motion.p
-            className="mt-4 text-base md:text-md text-gray-100 max-w-2xl"
+            className="mt-4 text-sm lg:text-base text-gray-100 max-w-xl lg:max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
           >
-            We create fast, responsive websites built to attract customers and boost sales. Team Infinity delivers SEO-friendly, mobile-optimized web solutions for businesses in worldwide.
+            We create fast, responsive websites built to attract customers and
+            boost sales. Team Infinity delivers SEO-friendly, mobile-optimized
+            web solutions for businesses worldwide.
           </motion.p>
         </div>
 

@@ -13,23 +13,23 @@ export default function HeaderClient() {
   return (
     <>
       <section
-        className="relative w-full h-[80vh] lg:h-[70vh] top-24 flex items-center justify-center text-center text-white overflow-hidden"
+        className="relative w-full h-[80vh] md:h-[70vh] lg:h-[60vh] top-24 flex items-center justify-center text-center text-white overflow-hidden"
         aria-labelledby="social-hero-heading"
       >
         {/* Background Image */}
         <Image
           src="/images/servicebg.svg"
-          alt="Social Media Marketing Background"
+          alt="AI Automation Service Background"
           fill
           className="object-cover object-center"
           priority
         />
 
         {/* Content */}
-        <div className="relative z-10 max-w-3xl px-6 flex flex-col items-center justify-center -top-10 h-full">
+        <div className="relative z-10 w-full max-w-6xl px-8 flex flex-col items-center justify-center -top-10 h-full text-center">
           <motion.h1
             id="social-hero-heading"
-            className="text-3xl md:text-4xl font-bold leading-tight"
+            className="text-2xl lg:text-4xl font-bold leading-tight max-w-5xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -38,7 +38,7 @@ export default function HeaderClient() {
           </motion.h1>
 
           <motion.p
-            className="mt-4 text-base md:text-lg text-gray-100 max-w-2xl"
+            className="mt-4 text-sm lg:text-base text-gray-100 max-w-xl lg:max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
