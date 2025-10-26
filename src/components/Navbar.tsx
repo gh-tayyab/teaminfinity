@@ -40,16 +40,16 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-[#F2FBFD] fixed inset-x-0 top-0 w-full overflow-x-clip z-50">      
+    <nav className="bg-white fixed inset-x-0 top-0 w-full overflow-x-clip z-50">      
       <header className="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8 min-w-0">
         {/* Logo - prevent it from shrinking unexpectedly */}
         <Link href="/" aria-label="Team Infinity Home" className="flex items-center flex-shrink-0">
           <Image
-            src="/logo/logo.svg"
+            src="/logo/logo.jpeg"
             alt="Team Infinity logo"
-            width={110}
+            width={150}
             height={100}
-            className="w-[110px] h-auto"
+            className="w-[150px] h-auto"
             priority
           />
         </Link>
