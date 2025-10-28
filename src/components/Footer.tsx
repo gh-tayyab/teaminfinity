@@ -153,7 +153,7 @@ export default function Footer() {
         >
           <div className="mb-4">
             <Image
-              src="/logo/logo1.svg"
+              src="/logo/logo2.png"
               alt="Team Infinity Logo"
               width={140}
               height={50}
