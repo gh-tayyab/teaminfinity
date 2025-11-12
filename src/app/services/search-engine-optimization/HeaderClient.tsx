@@ -3,48 +3,67 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import StatsSection from "@/app/services/web-development/StatsSection";
+// import StatsSection from "@/app/services/web-development/StatsSection";
 import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
 import BenefitsSection from "@/app/services/web-development/BenefitsSection";
 import ProjectsSection from "./ProjectsSection";
 import TestimonialsSection from "./TestimonialsSection";
+import Form from "@/app/services/web-development/Form";
+import ContactInfo from "@/app/services/web-development/ContactInfo";
 
 export default function HeaderClient() {
   return (
     <>
+      {/* Hero Section */}
       <section
-        className="relative w-full h-[80vh] md:h-[70vh] lg:h-[60vh] top-24 flex items-center justify-center text-center text-white overflow-hidden"
+        className="relative w-full flex items-center justify-center text-center text-white overflow-hidden"
         aria-labelledby="social-hero-heading"
       >
-        {/* Background Image */}
-        <Image
-          src="/images/servicebg.svg"
-          alt="SEO Services Background"
-          fill
-          className="object-cover object-center"
-          priority
-        />
+        {/* Desktop / Tablet Background */}
+        <div className="hidden md:block relative w-full h-[80vh]">
+          <Image
+            src="/images/webbg.jpg"
+            alt="SEO Services Background for desktop"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+
+        {/* Mobile Background */}
+        <div className="block md:hidden relative w-full h-[80vh]">
+          <Image
+            src="/images/webbgm.jpg"
+            alt="SEO Services Background for mobile"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[rgba(3,37,76,0.72)]" />
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-6xl px-8 flex flex-col items-center justify-center -top-10 h-full text-center">
+        <div className="absolute inset-0 top-20 md:top-30 flex flex-col items-center justify-center px-6 md:px-8 text-center z-10">
           <motion.h1
             id="social-hero-heading"
-            className="text-2xl lg:text-4xl font-bold leading-tight max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white max-w-[1100px]"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Improve Your Google Rankings with Expert SEO Services
+            Improve Your Google Rankings with SEO Services
           </motion.h1>
 
           <motion.p
-            className="mt-4 text-sm lg:text-base text-gray-100 max-w-xl lg:max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 40 }}
+            className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-white/90 max-w-3xl"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
           >
-            Team Infinity helps your website rank higher and reach real customers. 
-            Our SEO experts boost visibility through keyword optimization, link-building, 
+            Team Infinity helps your website rank higher and reach real customers.
+            Our SEO experts boost visibility through keyword optimization, link-building,
             and content strategies that drive traffic and growth.
           </motion.p>
         </div>
@@ -62,11 +81,14 @@ export default function HeaderClient() {
         />
       </section>
 
-      <StatsSection />
+      {/* Page Sections */}
+      {/* <StatsSection /> */}
+      <Form />
       <WhyChooseUs />
       <BenefitsSection />
       <ProjectsSection />
       <TestimonialsSection />
+      <ContactInfo />
     </>
   );
 }

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Team Infinity",
     images: [
       {
-        url: "https://teaminfinity.uk/og-image.jpg",
+        url: "https://teaminfinity.uk/og-image.png",
         width: 1200,
         height: 630,
         alt: "Team Infinity - IT Solutions",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Team Infinity – IT Solutions & Web Development",
     description:
       "Providing top-notch IT services, AI solutions, and scalable web applications for your business success.",
-    images: ["https://teaminfinity.uk/og-image.jpg"],
+    images: ["https://teaminfinity.uk/og-image.png"],
   },
   icons: {
     icon: "/favicon.ico",

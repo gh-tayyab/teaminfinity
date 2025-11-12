@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Team Infinity",
     images: [
       {
-        url: "https://teaminfinity.uk/og-image.jpg",
+        url: "https://teaminfinity.uk/og-image.png",
         width: 1200,
         height: 630,
         alt: "Team Infinity - AI Automation Services",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "AI Automation | Team Infinity",
     description:
       "Transform your business with Team Infinity’s AI automation solutions — intelligent systems that boost performance and reduce manual tasks.",
-    images: ["https://teaminfinity.uk/og-image.jpg"],
+    images: ["https://teaminfinity.uk/og-image.png"],
   },
 };
 

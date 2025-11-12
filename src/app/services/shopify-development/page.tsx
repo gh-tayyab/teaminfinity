@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "Team Infinity",
     images: [
       {
-        url: "https://teaminfinity.uk/og-image.jpg",
+        url: "https://teaminfinity.uk/og-image.png",
         width: 1200,
         height: 630,
         alt: "Team Infinity - Shopify Development",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Shopify Development | Team Infinity",
     description:
       "Custom Shopify development services by Team Infinity — scalable, fast, and SEO-friendly eCommerce stores for UK and global businesses.",
-    images: ["https://teaminfinity.uk/og-image.jpg"],
+    images: ["https://teaminfinity.uk/og-image.png"],
   },
 };
 

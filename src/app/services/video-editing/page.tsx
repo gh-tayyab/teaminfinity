@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "Team Infinity",
     images: [
       {
-        url: "https://teaminfinity.uk/og-image.jpg",
+        url: "https://teaminfinity.uk/og-image.png",
         width: 1200,
         height: 630,
         alt: "Team Infinity - Video Editing",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Video Editing | Team Infinity",
     description:
       "Professional video editing services by Team Infinity — cinematic visuals, smooth transitions, and creative storytelling for brands in the UK and globally.",
-    images: ["https://teaminfinity.uk/og-image.jpg"],
+    images: ["https://teaminfinity.uk/og-image.png"],
   },
 };
 

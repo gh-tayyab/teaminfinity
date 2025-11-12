@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Team Infinity",
     images: [
       {
-        url: "https://teaminfinity.uk/og-image.jpg",
+        url: "https://teaminfinity.uk/og-image.png",
         width: 1200,
         height: 630,
         alt: "Team Infinity - Digital Marketing Services",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Digital Marketing | Team Infinity",
     description:
       "Maximize your brand’s online visibility with Team Infinity’s expert digital marketing services — SEO, PPC, and social media marketing for UK & global clients.",
-    images: ["https://teaminfinity.uk/og-image.jpg"],
+    images: ["https://teaminfinity.uk/og-image.png"],
   },
 };
 
