@@ -10,24 +10,12 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  // ✅ FORCE Webpack (fixes Turbopack error)
+  // 🔑 REQUIRED: acknowledge Turbopack
+  turbopack: {},
+
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
-  },
-
-  // 🔑 This line is CRITICAL
-  webpack(config: WebpackConfig, { isServer }) {
-    if (!isServer) {
-      config.resolve = config.resolve || {};
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        net: false,
-        tls: false,
-      };
-    }
-    return config;
   },
 
   images: {
@@ -44,6 +32,19 @@ const nextConfig: NextConfig = {
 
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
+  },
+
+  webpack(config: WebpackConfig, { isServer }) {
+    if (!isServer) {
+      config.resolve = config.resolve || {};
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
+    return config;
   },
 };
 
