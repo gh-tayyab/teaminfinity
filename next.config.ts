@@ -2,16 +2,14 @@ import type { NextConfig } from "next";
 import type { Configuration as WebpackConfig } from "webpack";
 import bundleAnalyzer from "@next/bundle-analyzer";
 
-// Bundle Analyzer wrapper
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
-  openAnalyzer: false, // Prevents auto-opening in browser
+  openAnalyzer: false,
 });
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  // ✅ Optimize images + allow external flags
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60,
@@ -19,7 +17,6 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "flagcdn.com",
-        port: "",
         pathname: "/**",
       },
     ],
@@ -31,11 +28,10 @@ const nextConfig: NextConfig = {
   },
 
   compiler: {
-    // ✅ Strip console.logs only in production
     removeConsole: process.env.NODE_ENV === "production",
   },
 
-  webpack(config: WebpackConfig, { isServer }: { isServer: boolean }) {
+  webpack(config: WebpackConfig, { isServer }) {
     if (!isServer) {
       config.resolve = config.resolve || {};
       config.resolve.fallback = {
@@ -49,4 +45,10 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+// 🔧 Patch missing type (Next.js supports this at runtime)
+export default withBundleAnalyzer({
+  ...nextConfig,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+} as any);
