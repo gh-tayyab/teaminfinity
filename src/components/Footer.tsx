@@ -284,7 +284,7 @@ export default function Footer() {
         >
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             <Link
-              href="https://www.linkedin.com/company/teaminfinityuk"
+              href="https://www.linkedin.com/company/theteaminfinity"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"

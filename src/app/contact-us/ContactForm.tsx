@@ -205,7 +205,7 @@ const ContactForm = () => {
               <Link href="https://www.instagram.com/teaminfinity.uk" target="_blank" aria-label="Instagram" className="hover:opacity-80">
                 <Instagram className="w-5 h-5 text-[#009FB2]" />
               </Link>
-              <Link href="https://www.linkedin.com/company/teaminfinityuk" target="_blank" aria-label="LinkedIn" className="hover:opacity-80">
+              <Link href="https://www.linkedin.com/company/theteaminfinity" target="_blank" aria-label="LinkedIn" className="hover:opacity-80">
                 <Linkedin className="w-5 h-5 text-[#009FB2]" />
               </Link>
             </div>

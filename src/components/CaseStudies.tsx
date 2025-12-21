@@ -145,11 +145,11 @@ export default function CaseStudies(): React.JSX.Element {
                 </p>
 
                 <Link
-                  href="/our-work"
+                  href="/services"
                   className="inline-flex items-center justify-center px-5 py-2.5 border border-[#bfeef2] text-[#0f5670] rounded-md text-sm font-medium shadow-sm hover:shadow-md transition"
-                  aria-label="View our work"
+                  aria-label="View our services"
                 >
-                  View Our Work
+                  View Our Services
                 </Link>
               </motion.div>
             </motion.article>

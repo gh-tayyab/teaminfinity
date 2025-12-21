@@ -44,7 +44,7 @@ export default function Form() {
       id="contact"
       className="py-16 px-4 md:px-10 bg-[#F2FBFD] text-center"
     >
-      <h2 className="text-2xl md:text-3xl font-extrabold text-[#001144] mb-10">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-cyan-600 mb-10">
         LET’S BUILT SOMETHING GREAT TODAY!
       </h2>
 
@@ -100,7 +100,7 @@ export default function Form() {
 
         <button
           type="submit"
-          className="w-full sm:w-[200px] bg-[#001144] text-white font-semibold px-4 py-3 rounded-md hover:bg-[#000d33] transition-all"
+          className="w-full sm:w-[200px] bg-cyan-600 text-white font-semibold px-4 py-3 rounded-md hover:bg-cyan-700 transition-all"
         >
           Submit
         </button>

@@ -84,7 +84,7 @@ export default function Navbar() {
                 About Us
               </Link>
             </li>
-            <li role="none">
+            {/* <li role="none">
               <Link
                 href="/our-work"
                 role="menuitem"
@@ -92,7 +92,7 @@ export default function Navbar() {
               >
                 Our Work
               </Link>
-            </li>
+            </li> */}
 
             {/* Dropdown with Main Services Page */}
             <li
@@ -271,7 +271,7 @@ export default function Navbar() {
                   About
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/our-work"
                   onClick={() => setIsOpen(false)}
@@ -279,7 +279,7 @@ export default function Navbar() {
                 >
                   Our Work
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/services"
