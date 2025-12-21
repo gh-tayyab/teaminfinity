@@ -10,27 +10,13 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "flagcdn.com",
-        pathname: "/**",
-      },
-    ],
-  },
-
+  // ✅ FORCE Webpack (fixes Turbopack error)
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
   },
 
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
-  },
-
+  // 🔑 This line is CRITICAL
   webpack(config: WebpackConfig, { isServer }) {
     if (!isServer) {
       config.resolve = config.resolve || {};
@@ -43,12 +29,22 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
+
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+        pathname: "/**",
+      },
+    ],
+  },
+
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
 };
 
-// 🔧 Patch missing type (Next.js supports this at runtime)
-export default withBundleAnalyzer({
-  ...nextConfig,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-} as any);
+export default withBundleAnalyzer(nextConfig);
