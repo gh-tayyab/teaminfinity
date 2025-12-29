@@ -130,7 +130,7 @@ export default function Hero() {
           >
             <div className="flex -space-x-3">
               <Image
-                src="/images/avatar1.svg"
+                src="/images/avatar1.png"
                 alt="Happy client 1"
                 width={40}
                 height={40}
@@ -139,7 +139,7 @@ export default function Hero() {
                 loading="lazy"
               />
               <Image
-                src="/images/avatar2.svg"
+                src="/images/avatar2.png"
                 alt="Happy client 2"
                 width={40}
                 height={40}
@@ -148,7 +148,7 @@ export default function Hero() {
                 loading="lazy"
               />
               <Image
-                src="/images/avatar3.svg"
+                src="/images/avatar3.png"
                 alt="Happy client 3"
                 width={40}
                 height={40}
@@ -158,7 +158,7 @@ export default function Hero() {
               />
             </div>
             <figcaption className="text-gray-700 font-medium text-sm md:text-base">
-              Happy Clients <span className="font-bold">255+</span>
+            Trusted by startups & agencies
             </figcaption>
           </motion.figure>
         </motion.article>

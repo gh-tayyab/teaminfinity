@@ -73,16 +73,16 @@ export default function Partner() {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-8">
             {[
-              { value: "23+", label: "Years of Experience" },
+              { value: "4+", label: "Years of Experience" },
               { value: "200+", label: "Projects Completed" },
-              { value: "357K+", label: "Happy Clients" },
+              { value: "255+", label: "Happy Clients" },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.03 }}
                 className="bg-white shadow rounded-2xl p-4 text-center transition min-w-0"
               >
-                <h3 className="text-2xl font-bold text-gray-900">{stat.value}</h3>
+                <h3 className="text-2xl text-gray-900">{stat.value}</h3>
                 <p className="text-gray-500 text-sm">{stat.label}</p>
               </motion.div>
             ))}

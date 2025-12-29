@@ -43,13 +43,13 @@ const projects: Project[] = [
     desc: "An online store offering Nike essentials and more with no minimum order, free shipping, and secure shopping.",
     href: "https://noblebrit.com",
   },
-  {
-    key: "deepak-&-fahad",
-    title: "Deepak & Fahad",
-    img: "/projects/web3.png",
-    desc: "A contemporary Pakistani fashion brand blending timeless tradition with modern tailoring in menswear and womenswear.",
-    href: "https://www.deepakandfahad.com/",
-  },
+  // {
+  //   key: "deepak-&-fahad",
+  //   title: "Deepak & Fahad",
+  //   img: "/projects/web3.png",
+  //   desc: "A contemporary Pakistani fashion brand blending timeless tradition with modern tailoring in menswear and womenswear.",
+  //   href: "https://www.deepakandfahad.com/",
+  // },
   {
     key: "macopieprivee",
     title: "Macopieprivee",

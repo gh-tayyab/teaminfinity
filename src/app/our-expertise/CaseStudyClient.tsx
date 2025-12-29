@@ -5,7 +5,6 @@ import Image from "next/image";
 import IndustriesSection from "./IndustrySection";
 import CampaignsSection from "./CampaignCard";
 import Partner from "./Partner";
-import { motion } from "framer-motion";
 
 export default function CaseStudyClient() {
   const [email, setEmail] = useState("");
@@ -26,7 +25,6 @@ export default function CaseStudyClient() {
       });
 
       const data = await res.json();
-
       if (!res.ok) throw new Error(data.error || "Something went wrong");
 
       setSubmitted(true);
@@ -45,45 +43,29 @@ export default function CaseStudyClient() {
         className="relative top-16 md:top-0 py-16 bg-[#F2FBFD] overflow-visible"
         aria-labelledby="case-study-heading"
       >
-        {/* Decorative Blur Layers */}
+        {/* Decorative Blur */}
         <div
-        aria-hidden="true"
-        className="hidden md:block absolute top-[170px] left-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
-      />
+          aria-hidden="true"
+          className="hidden md:block absolute top-[170px] left-[-150px] w-[130px] h-[350px] bg-[#00B7CD] rounded-full blur-3xl z-10"
+        />
 
         <section className="container mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
           {/* Left Content */}
           <header className="z-10">
-            <motion.h2
+            <h2
               id="case-study-heading"
               className="text-4xl md:text-5xl font-bold text-gray-900"
-              initial={{ opacity: 0, y: -30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true, amount: 0.2 }}
             >
               Case Study
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              className="mt-4 text-lg text-gray-600"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
+            <p className="mt-4 text-lg text-gray-600">
               From strategy to execution, we help businesses grow through powerful
               marketing & innovative development solutions.
-            </motion.p>
+            </p>
 
             {/* Email Signup */}
-            <motion.article
-              className="mt-6 max-w-md"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
+            <article className="mt-6 max-w-md">
               <form
                 onSubmit={handleSubmit}
                 className="flex items-center w-full"
@@ -98,8 +80,6 @@ export default function CaseStudyClient() {
                   name="email"
                   placeholder="Enter your email"
                   required
-                  aria-required="true"
-                  aria-label="Email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={loading || submitted}
@@ -115,18 +95,12 @@ export default function CaseStudyClient() {
               </form>
 
               {error && <p className="mt-2 text-red-600 text-sm">{error}</p>}
-            </motion.article>
+            </article>
           </header>
 
           {/* Right Images */}
           <aside className="grid grid-cols-2 gap-4">
-            <motion.figure
-              className="col-span-2 mt-14"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
+            <figure className="col-span-2 mt-14">
               <Image
                 src="/images/casee1.jpg"
                 alt="Business analytics dashboard showing performance metrics"
@@ -136,14 +110,9 @@ export default function CaseStudyClient() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                 className="rounded-lg object-cover w-full h-64 md:h-72 lg:h-80"
               />
-            </motion.figure>
+            </figure>
 
-            <motion.figure
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
+            <figure>
               <Image
                 src="/images/casee2.jpg"
                 alt="Team working on digital project using design tools"
@@ -152,14 +121,9 @@ export default function CaseStudyClient() {
                 sizes="(max-width: 768px) 50vw, 400px"
                 className="rounded-lg object-cover w-full h-auto"
               />
-            </motion.figure>
+            </figure>
 
-            <motion.figure
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
+            <figure>
               <Image
                 src="/images/casee3.jpg"
                 alt="Mobile phone screen displaying social media applications"
@@ -168,12 +132,12 @@ export default function CaseStudyClient() {
                 sizes="(max-width: 768px) 50vw, 400px"
                 className="rounded-lg object-cover w-full h-auto"
               />
-            </motion.figure>
+            </figure>
           </aside>
         </section>
       </main>
 
-      {/* Related Sections (no animations here) */}
+      {/* Related Sections */}
       <IndustriesSection />
       <CampaignsSection />
       <Partner />

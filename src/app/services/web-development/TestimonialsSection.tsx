@@ -16,51 +16,36 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    key: "dylan-frost",
-    name: "Dylan Frost",
-    role: "E-commerce Store Owner",
-    avatar: "/images/avataar1.svg",
+    key: "rohit-malewar",
+    name: "Rohit Malewar",
+    role: "BlueHawk Logistics",
+    avatar: "/images/avat1.png",
     quote:
-      "The team at Soziely helped us increase website traffic and sales through targeted social media advertising. Their expertise and attention to detail were invaluable to our business.",
-    badge: (
-      <div className="w-10 h-10 rounded-full bg-[#00B7CD] grid place-items-center text-white shadow-sm">
-        🔥
-      </div>
-    ),
+      "We worked with Team Infinity for our website revamp, and the experience was smooth overall. They understood our requirements clearly and delivered practical solutions without unnecessary upselling.",
   },
   {
-    key: "ryan-warner",
-    name: "Ryan Warner",
-    role: "B2B Company Owner",
-    avatar: "/images/avataar2.svg",
+    key: "ananya-deshpande",
+    name: "Ananya Deshpande",
+    role: "Vertexa Solutions",
+    avatar: "/images/avat2.png",
     quote:
-      "As a B2B company, we were unsure how to effectively use social media. Soziely developed a LinkedIn strategy that generated leads and improved brand visibility.",
-    badge: (
-      <div className="w-10 h-10 rounded-full bg-[#00B7CD] grid place-items-center text-white shadow-sm">
-        🚀
-      </div>
-    ),
+      "Team Infinity helped us improve our website performance and design. Their communication was consistent, and they were open to revisions, which made the collaboration comfortable and productive."
   },
   {
-    key: "laura-glover",
-    name: "Laura Glover",
-    role: "Beauty Brand Owner",
-    avatar: "/images/avataar3.svg",
+    key: "sameer-kulkarni",
+    name: "Sameer Kulkarni",
+    role: "Nexora Systems",
+    avatar: "/images/avat3.png",
     quote:
-      "The Soziely team's skills and creativity helped us build a visually stunning Instagram presence that increased brand awareness and sales.",
-    badge: (
-      <div className="w-10 h-10 rounded-full bg-[#00B7CD] grid place-items-center text-white shadow-sm">
-        😺
-      </div>
-    ),
+      "Our IT support and website maintenance were handled by Team Infinity. The team was responsive, professional, and focused on long-term improvements rather than quick fixes.",
   },
 ];
 
 const partnerImages = [
-  { src: "/images/partners1.svg", alt: "Partner 1" },
-  { src: "/images/partners2.svg", alt: "Partner 2" },
-  { src: "/images/partners3.svg", alt: "Partner 3" },
-  { src: "/images/partners4.svg", alt: "Partner 4" },
+  { src: "/images/partners1.png", alt: "Partner 1" },
+  { src: "/images/partners2.png", alt: "Partner 2" },
+  { src: "/images/partners3.png", alt: "Partner 3" },
+  { src: "/images/partners4.png", alt: "Partner 4" },
 ];
 
 // NOTE: use a cubic-bezier array for `ease`, and cast the whole object to Variants
@@ -112,7 +97,7 @@ const TestimonialsSection: React.FC = () => {
               transition={{ delay: 0.3 }}
             >
               <Link
-                href="/testimonials"
+                href="/about"
                 className="inline-flex items-center justify-center w-max px-6 py-3 bg-[#00B7CD] text-white rounded-full font-medium hover:bg-cyan-600 transition mb-8"
               >
                 Discover more

@@ -92,7 +92,7 @@ const BenefitsSection: React.FC = () => {
                   </span>
                   <div className="text-left">
                     <div className="text-xs font-semibold text-slate-700">Best Agency</div>
-                    <div className="text-xs text-slate-500">Awwards</div>
+                    <div className="text-xs text-slate-500">Awards</div>
                   </div>
                 </div>
               </motion.div>

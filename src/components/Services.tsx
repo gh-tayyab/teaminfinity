@@ -1,19 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
 type Service = {
   title: string;
   items: string[];
-  icon: string;       // normal icon
-  iconHover: string;  // hover icon
+  icon: string;
+  iconHover: string;
   href: string;
 };
 
@@ -116,146 +117,116 @@ const services: Service[] = [
 ];
 
 export default function ServicesSection() {
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+
   return (
     <section
       id="services"
-      aria-labelledby="services-heading"
       className="relative bg-[#F2FBFD] py-20 px-6 overflow-hidden"
     >
-      {/* Decorative bottom images */}
-      <div
-        className="absolute left-0 bottom-0 pointer-events-none"
-        aria-hidden="true"
-      >
-        <Image
-          src="/images/servicesbottom.svg"
-          alt=""
-          width={220}
-          height={180}
-          loading="lazy"
-        />
+      {/* Decorative Images */}
+      <div className="absolute left-0 bottom-0 pointer-events-none">
+        <Image src="/images/servicesbottom.svg" alt="" width={220} height={180} />
       </div>
-      <div
-        className="absolute right-0 bottom-0 pointer-events-none"
-        aria-hidden="true"
-      >
-        <Image
-          src="/images/servicesbottomright.svg"
-          alt=""
-          width={160}
-          height={160}
-          loading="lazy"
-        />
+      <div className="absolute right-0 bottom-0 pointer-events-none">
+        <Image src="/images/servicesbottomright.svg" alt="" width={160} height={160} />
       </div>
 
-      <div className="max-w-7xl mx-auto">
-        {/* Section Heading */}
-        <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10 px-2">
+      <div className="max-w-7xl mx-auto relative">
+        {/* Heading */}
+        <header className="flex justify-between items-center mb-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-semibold text-[#009FB2] uppercase tracking-wider mb-3 flex items-center gap-2">
-              <span className="text-lg" aria-hidden="true">
-                ✱
-              </span>
-              <span className="text-black">Our Services</span>
+            <p className="text-sm font-semibold text-[#009FB2] uppercase mb-2">
+              ✱ Our Services
             </p>
-            <h2
-              id="services-heading"
-              className="text-3xl md:text-4xl font-bold text-gray-900"
-            >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Our Services
             </h2>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mt-4 sm:mt-0"
+          <Link
+            href="/services"
+            className="px-4 py-2 bg-white border rounded-full shadow-sm hover:shadow-md text-sm"
           >
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-200 text-sm font-medium hover:shadow-md transition"
-              aria-label="View all services"
-            >
-              View All Services
-            </Link>
-          </motion.div>
+            View All Services
+          </Link>
         </header>
 
-        {/* Swiper Slider */}
+        {/* Custom Arrows */}
+        <button
+          ref={prevRef}
+          className="swiper-prev absolute -left-6 top-1/2 -translate-y-1/2 z-10
+          w-12 h-12 rounded-full bg-white shadow-lg border flex items-center justify-center
+          hover:bg-[#00B7CD] hover:text-white transition disabled:opacity-0"
+        >
+          <ChevronLeft size={22} />
+        </button>
+
+        <button
+          ref={nextRef}
+          className="swiper-next absolute -right-6 top-1/2 -translate-y-1/2 z-10
+          w-12 h-12 rounded-full bg-white shadow-lg border flex items-center justify-center
+          hover:bg-[#00B7CD] hover:text-white transition disabled:opacity-0"
+        >
+          <ChevronRight size={22} />
+        </button>
+
+        {/* Swiper */}
         <Swiper
           modules={[Navigation]}
-          navigation
           spaceBetween={24}
+          onInit={(swiper) => {
+            // @ts-ignore
+            swiper.params.navigation.prevEl = prevRef.current;
+            // @ts-ignore
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }}
           breakpoints={{
             320: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          className="!pb-12"
+          className="pb-12"
         >
           {services.map((s, idx) => (
-            <SwiperSlide key={s.title} className="h-auto">
-              <Link
-                href={s.href}
-                className="block group h-full"
-                aria-label={`Open ${s.title} details`}
-              >
-                <article
-                  className="bg-white p-8 border border-transparent transition-transform duration-500 transform hover:scale-110 hover:shadow-3xl relative flex flex-col items-center text-center cursor-pointer h-full min-h-[350px]"
-                  role="group"
-                  aria-labelledby={`service-title-${idx}`}
-                >
-                  {/* Icon block with hover swap */}
-                  <div className="mb-6 relative w-20 h-20">
+            <SwiperSlide key={idx}>
+              <Link href={s.href} className="group block h-full">
+                <article className="bg-white p-8 text-center border hover:shadow-2xl transition transform hover:scale-105 min-h-[360px]">
+                  <div className="w-20 h-20 mx-auto mb-6 relative">
                     <Image
                       src={s.icon}
-                      alt={`${s.title} icon`}
-                      width={80}
-                      height={80}
-                      className="object-contain absolute inset-0 group-hover:hidden"
+                      alt=""
+                      fill
+                      className="object-contain group-hover:hidden"
                     />
                     <Image
                       src={s.iconHover}
-                      alt={`${s.title} icon hover`}
-                      width={80}
-                      height={80}
-                      className="object-contain absolute inset-0 hidden group-hover:block"
+                      alt=""
+                      fill
+                      className="object-contain hidden group-hover:block"
                     />
                   </div>
 
-                  {/* Title */}
-                  <h3
-                    id={`service-title-${idx}`}
-                    className="text-lg md:text-xl font-semibold text-gray-900 mb-4 group-hover:text-[#00B7CD] transition-colors"
-                  >
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-[#00B7CD]">
                     {s.title}
                   </h3>
 
-                  {/* List */}
-                  <ul
-                    className="space-y-2 text-sm text-gray-600 text-left flex-1"
-                    aria-label={`${s.title} features`}
-                  >
-                    {s.items.map((it) => (
-                      <li key={it} className="flex items-start gap-3">
-                        <Check
-                          className="w-4 h-4 mt-1 text-[#00B7CD] flex-shrink-0"
-                          aria-hidden="true"
-                        />
-                        <span>{it}</span>
+                  <ul className="text-sm text-gray-600 space-y-2 text-left">
+                    {s.items.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <Check className="w-4 h-4 text-[#00B7CD] mt-1" />
+                        {item}
                       </li>
                     ))}
                   </ul>
-
-                  {/* Bottom accent bar */}
-                  <span className="absolute left-0 bottom-0 w-full h-1 rounded-b-xl bg-transparent group-hover:bg-[#00B7CD] transition-colors duration-300" />
                 </article>
               </Link>
             </SwiperSlide>

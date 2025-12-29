@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
 import BenefitsSection from "@/app/services/web-development/BenefitsSection";
 import ProjectsSection from "./ProjectsSection";
-import TestimonialsSection from "./TestimonialsSection";
+import TestimonialsSection from "@/app/services/web-development/TestimonialsSection";
 import Form from "@/app/services/web-development/Form";
 import ContactInfo from "@/app/services/web-development/ContactInfo";
 

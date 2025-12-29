@@ -273,7 +273,7 @@ export default function Footer() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <p className="text-gray-500 text-sm">
-          Copyright © {new Date().getFullYear()} Design By Team Infinity
+          Copyright © 2021 Design By Team Infinity
         </p>
 
         {/* Social Links */}

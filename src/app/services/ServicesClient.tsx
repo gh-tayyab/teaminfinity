@@ -5,7 +5,6 @@ import { useState } from "react";
 import ServicesGrid from "./ServicesGrid";
 import WhyChooseUs from "./WhyChooseUs";
 import OurProcess from "./OurProcess";
-import { motion } from "framer-motion";
 
 export default function ServicesClient() {
   const [email, setEmail] = useState("");
@@ -37,15 +36,12 @@ export default function ServicesClient() {
   return (
     <main>
       {/* Hero Section */}
-      <motion.section
+      <section
         id="services-hero"
         aria-labelledby="services-heading"
         className="relative py-24 mt-10 bg-[#F2FBFD]"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Decorative Blur Elements */}
+        {/* Decorative Blurs */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-10"
@@ -57,44 +53,32 @@ export default function ServicesClient() {
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Left Content */}
-          <motion.header
-            className="flex flex-col justify-center items-start py-6 text-left"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          >
-            <motion.h1
+          <header className="flex flex-col justify-center items-start py-6 text-left">
+            <h1
               id="services-heading"
               className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
             >
               Our Services
-            </motion.h1>
-            <motion.p
-              className="text-gray-600 max-w-md mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-            >
+            </h1>
+
+            <p className="text-gray-600 max-w-md mb-6">
               From strategy to success — we help businesses grow with powerful
-              marketing, AI automation, and modern development solutions. At 
-              <span className="font-bold"> Team Infinity</span>, you get <span className="font-bold">premium-quality work at up to 30% lower
-              rates</span> — handled by experts who focus on real performance, not
-              empty promises. Smart strategies, creative execution, and
-              measurable results — all under one roof.
-            </motion.p>
+              marketing, AI automation, and modern development solutions. At
+              <span className="font-bold"> Team Infinity</span>, you get{" "}
+              <span className="font-bold">
+                premium-quality work at up to 30% lower rates
+              </span>{" "}
+              — handled by experts who focus on real performance, not empty
+              promises. Smart strategies, creative execution, and measurable
+              results — all under one roof.
+            </p>
 
             {/* Newsletter Form */}
-            <motion.form
+            <form
               onSubmit={handleSubmit}
               className="flex items-center gap-3 w-full sm:w-auto"
               role="form"
               aria-label="Subscribe to get started"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.5 }}
             >
               <label htmlFor="svc-email" className="sr-only">
                 Enter your email
@@ -115,28 +99,18 @@ export default function ServicesClient() {
               >
                 {loading ? "Sending..." : "Get Started"}
               </button>
-            </motion.form>
+            </form>
 
             {submitted && (
-              <motion.p
-                className="text-green-600 mt-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
+              <p className="text-green-600 mt-2">
                 ✅ Thanks for subscribing!
-              </motion.p>
+              </p>
             )}
-          </motion.header>
+          </header>
 
-          {/* Right Illustration */}
-          <motion.figure
-            className="relative flex justify-center lg:justify-end items-center py-6"
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
-          >
-            <div className="relative z-20 w-[420px] sm:w-[380px] md:w-[340px] lg:w-[500px] md:left-6 md:-top-1 lg:left-0 overflow-hidden rounded-md">
+          {/* Right Image (Desktop / Tablet only) */}
+          <figure className="relative hidden md:flex justify-center lg:justify-end items-center py-6">
+            <div className="relative z-20 w-[420px] md:w-[340px] lg:w-[500px] overflow-hidden rounded-md">
               <Image
                 src="/images/services.jpg"
                 alt="Illustration showcasing our digital services"
@@ -146,13 +120,22 @@ export default function ServicesClient() {
                 priority
               />
             </div>
-            <figcaption className="sr-only">
-              Illustration representing our digital marketing and development
-              services.
-            </figcaption>
-          </motion.figure>
+          </figure>
         </div>
-      </motion.section>
+
+        {/* Mobile Image (Vertical friendly – separate placement) */}
+        <div className="md:hidden mt-10 px-6">
+          <div className="relative w-full h-[420px] rounded-lg overflow-hidden">
+            <Image
+              src="/images/services.jpg"
+              alt="Our digital services illustration"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Sections */}
       <ServicesGrid />

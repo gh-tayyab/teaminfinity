@@ -151,7 +151,7 @@ export default function Testimonials(): React.JSX.Element {
                 <figure className="relative p-6 md:p-8">
                   <div className="rounded-xl overflow-hidden relative h-56 md:h-64">
                     <Image
-                      src="/images/testimonials1.jpg"
+                      src="/images/testi1.jpg"
                       alt="Maya Olivia — Marketing Lead at Urban Bloom"
                       fill
                       className="object-cover rounded-xl"
@@ -175,7 +175,7 @@ export default function Testimonials(): React.JSX.Element {
                   <div itemProp="author" itemScope itemType="https://schema.org/Person">
                     <meta itemProp="name" content="Maya Olivia" />
                     <p className="text-sm text-gray-500 mb-6">
-                    Amina Rahman, BrightNest, Bangladesh
+                    Wilfried Mbaihornom , South Africa
                     </p>
                   </div>
 
@@ -222,7 +222,7 @@ export default function Testimonials(): React.JSX.Element {
                 <figure className="relative p-6 md:p-8">
                   <div className="rounded-xl overflow-hidden relative h-56 md:h-64">
                     <Image
-                      src="/images/testimonials-2.svg"
+                      src="/images/testi2.jpg"
                       alt="Nadya Sarah — Founder of Matcha Mood"
                       fill
                       className="object-cover rounded-xl"

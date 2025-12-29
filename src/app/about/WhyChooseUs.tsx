@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
           {/* Clients */}
           <aside className="flex items-center gap-4">
             <div className="flex -space-x-3">
-              {["avatar1.svg", "avatar2.svg", "avatar3.svg"].map(
+              {["avatar1.png", "avatar2.png", "avatar3.png"].map(
                 (avatar, index) => (
                   <motion.div
                     key={index}
