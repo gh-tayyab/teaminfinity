@@ -44,12 +44,12 @@ export default function AboutClient() {
         {/* Decorative Blur Elements */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-16 top-64 -translate-y-1/2 w-96 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-10"
+          className="pointer-events-none absolute -left-16 top-64 -translate-y-1/2 w-96 h-72 bg-[#00B7CD] rounded-full blur-3xl opacity-20 z-50"
         />
-        <div
+        {/* <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-10 top-12 w-72 h-[520px] bg-[#CFF8FB] rounded-2xl blur-2xl opacity-80 z-10"
-        />
+          className="pointer-events-none absolute -right-10 top-12 w-72 h-[520px] bg-[#CFF8FB] rounded-2xl blur-2xl opacity-80 z-50"
+        /> */}
 
         {/* Content Grid */}
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">

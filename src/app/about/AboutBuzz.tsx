@@ -51,7 +51,7 @@ export default function AboutBuzzz() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-bold text-gray-900">23+</h3>
+              <h3 className="text-3xl font-bold text-gray-900">4+</h3>
               <p className="text-sm text-gray-500">Years of Experience</p>
             </motion.div>
           </div>

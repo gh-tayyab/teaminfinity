@@ -23,7 +23,7 @@ const supportOptions = [
     icon: <Phone className="text-[#00B7CD] mb-3" size={32} />,
     title: "Call Us",
     desc: "Talk directly with our support team.",
-    link: <p className="text-[#00B7CD] font-medium">+92 333 1290212</p>,
+    link: <p className="text-[#00B7CD] font-medium">+44 7908 793529</p>,
   },
   {
     icon: <MessageCircle className="text-[#00B7CD] mb-3" size={32} />,
@@ -31,7 +31,7 @@ const supportOptions = [
     desc: "Get instant help from our team.",
     link: (
       <Link
-        href="/contact-us"
+        href="/live-chat"
         className="text-[#00B7CD] font-medium hover:underline"
       >
         Start Chat

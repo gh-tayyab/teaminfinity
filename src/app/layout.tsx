@@ -120,12 +120,22 @@ export default function RootLayout({
         {/* For WhatsApp, LinkedIn, Telegram, etc — they all use OG tags above */}
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className="antialiased bg-[#F2FBFD] text-gray-900">
-        <Navbar />
-        <main>{children}</main>
-        <BackToTop />
-        <Footer />
-      </body>
+      <body
+  suppressHydrationWarning
+  className="antialiased bg-[#F2FBFD] text-gray-900"
+>
+  <div className="flex flex-col min-h-screen">
+    <Navbar />
+
+    {/* Main content */}
+    <main className="flex-1">
+      {children}
+    </main>
+
+    <BackToTop />
+    <Footer />
+  </div>
+</body>
     </html>
   );
 }

@@ -50,7 +50,7 @@ export default function Navbar() {
         >
           <div className="flex items-center justify-center h-[60px] sm:h-[110px]">
             <Image
-              src="/logo/logo2.png"
+              src="/logo/logo5.png"
               alt="Team Infinity logo"
               width={260}
               height={260}

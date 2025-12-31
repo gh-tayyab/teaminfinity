@@ -2,8 +2,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function BackToTop() {
+  const pathname = usePathname();
+
+  if (pathname === "/live-chat") return null;
   const [isVisible, setIsVisible] = useState(false);
 
   // scroll listener

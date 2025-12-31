@@ -4,8 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Youtube, Twitter, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === "/live-chat") return null;
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
