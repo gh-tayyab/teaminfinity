@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 const API_KEY = process.env.GEMINI_API_KEY!;
-
 const API_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" +
   API_KEY;
@@ -27,37 +26,38 @@ Rules:
 
 export async function POST(req: Request) {
   try {
-    const { message } = await req.json();
+    const body = await req.json();
+
+    // ✅ SAFE fallback
+    const messages = Array.isArray(body.messages)
+      ? body.messages
+      : [];
+
+    const contents = [
+      {
+        role: "user",
+        parts: [{ text: SYSTEM_PROMPT }],
+      },
+
+      ...messages.map((m: any) => ({
+        role: m.role === "user" ? "user" : "model",
+        parts: [{ text: m.text }],
+      })),
+    ];
 
     const response = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [
-          {
-            role: "user",
-            parts: [
-              {
-                text: `${SYSTEM_PROMPT}\n\nUser question: ${message}`,
-              },
-            ],
-          },
-        ],
-      }),
+      body: JSON.stringify({ contents }),
     });
 
     const data = await response.json();
 
-    console.log("Gemini raw response:", JSON.stringify(data, null, 2));
-
     const reply =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+      "Hi 👋 Welcome to Team Infinity! How can we help you grow your business today?";
 
-    return NextResponse.json({
-      reply:
-        reply ||
-        "Hi 👋 Welcome to Team Infinity! How can we help you grow your business today?",
-    });
+    return NextResponse.json({ reply });
   } catch (error) {
     console.error("Gemini Error:", error);
     return NextResponse.json({

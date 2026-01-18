@@ -4,12 +4,14 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 // import StatsSection from "@/app/services/web-development/StatsSection";
-import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
+// import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
 import BenefitsSection from "@/app/services/web-development/BenefitsSection";
-import ProjectsSection from "./ProjectsSection";
+// import ProjectsSection from "./ProjectsSection";
 import TestimonialsSection from "@/app/services/web-development/TestimonialsSection";
 import Form from "@/app/services/web-development/Form";
 import ContactInfo from "@/app/services/web-development/ContactInfo";
+import Services from "./Services";
+import HowWeWork from "./HowWeWork";
 
 export default function HeaderClient() {
   return (
@@ -20,7 +22,7 @@ export default function HeaderClient() {
         aria-labelledby="social-hero-heading"
       >
         {/* Desktop / Tablet Background */}
-        <div className="hidden md:block relative w-full h-[80vh]">
+        <div className="hidden md:block relative w-full h-[70vh]">
           <Image
             src="/images/webbg.jpg"
             alt="AI Automation Service Background"
@@ -84,9 +86,11 @@ export default function HeaderClient() {
       {/* Rest of Page Sections */}
       {/* <StatsSection /> */}
       <Form />
-      <WhyChooseUs />
+      <Services />
+      {/* <WhyChooseUs /> */}
       <BenefitsSection />
-      <ProjectsSection />
+      <HowWeWork />
+      {/* <ProjectsSection /> */}
       <TestimonialsSection />
       <ContactInfo />
     </>

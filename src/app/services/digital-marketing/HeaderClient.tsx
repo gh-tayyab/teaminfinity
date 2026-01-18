@@ -4,19 +4,21 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 // import StatsSection from "@/app/services/web-development/StatsSection";
-import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
+// import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
 import BenefitsSection from "@/app/services/web-development/BenefitsSection";
 import ProjectsSection from "./ProjectsSection";
 import TestimonialsSection from "@/app/services/web-development/TestimonialsSection";
 import Form from "@/app/services/web-development/Form";
 import ContactInfo from "@/app/services/web-development/ContactInfo";
+import Services from "./Services";
+import HowWeWork from "./HowWeWork";
 
 export default function HeaderClient() {
   return (
     <>
       {/* Hero Section */}
       <section
-        className="relative w-full flex items-center justify-center text-center text-white overflow-hidden top-24"
+        className="relative w-full flex items-center justify-center text-center text-white overflow-hidden"
         aria-labelledby="social-hero-heading"
       >
         {/* Desktop / Tablet Background */}
@@ -31,7 +33,7 @@ export default function HeaderClient() {
         </div>
 
         {/* Mobile Background */}
-        <div className="block md:hidden relative w-full h-[80vh]">
+        <div className="block md:hidden relative w-full h-[60vh]">
           <Image
             src="/images/webbgm.jpg"
             alt="Social Media Marketing Mobile Background"
@@ -84,9 +86,11 @@ export default function HeaderClient() {
       {/* Rest of Page Sections */}
       {/* <StatsSection /> */}
       <Form />
-      <WhyChooseUs />
+      <Services />
+      {/* <WhyChooseUs /> */}
       <BenefitsSection />
-      <ProjectsSection />
+      <HowWeWork />
+      {/* <ProjectsSection /> */}
       <TestimonialsSection />
       <ContactInfo />
     </>

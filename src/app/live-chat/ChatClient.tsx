@@ -60,7 +60,7 @@ export default function ChatClient() {
     >
       {/* Header */}
       <header className="border-b px-6 py-4 shrink-0">
-        <h1 className="text-lg font-semibold text-gray-800">
+        <h1 className="text-lg font-semibold text-cyan-600">
           Team Infinity AI Assistant
         </h1>
         <p className="text-sm text-gray-500">
@@ -80,7 +80,7 @@ export default function ChatClient() {
             <div
               className={`max-w-[75%] rounded-lg px-4 py-2 text-sm leading-relaxed ${
                 msg.role === "user"
-                  ? "bg-black text-white"
+                  ? "bg-cyan-600 text-white"
                   : "bg-gray-100 text-gray-800"
               }`}
             >
@@ -113,12 +113,12 @@ export default function ChatClient() {
             text-sm
             focus:outline-none
             focus:ring-2
-            focus:ring-black
+            focus:ring-cyan-500
           "
         />
         <button
           onClick={sendMessage}
-          className="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-900"
+          className="bg-cyan-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-cyan-700"
         >
           Send
         </button>

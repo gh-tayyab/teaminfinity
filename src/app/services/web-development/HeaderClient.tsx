@@ -10,6 +10,7 @@ import ProjectsSection from "./ProjectsSection";
 import TestimonialsSection from "./TestimonialsSection";
 import Form from "./Form";
 import ContactInfo from "./ContactInfo";
+import Services from "./Services";
 
 export default function HeaderClient() {
   return (
@@ -72,7 +73,8 @@ export default function HeaderClient() {
       {/* Rest of Page Sections */}
       <Form />
       {/* <StatsSection /> */}
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
+      <Services />
       <BenefitsSection />
       <ProjectsSection />
       <TestimonialsSection />

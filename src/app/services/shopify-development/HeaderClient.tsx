@@ -10,6 +10,8 @@ import ProjectsSection from "./ProjectsSection";
 import TestimonialsSection from "@/app/services/web-development/TestimonialsSection";
 import Form from "@/app/services/web-development/Form";
 import ContactInfo from "@/app/services/web-development/ContactInfo";
+import Services from "./Services";
+import HowWeWork from "./HowWeWork";
 
 export default function HeaderClient() {
   return (
@@ -84,9 +86,10 @@ export default function HeaderClient() {
       {/* Rest of Page Sections */}
       {/* <StatsSection /> */}
       <Form />
-      <WhyChooseUs />
+      <Services />
       <BenefitsSection />
-      <ProjectsSection />
+      <HowWeWork />
+      {/* <ProjectsSection /> */}
       <TestimonialsSection />
       <ContactInfo />
     </>

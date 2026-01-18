@@ -4,12 +4,14 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 // import StatsSection from "@/app/services/web-development/StatsSection";
-import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
+// import WhyChooseUs from "@/app/services/web-development/WhyChooseUs";
 import BenefitsSection from "@/app/services/web-development/BenefitsSection";
-import ProjectsSection from "./ProjectsSection";
+// import ProjectsSection from "./ProjectsSection";
 import TestimonialsSection from "@/app/services/web-development/TestimonialsSection";
 import Form from "@/app/services/web-development/Form";
 import ContactInfo from "@/app/services/web-development/ContactInfo";
+import Services from "./Services";
+import HowWeWork from "./HowWeWork";
 
 export default function HeaderClient() {
   return (
@@ -83,10 +85,12 @@ export default function HeaderClient() {
 
       {/* Rest of Page Sections */}
       <Form />
+      <Services />
       {/* <StatsSection /> */}
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <BenefitsSection />
-      <ProjectsSection />
+      <HowWeWork />
+      {/* <ProjectsSection /> */}
       <TestimonialsSection />
       <ContactInfo />
     </>
